@@ -13,7 +13,17 @@ namespace Aplicacion_03
 
             Console.WriteLine(Funciones.NombreApp());
 
-            Console.WriteLine(Funciones.CantidadUsuarios("0.1A"));
+            //Console.WriteLine(Funciones.CantidadUsuarios("0.1A"));
+
+            Console.WriteLine("Ingrese cantidad de usuarios:");
+            if (int.TryParse(Console.ReadLine(), out int usuarios))
+                Console.WriteLine($"Cantidad de usuarios de la App: {usuarios}");
+            else
+            {
+                Console.WriteLine("No se pudo obtener la cantidad de usuarios");
+                Console.WriteLine($"Cantidad de usuarios: {usuarios=-1}");
+            }
+
         }
     }
 }
