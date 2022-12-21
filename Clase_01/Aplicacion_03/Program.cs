@@ -6,7 +6,14 @@ namespace Aplicacion_03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //for (int i = 0; i < 100; i++) 
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            Console.WriteLine(Funciones.NombreApp());
+
+            Console.WriteLine(Funciones.CantidadUsuarios("0.1A"));
         }
     }
 }
