@@ -1,4 +1,5 @@
 ﻿using System;
+using Veterinaria;
 
 namespace POO
 {
@@ -6,7 +7,11 @@ namespace POO
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Gato gato = new Gato("Gardfield", new DateTime(1999,3,3),"Largo");
+
+            gato.AsignarPeso(12.2);
+
+            Console.WriteLine(gato.ObtenerDatos());
         }
     }
 }
