@@ -16,14 +16,28 @@ namespace Veterinaria
 
         private string tipoDePelo;
 
+  
         public Gato(string nombre, DateTime fechaNacimiento, string tipoDePelo)
         {
-            this.nombre = nombre;
+            AsignarNombre(nombre);
 
             this.fechaNacimiento = fechaNacimiento;
 
             this.tipoDePelo = tipoDePelo;
 
+        }
+
+        public void AsignarNombre(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(nombre))
+                this.nombre = "NN";
+            else
+                this.nombre = nombre;
+        }
+
+        public string ObtenerNombre() 
+        {
+            return nombre;
         }
 
         public void AsignarPeso(double peso)
@@ -33,7 +47,7 @@ namespace Veterinaria
 
         public double ObtenerPeso()
         {
-            return this.peso;
+            return peso;
         }
 
         public string ObtenerDatos()
@@ -41,7 +55,8 @@ namespace Veterinaria
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("### Datos del gato ###");
-            sb.AppendLine($"Nombre: {nombre}");
+
+            sb.AppendLine($"Nombre: {nombre.ToUpper()}");
             sb.AppendLine($"Fecha de Nacimiento: {fechaNacimiento.ToString("dd/MM/yyyy")}");
             sb.AppendLine($"Peso: {peso}");
             sb.AppendLine($"Tipo de pelo: {tipoDePelo}");

@@ -9,7 +9,9 @@ namespace POO
         {
             Gato gato = new Gato("Gardfield", new DateTime(1999,3,3),"Largo");
 
-            gato.AsignarPeso(12.2);
+            gato.AsignarPeso(5.2);
+
+            Console.WriteLine($"El peso de {gato.ObtenerNombre()} es {gato.ObtenerPeso()} kg");
 
             Console.WriteLine(gato.ObtenerDatos());
         }
