@@ -11,7 +11,7 @@ namespace POO
 
             Gato gato2 = new Gato("Félix", new DateTime(2020,2,21),null);
 
-            gato.AsignarPeso(5.2);
+            gato.AsignarPeso(4.2);
 
             gato2.AsignarPeso(3.4);
 

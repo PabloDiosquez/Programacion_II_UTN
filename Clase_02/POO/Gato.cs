@@ -32,7 +32,7 @@ namespace Veterinaria
             if (string.IsNullOrWhiteSpace(nombre))
                 this.nombre = "NN";
             else
-                this.nombre = nombre;
+                this.nombre = nombre.Trim();
         }
 
         public string ObtenerNombre() 
@@ -42,6 +42,9 @@ namespace Veterinaria
 
         public void AsignarPeso(double peso)
         {
+            if(peso < 0)
+                peso = 0;
+
             this.peso = peso;
         }
 
