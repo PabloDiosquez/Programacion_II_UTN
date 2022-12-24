@@ -59,7 +59,10 @@ namespace Veterinaria
             sb.AppendLine($"Nombre: {nombre.ToUpper()}");
             sb.AppendLine($"Fecha de Nacimiento: {fechaNacimiento.ToString("dd/MM/yyyy")}");
             sb.AppendLine($"Peso: {peso}");
-            sb.AppendLine($"Tipo de pelo: {tipoDePelo}");
+            if (tipoDePelo is not null)
+                sb.AppendLine($"Tipo de pelo: {tipoDePelo}");
+            else
+                sb.AppendLine($"Tipo de pelo: sin especificar");
 
             return sb.ToString();
         }
