@@ -23,6 +23,21 @@ namespace Logica
             usuariosRegistrados[2] = new Usuario("María", "XYZ321");
         }
 
+        public static bool AgregarNuevoUsuario(string nombre, string pass)
+        {
+            for (int i = 0; i < usuariosRegistrados.Length; i++) 
+            {
+                if (usuariosRegistrados[i] is null)
+                {
+                    usuariosRegistrados[i] = new Usuario(nombre, pass);
+
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public static bool ChekearUsuario(string nombre, string pass)
         {
             if (!string.IsNullOrWhiteSpace(nombre) || !string.IsNullOrWhiteSpace(pass)) 
@@ -35,7 +50,6 @@ namespace Logica
                     }
                 }
 
-                return false;
             }
             return false;
 
