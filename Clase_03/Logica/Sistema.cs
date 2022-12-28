@@ -29,7 +29,7 @@ namespace Logica
             {
                 for (int i = 0; i < usuariosRegistrados.Length; i++)
                 {
-                    if (usuariosRegistrados[i].ObtenerNombre() == usuario.ObtenerNombre())
+                    if (usuariosRegistrados[i].ObtenerNombre().Trim().ToUpper() == usuario.ObtenerNombre().Trim().ToUpper())
                     {
                         return true;
                     }
@@ -40,6 +40,7 @@ namespace Logica
                 } 
             }
             return false;
+
         }
     }
 }

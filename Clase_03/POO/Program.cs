@@ -1,4 +1,5 @@
 ﻿using System;
+using Logica;
 
 namespace Vista
 {
@@ -6,7 +7,9 @@ namespace Vista
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+
+
         }
     }
 }
