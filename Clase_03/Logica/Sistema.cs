@@ -23,21 +23,19 @@ namespace Logica
             usuariosRegistrados[2] = new Usuario("María", "XYZ321");
         }
 
-        public static bool ChekearUsuario(Usuario usuario)
+        public static bool ChekearUsuario(string nombre, string pass)
         {
-            if (usuario is not null) 
+            if (!string.IsNullOrWhiteSpace(nombre) || !string.IsNullOrWhiteSpace(pass)) 
             {
                 for (int i = 0; i < usuariosRegistrados.Length; i++)
                 {
-                    if (usuariosRegistrados[i].ObtenerNombre().Trim().ToUpper() == usuario.ObtenerNombre().Trim().ToUpper())
+                    if (usuariosRegistrados[i].ObtenerNombre().Trim().ToUpper() == nombre.Trim().ToUpper())
                     {
-                        return true;
+                        return usuariosRegistrados[i].CheckPass(pass);
                     }
-                    else 
-                    {
-                        return false;
-                    }
-                } 
+                }
+
+                return false;
             }
             return false;
 
