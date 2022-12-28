@@ -24,6 +24,12 @@ namespace Ejercicio_2
             //Instanciar 3 objetos de tipo Persona en el método Main.
             //Mostrar quiénes son mayores de edad y quiénes no.
 
+            Persona persona1 = new Persona("Pablo", new DateTime(1990, 08, 24), 35402027);
+
+            Console.WriteLine(persona1.MostrarDatos());
+
+            Console.WriteLine($"¿Es mayor de edad? {persona1.EsMayorDeEdad()}");
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Vista
             }
             else 
             {
-                Console.WriteLine("");
+                Console.WriteLine("Sin acceso");
             }
 
         }

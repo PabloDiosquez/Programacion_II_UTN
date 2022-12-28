@@ -23,16 +23,28 @@ namespace Logica
             usuariosRegistrados[2] = new Usuario("María", "XYZ321");
         }
 
+        private static int PosicionLibre() 
+        {
+            for (int i = 0; i < usuariosRegistrados.Length; i++)
+            {
+                if (usuariosRegistrados[i] is null) 
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
         public static bool AgregarNuevoUsuario(string nombre, string pass)
         {
-            for (int i = 0; i < usuariosRegistrados.Length; i++) 
-            {
-                if (usuariosRegistrados[i] is null)
-                {
-                    usuariosRegistrados[i] = new Usuario(nombre, pass);
+            int posLibre = PosicionLibre();
 
-                    return true;
-                }
+            if (posLibre != -1) 
+            {
+                usuariosRegistrados[posLibre] = new Usuario(nombre, pass);
+
+                return true;
             }
 
             return false;

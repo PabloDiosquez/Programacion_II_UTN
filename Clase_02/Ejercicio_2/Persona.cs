@@ -40,7 +40,7 @@ namespace Ejercicio_2
 
         public void AsignarFechaNacimiento(DateTime fecha) 
         {
-            this.fechaNacimiento = fecha;
+            fechaNacimiento = fecha;
         }
 
         public int ObtenerDni() 
@@ -52,5 +52,33 @@ namespace Ejercicio_2
         {
             this.dni = dni;
         }
+
+        private int CalcularEdad()
+        {
+            return DateTime.Today.Subtract(fechaNacimiento).Days / 365;
+
+        }
+
+        public string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("### Datos de la persona ###");
+            sb.AppendLine($"Nombre: {nombre}");
+            sb.AppendLine($"Edad: {CalcularEdad()}");
+            sb.AppendLine($"DNI: {dni}");
+
+            return sb.ToString();
+        }
+
+        public string EsMayorDeEdad() 
+        {
+            if (CalcularEdad() > 18)
+            {
+                return "Es mayor de edad";
+            }
+
+            return "Es menor";
+        }
+
     }
 }

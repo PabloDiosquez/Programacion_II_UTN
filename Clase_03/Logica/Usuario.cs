@@ -20,11 +20,6 @@ namespace Logica
             {
                 this.nombre = nombre;
             }
-            else
-            {
-                this.nombre = "NN";
-            }
-                
         }
 
         public void AsignarPassword(string password) 
@@ -40,5 +35,9 @@ namespace Logica
             return nombre;
         }
 
+        internal bool CheckPass(string pass)
+        {
+            return password == pass;
+        }
     }
 }
