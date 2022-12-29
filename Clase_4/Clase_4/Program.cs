@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Clase_4
+namespace Sobrecarga
 {
     internal class Program
     {
