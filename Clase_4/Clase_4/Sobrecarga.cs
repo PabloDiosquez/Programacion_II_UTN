@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace Clase_4
 {
     internal class Sobrecarga
+
+        // SOBRECARGA DE MÉTODOS
     {
         // Cantidad de parámetros 
         public static int Sumar(int num1, int num2)
@@ -28,6 +30,11 @@ namespace Clase_4
             //return (float)Sumar(num1, num2);
 
             return num1 + num2; 
+        }
+
+        public static string Sumar(string s1, string s2=" Opcional") // 👉🏼 Parámtros opcionales (deben ir siempre al final ⚠)
+        {
+            return s1 + s2;
         }
 
         // Orden de los parámetros
