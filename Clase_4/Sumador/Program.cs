@@ -19,7 +19,9 @@ namespace Sumador
             Sumador sumador = new Sumador();
 
             Console.WriteLine($"Cantidad de sumas: {sumador.CantidadSumas()}");
-            Console.WriteLine(sumador.Sumar("Hola"," Mundo!!"));
+            Console.WriteLine($"Resultado string: {sumador.Sumar("Hola", " Mundo!!")}");
+            Console.WriteLine($"Cantidad de sumas: {sumador.CantidadSumas()}");
+            Console.WriteLine($"Resultado long: {sumador.Sumar(21, 34)}");
             Console.WriteLine($"Cantidad de sumas: {sumador.CantidadSumas()}");
 
         }

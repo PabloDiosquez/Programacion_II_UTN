@@ -44,5 +44,17 @@ namespace Sobrecarga
             return sb.ToString();
         
         }
+
+        // SOBRECARGA DE OPERADORES
+
+        public static bool operator == (Persona p1, Persona p2)
+        {
+            return p1.dni == p2.dni; 
+        }
+
+        public static bool operator !=(Persona p1, Persona p2) 
+        {
+            return !(p1 == p2);
+        }
     }
 }

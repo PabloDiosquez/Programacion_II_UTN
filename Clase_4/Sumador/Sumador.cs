@@ -28,8 +28,7 @@ namespace Sumador
         public string Sumar(string s1, string s2) 
         {
             cantidadSumas++;
-
-            return s1 + s2;
+            return s1 + s2; 
         }
 
         public int CantidadSumas() 
