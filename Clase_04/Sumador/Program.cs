@@ -38,6 +38,9 @@ namespace Sumador
             //Console.WriteLine($"Cantidad de sumas: {sumador.CantidadSumas()}");
             Console.WriteLine($"Cantidad de sumas: {(int)sumador}");
 
+            Console.WriteLine($"Resultado long: {sumador1.Sumar(12,4)}");
+            Console.WriteLine($"Cantidad de sumas: {(int)sumador1}");
+
             Console.WriteLine($"Suma de los sumadores: {sumador + sumador1}");
             Console.WriteLine($"¿Tienen igual cantidad de sumas?: {sumador | sumador1}");
 
