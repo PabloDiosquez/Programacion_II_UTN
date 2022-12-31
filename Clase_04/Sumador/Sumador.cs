@@ -31,9 +31,24 @@ namespace Sumador
             return s1 + s2; 
         }
 
-        public int CantidadSumas() 
+        //public int CantidadSumas() 
+        //{
+        //    return cantidadSumas;
+        //}
+
+        public static explicit operator int(Sumador sumador)
         {
-            return cantidadSumas;
+            return sumador.cantidadSumas;
+        }
+
+        public static long operator +(Sumador s1, Sumador s2) 
+        {
+            return s1.cantidadSumas + s2.cantidadSumas;
+        }
+
+        public static bool operator |(Sumador s1, Sumador s2) 
+        {
+            return s1.cantidadSumas == s2.cantidadSumas;
         }
     }
 }
