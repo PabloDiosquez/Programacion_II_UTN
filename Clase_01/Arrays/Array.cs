@@ -13,6 +13,7 @@ namespace Arrays
             for (int i = 0; i < letras.Length; i++)
             {
                 Console.WriteLine($"letras[{i}]:");
+
                 while (!char.TryParse(Console.ReadLine(), out letras[i]))
                     Console.WriteLine("Ingrese un caracter:");
             }
