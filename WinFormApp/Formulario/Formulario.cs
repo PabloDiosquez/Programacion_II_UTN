@@ -23,15 +23,32 @@ namespace Formulario
 
             string pass = txb_password.Text;
 
-            if (usuario == "LioMessi" && pass == "ABC123")
+            if (usuario == "LioMessi".Trim() && pass == "ABC123".Trim())
             {
-                MessageBox.Show("Usuario logueado");
+                this.BackColor = Color.AliceBlue;
+
+                //MessageBox.Show("Usuario logueado");
+
+                MenuPrincipal frmMenuPrincipal = new MenuPrincipal(usuario);
+
+                this.Hide();
+
+                frmMenuPrincipal.ShowDialog(this);
 
             }
-            else 
+            else
             {
+                this.BackColor = Color.Teal;
+
                 MessageBox.Show("Usuario incorrecto");
             }
+        }
+
+        private void btn_completar_Click(object sender, EventArgs e)
+        {
+            txb_usuario.Text = "LioMessi";
+
+            txb_password.Text = "ABC123";
         }
     }
 }

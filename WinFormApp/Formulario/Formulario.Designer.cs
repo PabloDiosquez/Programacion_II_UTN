@@ -33,6 +33,7 @@
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.lbl_password = new System.Windows.Forms.Label();
             this.btn_loguear = new System.Windows.Forms.Button();
+            this.btn_completar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txb_usuario
@@ -73,7 +74,7 @@
             // btn_loguear
             // 
             this.btn_loguear.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btn_loguear.Location = new System.Drawing.Point(126, 214);
+            this.btn_loguear.Location = new System.Drawing.Point(126, 246);
             this.btn_loguear.Name = "btn_loguear";
             this.btn_loguear.Size = new System.Drawing.Size(106, 38);
             this.btn_loguear.TabIndex = 4;
@@ -81,17 +82,30 @@
             this.btn_loguear.UseVisualStyleBackColor = true;
             this.btn_loguear.Click += new System.EventHandler(this.btn_loguear_Click);
             // 
+            // btn_completar
+            // 
+            this.btn_completar.Location = new System.Drawing.Point(285, 201);
+            this.btn_completar.Name = "btn_completar";
+            this.btn_completar.Size = new System.Drawing.Size(75, 23);
+            this.btn_completar.TabIndex = 5;
+            this.btn_completar.Text = "Completar";
+            this.btn_completar.UseVisualStyleBackColor = true;
+            this.btn_completar.Click += new System.EventHandler(this.btn_completar_Click);
+            // 
             // frm_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(382, 430);
+            this.Controls.Add(this.btn_completar);
             this.Controls.Add(this.btn_loguear);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_usuario);
             this.Controls.Add(this.txb_password);
             this.Controls.Add(this.txb_usuario);
             this.Name = "frm_principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,5 +119,6 @@
         private System.Windows.Forms.Label lbl_usuario;
         private System.Windows.Forms.Label lbl_password;
         private System.Windows.Forms.Button btn_loguear;
+        private System.Windows.Forms.Button btn_completar;
     }
 }
