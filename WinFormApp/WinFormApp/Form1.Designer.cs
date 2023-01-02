@@ -30,11 +30,12 @@
         {
             this.btnMostrarTexto = new System.Windows.Forms.Button();
             this.lblTexto = new System.Windows.Forms.Label();
+            this.txb_Texto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnMostrarTexto
             // 
-            this.btnMostrarTexto.Location = new System.Drawing.Point(186, 227);
+            this.btnMostrarTexto.Location = new System.Drawing.Point(186, 121);
             this.btnMostrarTexto.Name = "btnMostrarTexto";
             this.btnMostrarTexto.Size = new System.Drawing.Size(188, 23);
             this.btnMostrarTexto.TabIndex = 0;
@@ -46,17 +47,26 @@
             // 
             this.lblTexto.AutoSize = true;
             this.lblTexto.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTexto.Location = new System.Drawing.Point(202, 119);
+            this.lblTexto.Location = new System.Drawing.Point(200, 159);
             this.lblTexto.Name = "lblTexto";
             this.lblTexto.Size = new System.Drawing.Size(149, 25);
             this.lblTexto.TabIndex = 1;
             this.lblTexto.Text = "Texto de prueba";
+            // 
+            // txb_Texto
+            // 
+            this.txb_Texto.Location = new System.Drawing.Point(186, 74);
+            this.txb_Texto.Name = "txb_Texto";
+            this.txb_Texto.PlaceholderText = "Ingrese un mensaje";
+            this.txb_Texto.Size = new System.Drawing.Size(188, 23);
+            this.txb_Texto.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 406);
+            this.Controls.Add(this.txb_Texto);
             this.Controls.Add(this.lblTexto);
             this.Controls.Add(this.btnMostrarTexto);
             this.Name = "Form1";
@@ -71,5 +81,6 @@
 
         private System.Windows.Forms.Button btnMostrarTexto;
         private System.Windows.Forms.Label lblTexto;
+        private System.Windows.Forms.TextBox txb_Texto;
     }
 }

@@ -19,7 +19,20 @@ namespace WinFormApp
 
         private void btnMostrarTexto_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("### Primer mensaje 💣 ###");
+            //MessageBox.Show("### Primer mensaje 💣 ###");
+
+            //TODO: 1 👉🏼 Capturar el texto del TextBox.
+
+            //TODO: 2 👉🏼 Reemplazar el texto en el Label.
+
+            //string mensaje = txb_Texto.Text;
+
+            //lblTexto.Text = mensaje;
+
+            // En una única linea 👌🏼
+
+            lblTexto.Text = txb_Texto.Text;
+            
         }
     }
 }
