@@ -14,14 +14,33 @@ namespace Formulario
     {
 
         private string usuario;
+
+        Usuario[] usuarios;
         private MenuPrincipal()
         {         
             InitializeComponent();
+
+            usuarios = new Usuario[3];
+
+            CargaUsuarios();
         }
 
         public MenuPrincipal(string usuario): this()
         {
             this.usuario = usuario;
+        }
+
+        /// <summary>
+        /// Carga de usuarios por defecto.
+        /// </summary>
+        private void CargaUsuarios() 
+        {
+            usuarios[0] = new Usuario("Lio", "Messi", 30123456);
+
+            usuarios[1] = new Usuario("Julián", "Álvarez", 40123456);
+
+            usuarios[2] = new Usuario("Emiliano", "Martínez", 20123456);
+
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
