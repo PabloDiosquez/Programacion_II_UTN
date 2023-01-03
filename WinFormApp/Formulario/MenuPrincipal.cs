@@ -39,8 +39,6 @@ namespace Formulario
 
             usuarios[1] = new Usuario("Julián", "Álvarez", 40123456);
 
-            usuarios[2] = new Usuario("Emiliano", "Martínez", 20123456);
-
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -69,6 +67,37 @@ namespace Formulario
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             lbl_bienvenida.Text = $"Bienvenido {usuario}";
+        }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            AltaUsuario frmAltaUsuario = new AltaUsuario();
+
+            if (frmAltaUsuario.ShowDialog() == DialogResult.OK)
+            {
+                int posLibre = PosLibre();
+                if (posLibre != -1) 
+                {
+                    usuarios[posLibre] = frmAltaUsuario.ObtenerUsuario();
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Carga cancelada");
+            }
+        }
+
+        private int PosLibre() 
+        {
+            for (int i = 0; i < usuarios.Length; i++)
+            {
+                if (usuarios[i] is null) 
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Formulario
 {
-    internal class Usuario
+    public class Usuario
     {
         private string nombre;
 
@@ -43,6 +43,7 @@ namespace Formulario
             }
 
             this.nombre = "NN";
+
             this.apellido = "NN";
         }
         public string MostrarInfo()
