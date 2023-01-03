@@ -20,7 +20,7 @@ namespace Formulario
         {         
             InitializeComponent();
 
-            usuarios = new Usuario[3];
+            usuarios = new Usuario[10];
 
             CargaUsuarios();
         }
@@ -67,6 +67,14 @@ namespace Formulario
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             lbl_bienvenida.Text = $"Bienvenido {usuario}";
+
+            for (int i = 0; i < usuarios.Length; i++)
+            {
+                if (usuarios[i] is not null)
+                {
+                    rtb_datos.Text += $"{usuarios[i].MostrarInfo()}\n";
+                }
+            }
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -76,9 +84,15 @@ namespace Formulario
             if (frmAltaUsuario.ShowDialog() == DialogResult.OK)
             {
                 int posLibre = PosLibre();
-                if (posLibre != -1) 
+                if (posLibre != -1)
                 {
                     usuarios[posLibre] = frmAltaUsuario.ObtenerUsuario();
+
+                    rtb_datos.Text += usuarios[posLibre].MostrarInfo();
+                }
+                else 
+                {
+                    MessageBox.Show("No hay más lugar");
                 }
             }
             else 

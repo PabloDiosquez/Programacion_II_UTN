@@ -35,16 +35,19 @@ namespace Formulario
 
         public void AsignarNombreYApellido(string nombre, string apellido) 
         {
-            if (nombre is not null && apellido is not null) 
+            if (nombre is not null && apellido is not null)
             {
                 this.nombre = nombre.Trim();
 
                 this.apellido = apellido.Trim();
             }
+            else 
+            {
+                this.nombre = "NN";
 
-            this.nombre = "NN";
+                this.apellido = "NN";
+            }
 
-            this.apellido = "NN";
         }
         public string MostrarInfo()
         {
