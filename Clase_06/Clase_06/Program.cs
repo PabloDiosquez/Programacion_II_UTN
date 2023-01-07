@@ -76,21 +76,76 @@ namespace Clase_06
 
             numeros2.Sort(); // Ordena la lista de menor a mayor 
 
-            foreach (int numero in numeros2)
-            {
-                Console.WriteLine(numero);
-            }
+            //foreach (int numero in numeros2)
+            //{
+            //    Console.WriteLine(numero);
+            //}
 
             numeros2.Sort(Comparacion); // Ordena la lista de mayor a menor (a Sort se le pasa una referencia al método Comparacion 👌🏼)
 
             Console.WriteLine();
 
-            foreach (int numero in numeros2) 
-            {
-                Console.WriteLine(numero);
-            }    
+            //foreach (int numero in numeros2) 
+            //{
+            //    Console.WriteLine(numero);
+            //}
 
             #endregion
+
+            #region Diccionarios
+
+            Dictionary<int, string> dicc = new Dictionary<int, string>();
+
+            dicc.Add(10, "Lio Messi");
+            dicc.Add(1, "Emiliano Martínez");
+            dicc.Add(5,"Enzo Fernández");
+
+            // Recorrer el diccionario
+
+            foreach (KeyValuePair<int, string> item in dicc)
+            {
+                Console.WriteLine(item);
+                Console.WriteLine($"Clave: {item.Key} >>> Valor: {item.Value}");
+                Console.WriteLine();
+            }
+
+            // Se peuden recorrer sólo los valores o las claves...
+
+            foreach (int clave in dicc.Keys)
+            {
+                Console.WriteLine($"Clave: {clave}");
+            }
+
+            Console.WriteLine();
+
+            foreach  (string valor in dicc.Values)
+            {
+                Console.WriteLine($"Valor: {valor}");
+            }
+
+            Console.WriteLine();
+
+            if (dicc.ContainsKey(10))
+            {
+                Console.WriteLine($"{dicc[10]} está agendado");
+            }
+            else
+            {
+                Console.WriteLine("Deberías agendar al mejor jugador del mundo!");
+            }
+
+            Console.WriteLine();
+
+            if(dicc.TryGetValue(10, out string jugador))
+            {
+                Console.WriteLine(jugador);
+            }
+
+
+
+
+            #endregion
+
 
         }
 
