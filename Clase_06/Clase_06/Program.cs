@@ -94,58 +94,123 @@ namespace Clase_06
 
             #region Diccionarios
 
-            Dictionary<int, string> dicc = new Dictionary<int, string>();
+            //Dictionary<int, string> dicc = new Dictionary<int, string>();
 
-            dicc.Add(10, "Lio Messi");
-            dicc.Add(1, "Emiliano Martínez");
-            dicc.Add(5,"Enzo Fernández");
+            //dicc.Add(10, "Lio Messi");
+            //dicc.Add(1, "Emiliano Martínez");
+            //dicc.Add(5,"Enzo Fernández");
 
-            // Recorrer el diccionario
+            //// Recorrer el diccionario
 
-            foreach (KeyValuePair<int, string> item in dicc)
-            {
-                Console.WriteLine(item);
-                Console.WriteLine($"Clave: {item.Key} >>> Valor: {item.Value}");
-                Console.WriteLine();
-            }
+            //foreach (KeyValuePair<int, string> item in dicc)
+            //{
+            //    Console.WriteLine(item);
+            //    Console.WriteLine($"Clave: {item.Key} >>> Valor: {item.Value}");
+            //    Console.WriteLine();
+            //}
 
-            // Se peuden recorrer sólo los valores o las claves...
+            //// Se peuden recorrer sólo los valores o las claves...
 
-            foreach (int clave in dicc.Keys)
-            {
-                Console.WriteLine($"Clave: {clave}");
-            }
+            //foreach (int clave in dicc.Keys)
+            //{
+            //    Console.WriteLine($"Clave: {clave}");
+            //}
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            foreach  (string valor in dicc.Values)
-            {
-                Console.WriteLine($"Valor: {valor}");
-            }
+            //foreach  (string valor in dicc.Values)
+            //{
+            //    Console.WriteLine($"Valor: {valor}");
+            //}
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            if (dicc.ContainsKey(10))
-            {
-                Console.WriteLine($"{dicc[10]} está agendado");
-            }
-            else
-            {
-                Console.WriteLine("Deberías agendar al mejor jugador del mundo!");
-            }
+            //if (dicc.ContainsKey(10))
+            //{
+            //    Console.WriteLine($"{dicc[10]} está agendado");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Deberías agendar al mejor jugador del mundo!");
+            //}
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            if(dicc.TryGetValue(10, out string jugador))
-            {
-                Console.WriteLine(jugador);
-            }
-
-
-
+            //if(dicc.TryGetValue(10, out string jugador))
+            //{
+            //    Console.WriteLine(jugador);
+            //}
 
             #endregion
 
+            #region Queue // FIFO >>> First In First Out
+
+            // Queue >>> No están indexadas y no se pueden ordenar ⚠
+
+            //Queue<string> colaStrings = new Queue<string>();
+
+            //colaStrings.Enqueue("Lionel");
+            //colaStrings.Enqueue("Julián");
+            //colaStrings.Enqueue("Lautaro");
+
+            //foreach (string nombre in colaStrings)
+            //{
+            //    Console.WriteLine(nombre);
+            //}
+
+            //string primerEliminado = colaStrings.Dequeue(); // Elimina el elemento ubicado al principio de la cola y lo retorna.
+
+            //Console.WriteLine();
+
+            //foreach (string nombre in colaStrings) 
+            //{
+            //    Console.WriteLine(nombre);
+            //}
+
+            //Console.WriteLine();
+
+            //string primerElem = colaStrings.Peek(); // Peek() >>> nos devuelve el primer elemento de la cola sin eliminarlo.
+
+            //Console.WriteLine($"Primer elemento: {primerElem}");
+
+            #endregion
+
+            #region Pilas // LIFO >>> Last In First Out
+
+            Stack<string> pilaStrings = new Stack<string>();
+
+            pilaStrings.Push("Lio");
+            pilaStrings.Push("Julián");
+            pilaStrings.Push("Enzo");
+
+            foreach (string nombre in pilaStrings)
+            {
+                Console.WriteLine(nombre);
+            }
+
+            //string primerElem = pilaStrings.Peek(); // Peek() >>> nos devuelve el último elemento de la pila sin eliminarlo.
+
+            string topeString = pilaStrings.Peek();
+
+            Console.WriteLine($"Tope de la pila >>> {topeString}");
+
+            Console.WriteLine();
+
+            string ultimoNombre = pilaStrings.Pop(); // Eimina de la lista el último objeto que entró y lo retorna.
+
+            foreach (string nombre in pilaStrings)
+            {
+                Console.WriteLine(nombre);
+            }
+
+            if (pilaStrings.Contains("Julián")) // >>> Contains() compara por el tipo de comparación que tenga dentro.
+                                                // Ej: Los tipos referencia compara si apuntan a la misma dirección de memoria
+                                                // los de tipo valor por su valor, etc⚠
+            {
+                Console.WriteLine("Está en la lista!");
+            }
+
+            #endregion
 
         }
 
