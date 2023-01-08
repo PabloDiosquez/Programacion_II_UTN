@@ -14,12 +14,11 @@ namespace Ejercicio_1
             // b) Luego mostrar los positivos ordenados en forma decreciente.
             // Por último, mostrar los negativos ordenados en forma creciente.
 
+            int[] numeros = new int[20];
             Random random = new Random();
 
-            int[] numeros = new int[20];
-
             // Carga del vector
-            for (int i = 0; i < 20; i++) 
+            for (int i = 0; i < numeros.Length; i++) 
             {
                 int randInt = random.Next(-100, 101);
 
@@ -35,59 +34,47 @@ namespace Ejercicio_1
 
             // a)
 
-            foreach (int numero in numeros) 
+            Console.WriteLine("Array original");
+
+            for (int i = 0; i < numeros.Length; i++)
             {
-                Console.WriteLine(numero);
+                Console.WriteLine($"{i+1}: {numeros[i]}");
             }
-            
+
             // b) 
 
-            List<int> positivos = new List<int>();
-
-            foreach (int numero in numeros) 
-            {
-                if (numero > 0) 
-                {
-                    positivos.Add(numero);
-                }
-            }
-
-            Console.WriteLine();
+            Console.WriteLine("Números positivos ordenados en forma decreciente:");
 
             // Ordenar la lista de forma decreciente
 
-            positivos.Sort(Comparacion);
+            Array.Sort(numeros,Comparacion);
 
-            Console.WriteLine("Lista de números positivos ordenada de forma decreciente:");
-
-            foreach (int numero in positivos) 
+            for (int i = 0; i < numeros.Length; i++)
             {
-                Console.WriteLine(numero);
+                if (numeros[i] >  0) 
+                {
+                    Console.WriteLine($"{i+1}: {numeros[i]}");
+                }
             }
 
             Console.WriteLine();
 
-            List<int> negativos = new List<int>();
+            // c)
+            // 
 
-            foreach (int numero in numeros)
+            Console.WriteLine("Números negativos ordenados de forma creciente: ");
+
+            Array.Sort(numeros);
+
+            for (int i = 0; i < numeros.Length; i++)
             {
-                if (numero < 0) 
+                if (numeros[i] < 0) 
                 {
-                    negativos.Add(numero);
+                    Console.WriteLine($"{i + 1}: {numeros[i]}");
                 }
             }
 
-            Console.WriteLine("Lista de números negativos ordenada de forma creciente: ");
-
-            negativos.Sort();
-
-            foreach (int numero in negativos)
-            {
-                Console.WriteLine(numero);
-            }
-
         }
-
         public static int Comparacion(int num1, int num2) 
         {
             return num2 - num1;
