@@ -55,21 +55,25 @@ namespace Ejercicio_2
 
             for (int i = 0; i < numeros.Count; i++)
             {
-                if (numeros[i] > 0) 
+                if (numeros[i] > 0)
                 {
-                    Console.WriteLine($"{i+1}: {numeros[i]}");
+                    Console.WriteLine($"{i + 1}: {numeros[i]}");
+
+                    colaPos.Enqueue(numeros[i]);
+                }
+
+                else 
+                {
+                    pilaNeg.Push(numeros[i]);   
                 }
             }
 
+            Console.WriteLine("Números negativos ordenados de forma creciente:");
 
-
-            
-
-
-
-
-
-
+            foreach (int numero in pilaNeg)
+            {
+                Console.WriteLine(numero);
+            }
 
         }
 
