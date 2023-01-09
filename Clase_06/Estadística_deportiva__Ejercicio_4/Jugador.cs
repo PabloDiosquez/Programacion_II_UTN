@@ -23,6 +23,8 @@ namespace Estadística_deportiva__Ejercicio_4
             partidosJugados = 0;
 
             totalGoles = 0;
+
+            promedioGoles = 0;
         }
 
         public Jugador(int dni, string nombre) : this() 
@@ -41,8 +43,11 @@ namespace Estadística_deportiva__Ejercicio_4
 
         public float ObtenerPromedioGoles() 
         {
-            promedioGoles = totalGoles / partidosJugados;
-            
+            if (partidosJugados != 0)
+            {
+                promedioGoles = (float)totalGoles / partidosJugados;
+            }
+          
             return promedioGoles;
         }
 
@@ -62,7 +67,12 @@ namespace Estadística_deportiva__Ejercicio_4
 
         public static bool operator ==(Jugador j1, Jugador j2) 
         {
-            return j1.dni == j2.dni;
+            if (j1 is not null && j2 is not null) 
+            {
+                return j1.dni == j2.dni;
+            }
+
+            return false;
         }
 
         public static bool operator !=(Jugador j1, Jugador j2) 
