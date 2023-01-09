@@ -61,12 +61,21 @@ namespace A_contar_palabras___Ejercicio_3
 
         private void MostrarPodio(List<KeyValuePair<string, int>> podio) 
         {
-            StringBuilder sb = new StringBuilder(); 
+            StringBuilder sb = new StringBuilder();
 
-            foreach (KeyValuePair<string, int> item in podio) 
+            int i = 0;
+
+            while (i < 3) 
             {
-                sb.AppendLine($"Palabra: {item.Key} 👉🏼 Cantidad: {item.Value}");
-            }
+                foreach (KeyValuePair<string, int> item in podio) 
+                {
+                    sb.AppendLine($"Palabra: {item.Key} 👉🏼 Cantidad: {item.Value}");
+                    podio.Remove(item);
+                    break;
+                }
+
+            i++;
+            } 
 
             MessageBox.Show(sb.ToString());
         }
