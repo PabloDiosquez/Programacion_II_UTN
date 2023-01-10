@@ -268,6 +268,7 @@
             // 
             this.txb_pantalla.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txb_pantalla.Location = new System.Drawing.Point(25, 25);
+            this.txb_pantalla.MaxLength = 20;
             this.txb_pantalla.Multiline = true;
             this.txb_pantalla.Name = "txb_pantalla";
             this.txb_pantalla.ReadOnly = true;
