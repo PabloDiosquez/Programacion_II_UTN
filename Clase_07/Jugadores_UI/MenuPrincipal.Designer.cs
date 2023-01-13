@@ -1,6 +1,6 @@
-﻿namespace UI
+﻿namespace Jugadores_UI
 {
-    partial class Form1
+    partial class MenuPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btn_agregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Location = new System.Drawing.Point(144, 230);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(129, 36);
+            this.btn_agregar.TabIndex = 0;
+            this.btn_agregar.Text = "Agregar jugador";
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 495);
+            this.ClientSize = new System.Drawing.Size(285, 278);
+            this.Controls.Add(this.btn_agregar);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -42,5 +54,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btn_agregar;
     }
 }

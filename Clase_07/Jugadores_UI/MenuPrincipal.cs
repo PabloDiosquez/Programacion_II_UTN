@@ -8,14 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI
+namespace Jugadores_UI
 {
-    public partial class Form1 : Form
+    public partial class MenuPrincipal : Form
     {
-        public Form1()
+        List<Jugador> jugadores;
+        public MenuPrincipal()
         {
+            jugadores = new List<Jugador>();
+
             InitializeComponent();
         }
 
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

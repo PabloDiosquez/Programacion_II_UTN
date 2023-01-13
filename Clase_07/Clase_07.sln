@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{DBB5BF2B-8223-484E-A52B-D833E7007B95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jugadores_UI", "Jugadores_UI\Jugadores_UI.csproj", "{1960A7CB-2EA8-4C3D-84C5-BF548FC1FAF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DBB5BF2B-8223-484E-A52B-D833E7007B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBB5BF2B-8223-484E-A52B-D833E7007B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBB5BF2B-8223-484E-A52B-D833E7007B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBB5BF2B-8223-484E-A52B-D833E7007B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1960A7CB-2EA8-4C3D-84C5-BF548FC1FAF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1960A7CB-2EA8-4C3D-84C5-BF548FC1FAF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1960A7CB-2EA8-4C3D-84C5-BF548FC1FAF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1960A7CB-2EA8-4C3D-84C5-BF548FC1FAF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B85C7E7C-CA40-4410-A0AF-439E8CC2B31B}
+		SolutionGuid = {5C156E2F-944A-4A59-BD0D-4201FFE4D4EB}
 	EndGlobalSection
 EndGlobal
