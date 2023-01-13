@@ -1,6 +1,6 @@
 ﻿namespace Jugadores_UI
 {
-    partial class MenuPrincipal
+    partial class frm_menu_principal
     {
         /// <summary>
         ///  Required designer variable.
@@ -41,14 +41,14 @@
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
-            // Form1
+            // frm_menu_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 278);
             this.Controls.Add(this.btn_agregar);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frm_menu_principal";
+            this.Text = "Menú Principal";
             this.ResumeLayout(false);
 
         }

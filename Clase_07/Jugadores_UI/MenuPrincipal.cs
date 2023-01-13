@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Jugadores_UI
 {
-    public partial class MenuPrincipal : Form
+    public partial class frm_menu_principal : Form
     {
         List<Jugador> jugadores;
-        public MenuPrincipal()
+        public frm_menu_principal()
         {
             jugadores = new List<Jugador>();
 
@@ -22,7 +22,14 @@ namespace Jugadores_UI
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            Alta_jugador frm_alta_jugador = new Alta_jugador();
 
+            frm_alta_jugador.ShowDialog();
+
+            if (frm_alta_jugador.DialogResult == DialogResult.OK) 
+            {
+                jugadores.Add(frm_alta_jugador.ObtenerJugador());
+            }
         }
     }
 }

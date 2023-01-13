@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jugadores_UI
 {
-    internal class Jugador
+    public class Jugador
     {
         private int dni;
 
