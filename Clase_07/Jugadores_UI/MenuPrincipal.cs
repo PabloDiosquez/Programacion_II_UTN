@@ -26,9 +26,15 @@ namespace Jugadores_UI
 
             frm_alta_jugador.ShowDialog();
 
-            if (frm_alta_jugador.DialogResult == DialogResult.OK) 
+            if (frm_alta_jugador.DialogResult == DialogResult.OK)
             {
                 jugadores.Add(frm_alta_jugador.ObtenerJugador());
+
+                MessageBox.Show("Jugador agregado con éxito!");
+            }
+            else if (frm_alta_jugador.DialogResult == DialogResult.Cancel)
+            {
+                MessageBox.Show("Carga cancelada");
             }
         }
     }

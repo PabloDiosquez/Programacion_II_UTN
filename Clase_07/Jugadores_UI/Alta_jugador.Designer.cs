@@ -101,7 +101,6 @@
             this.Controls.Add(this.txb_dni);
             this.Name = "Alta_jugador";
             this.Text = "Alta Jugador";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Alta_jugador_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

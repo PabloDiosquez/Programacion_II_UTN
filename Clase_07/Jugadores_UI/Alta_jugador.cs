@@ -18,14 +18,9 @@ namespace Jugadores_UI
             InitializeComponent();
         }
 
-        private void Alta_jugador_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Cancel; 
         }
 
         private void btn_alta_Click(object sender, EventArgs e)
@@ -48,6 +43,11 @@ namespace Jugadores_UI
             }
 
             DialogResult = DialogResult.OK;
+        }
+
+        public Jugador ObtenerJugador() 
+        {
+            return jugador;
         }
     }
 }
