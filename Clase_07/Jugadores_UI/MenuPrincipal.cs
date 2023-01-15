@@ -30,6 +30,8 @@ namespace Jugadores_UI
             {
                 jugadores.Add(frm_alta_jugador.ObtenerJugador());
 
+                rtb_datos.Text += $"{jugadores[jugadores.Count() - 1].MostrarDatos()}\n";
+
                 MessageBox.Show("Jugador agregado con éxito!");
             }
             else if (frm_alta_jugador.DialogResult == DialogResult.Cancel)
@@ -37,5 +39,6 @@ namespace Jugadores_UI
                 MessageBox.Show("Carga cancelada");
             }
         }
+
     }
 }
