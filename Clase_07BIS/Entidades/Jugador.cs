@@ -2,6 +2,20 @@
 
 namespace Entidades
 {
+    // ENUMERADOS
+
+    public enum EPosicion
+    {
+        Arquero,
+
+        Defensor,
+
+        Mediocampista,
+
+        Delantero
+    }
+
+
     public class Jugador
     {
         private static int ultimoId;
@@ -10,7 +24,7 @@ namespace Entidades
 
         private string nombre;
 
-        private string posicion;
+        private EPosicion posicion;
 
         private int camiseta;
 
@@ -70,7 +84,7 @@ namespace Entidades
             set { estaSuspendido = value; }
         }
 
-        public Jugador(string nombre, string posicion, int camiseta, int edad, string nacionalidad)
+        public Jugador(string nombre, EPosicion posicion, int camiseta, int edad, string nacionalidad)
         {
             this.nombre = nombre;
 

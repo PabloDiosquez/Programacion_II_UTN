@@ -20,6 +20,7 @@ namespace Jugadores_UI
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            Jugador jugador = new Jugador("Lio Messi",EPosicion.Delantero,10,35,"Argentina");
             
         }
     }
