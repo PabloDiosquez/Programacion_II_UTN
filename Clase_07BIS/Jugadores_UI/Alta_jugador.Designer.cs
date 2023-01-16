@@ -109,7 +109,7 @@
             this.Controls.Add(this.txb_posicion);
             this.Controls.Add(this.txb_Nombre);
             this.Name = "Alta_jugador";
-            this.Text = "Alta_jugador";
+            this.Text = "Alta jugador";
             this.ResumeLayout(false);
             this.PerformLayout();
 
