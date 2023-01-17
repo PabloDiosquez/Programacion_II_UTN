@@ -17,5 +17,11 @@ namespace Jugadores_UI
             InitializeComponent();
         }
 
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            Alta_jugador frm_alta_jugador = new Alta_jugador();
+
+            frm_alta_jugador.ShowDialog();
+        }
     }
 }

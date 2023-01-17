@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.txb_Nombre = new System.Windows.Forms.TextBox();
-            this.txb_posicion = new System.Windows.Forms.TextBox();
             this.txb_camiseta = new System.Windows.Forms.TextBox();
             this.txb_edad = new System.Windows.Forms.TextBox();
             this.txb_nacionalidad = new System.Windows.Forms.TextBox();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.cbx_posicion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txb_Nombre
@@ -44,14 +44,6 @@
             this.txb_Nombre.PlaceholderText = "Nombre";
             this.txb_Nombre.Size = new System.Drawing.Size(248, 23);
             this.txb_Nombre.TabIndex = 0;
-            // 
-            // txb_posicion
-            // 
-            this.txb_posicion.Location = new System.Drawing.Point(71, 100);
-            this.txb_posicion.Name = "txb_posicion";
-            this.txb_posicion.PlaceholderText = "Posición";
-            this.txb_posicion.Size = new System.Drawing.Size(248, 23);
-            this.txb_posicion.TabIndex = 1;
             // 
             // txb_camiseta
             // 
@@ -95,21 +87,33 @@
             this.btn_cancelar.TabIndex = 6;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // cbx_posicion
+            // 
+            this.cbx_posicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_posicion.FormattingEnabled = true;
+            this.cbx_posicion.Location = new System.Drawing.Point(71, 100);
+            this.cbx_posicion.Name = "cbx_posicion";
+            this.cbx_posicion.Size = new System.Drawing.Size(247, 23);
+            this.cbx_posicion.TabIndex = 7;
             // 
             // Alta_jugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 380);
+            this.Controls.Add(this.cbx_posicion);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.txb_nacionalidad);
             this.Controls.Add(this.txb_edad);
             this.Controls.Add(this.txb_camiseta);
-            this.Controls.Add(this.txb_posicion);
             this.Controls.Add(this.txb_Nombre);
             this.Name = "Alta_jugador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta jugador";
+            this.Load += new System.EventHandler(this.Alta_jugador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,11 +122,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox txb_Nombre;
-        private System.Windows.Forms.TextBox txb_posicion;
         private System.Windows.Forms.TextBox txb_camiseta;
         private System.Windows.Forms.TextBox txb_edad;
         private System.Windows.Forms.TextBox txb_nacionalidad;
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.ComboBox cbx_posicion;
     }
 }

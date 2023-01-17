@@ -6,13 +6,13 @@ namespace Entidades
 
     public enum EPosicion
     {
-        Arquero,
+        Arquero = 1,
 
-        Defensor,
+        Defensor = 2,
 
-        Mediocampista,
+        Mediocampista = 3,
 
-        Delantero
+        Delantero = 4,
     }
 
 
@@ -86,6 +86,8 @@ namespace Entidades
 
         public Jugador(string nombre, EPosicion posicion, int camiseta, int edad, string nacionalidad)
         {
+            id = ultimoId;
+
             this.nombre = nombre;
 
             this.posicion = posicion;
@@ -96,6 +98,12 @@ namespace Entidades
 
             this.nacionalidad = nacionalidad;
 
+            ultimoId++;
+        }
+
+        static Jugador()
+        {
+            ultimoId = 1;
         }
     }
 }
