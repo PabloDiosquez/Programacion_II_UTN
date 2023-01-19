@@ -8,11 +8,11 @@ namespace Consola
 {
     internal class Persona
     {
-        private string nombre;
+        protected string nombre;
 
-        private string apellido;
+        protected string apellido;
 
-        private int dni;
+        protected int dni;
 
         protected int edad;
 

@@ -18,5 +18,10 @@ namespace Consola
 
             materias = new List<Materia>();
         }
+
+        public string Estudiar()
+        {
+            return "Estudiando...";
+        }
     }
 }
