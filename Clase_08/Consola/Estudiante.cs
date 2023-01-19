@@ -21,7 +21,27 @@ namespace Consola
 
         public string Estudiar()
         {
-            return "Estudiando...";
+            return "Estudiando... ";
+        }
+
+        public void AgregarMateria(Materia materia)
+        {
+            materias.Add(materia);
+        }
+
+        public void MateriasQueCursa() 
+        {
+            if (materias.Count > 0)
+            {
+                foreach (Materia materia in materias)
+                {
+                    Console.WriteLine(materia.Nombre);
+                }
+            }
+            else 
+            {
+                Console.WriteLine("El alumno NO cursa materias este cuatrimestre.");
+            }
         }
     }
 }

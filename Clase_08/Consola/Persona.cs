@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Consola
 {
-    internal class Persona
+    public class Persona
     {
         protected string nombre;
 

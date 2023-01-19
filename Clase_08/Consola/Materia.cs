@@ -16,10 +16,13 @@ namespace Consola
 
         public Materia(string nombre, string carrera)
         {
-            this.nombre = nombre;
+            this.Nombre = nombre;
 
-            this.carrera = carrera;
+            this.Carrera = carrera;
         }
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Carrera { get => carrera; set => carrera = value; }
 
         public void ProfesorACargo(Profesor profesor) 
         {
