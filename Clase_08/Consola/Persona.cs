@@ -25,9 +25,10 @@ namespace Consola
             this.dni = dni;
         }
 
-        protected string Nombre { get => nombre; set => nombre = value; }
-        protected string Apellido { get => apellido; set => apellido = value; }
-        protected int Dni { get => dni; set => dni = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public int Dni { get => dni; set => dni = value; }
+        public int Edad { get => edad; set => edad = value; }
 
         public string MostrarDatos(Persona persona)
         {
@@ -36,7 +37,7 @@ namespace Consola
             sb.AppendLine($"Nombre: {nombre}");
             sb.AppendLine($"Apellido: {apellido}");
             sb.AppendLine($"DNI: {dni}");
-            sb.AppendLine($"Edad: {edad}");
+            sb.AppendLine($"Edad: {Edad}");
 
             return sb.ToString();
         }
