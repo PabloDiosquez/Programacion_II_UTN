@@ -30,7 +30,7 @@ namespace Consola
         public int Dni { get => dni; set => dni = value; }
         public int Edad { get => edad; set => edad = value; }
 
-        public string MostrarDatos(Persona persona)
+        public string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
 
