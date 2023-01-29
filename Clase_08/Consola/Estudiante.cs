@@ -13,12 +13,7 @@ namespace Consola
         private List<Materia> materias;
 
         public Estudiante(int legajo, string nombre, string apellido, int dni)
-        : this(legajo, new Persona(nombre,apellido,dni))
-        {
-            this.legajo = legajo;
-
-            materias = new List<Materia>();
-        }
+        : this(legajo, new Persona(nombre,apellido,dni)) {}
 
         public Estudiante(int legajo,Persona persona) : base(persona.Nombre,persona.Apellido,persona.Dni)
         {
