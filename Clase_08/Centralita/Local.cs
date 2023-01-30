@@ -10,16 +10,16 @@ namespace Centralita
     {
         protected float costo;
 
-        public Local(Llamada llamada, float costo) : this(llamada.Duracion, llamada.NroDestino, llamada.NroOrigen, costo)
+        public Local(Llamada llamada, float costo) : this(llamada.NroOrigen, llamada.Duracion, llamada.NroDestino, costo)
         {
 
         }
 
-        public Local(float duracion, string nroDestino, string nroOrigen, float costo) : base(duracion, nroDestino, nroOrigen)
+        public Local(string origen, float duracion, string destino, float costo) : base(duracion, destino, origen)
         {
             this.costo = costo;
         }
-        private float CostoLlamada 
+        public float CostoLlamada 
         {
             get { return CalcularCosto(); }
         }
@@ -28,5 +28,19 @@ namespace Centralita
         {
             return costo * duracion;
         }
+
+        public new string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("### Datos de la llamada ###");
+            sb.AppendLine($"Duración: {duracion}");
+            sb.AppendLine($"Número de destino: {nroDestino}");
+            sb.AppendLine($"Número de origen: {nroOrigen}");
+            sb.AppendLine($"Costo de la llamada: {CostoLlamada}");
+
+            return sb.ToString();
+        }
+        
     }
 }
