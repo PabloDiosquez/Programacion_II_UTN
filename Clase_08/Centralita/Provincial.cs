@@ -22,12 +22,14 @@ namespace Centralita
             get { return CalcularCosto(); }
         }
 
-        public Provincial(franja miFranja, Llamada llamada) : this(llamada.NroOrigen, miFranja, llamada.Duracion, llamada.NroDestino)
+        public Provincial(franja miFranja, Llamada llamada) :
+            this(llamada.NroOrigen, miFranja, llamada.Duracion, llamada.NroDestino)
         {
 
         }
 
-        public Provincial(string origen, franja miFranja, float duracion, string destino) : base(duracion, destino, origen) 
+        public Provincial(string origen, franja miFranja, float duracion, string destino) :
+            base(duracion, destino, origen) 
         {
             franjaHoraria = miFranja;
         }
@@ -36,20 +38,23 @@ namespace Centralita
         {
             float costo;
 
-            if (franjaHoraria == franja.Franja_1)
+            switch (franjaHoraria)
             {
-                costo = 0.99F * duracion;
-            }
-            else if (franjaHoraria == franja.Franja_2)
-            {
-                costo = 1.25F * duracion;
-            }
-            else
-            {
-                costo = 0.66F * duracion;
+                case franja.Franja_1:
+                    costo = 0.99F * duracion;
+                    break;
+                case franja.Franja_2:
+                    costo = 1.25F * duracion;
+                    break;
+                case franja.Franja_3:
+                    costo = 0.66F * duracion;
+                    break;
+                default:
+                    costo = 0;
+                    break;
             }
 
-            return costo;
+            return costo;   
         }
 
         public new string Mostrar()
@@ -57,7 +62,7 @@ namespace Centralita
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.Mostrar());
-            sb.AppendLine($"Franja: {}");
+            sb.AppendLine($"Franja: {franjaHoraria}");
             sb.AppendLine($"Costo de la llamada: {CostoLlamada}");
 
             return sb.ToString();   

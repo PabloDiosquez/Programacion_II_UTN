@@ -38,9 +38,9 @@ namespace Centralita
             get { return nroOrigen; }
         }
 
-        public Llamada(float duaracion, string nroDestino, string nroOrigen) 
+        public Llamada(float duracion, string nroDestino, string nroOrigen) 
         {
-            this.duracion = duaracion;
+            this.duracion = duracion;
 
             this.nroDestino = nroDestino;
 
