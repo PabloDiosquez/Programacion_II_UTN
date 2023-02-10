@@ -20,14 +20,19 @@ namespace Clase_10
             {
                 arr[arr.Length] = 8;
             }
-            catch (Exception) 
+            catch (Exception)
             {
                 Console.WriteLine("Ocurrió una excepción 😕");
             }
+            finally 
+            {
+                Console.WriteLine("Programa terminado.");
+            }
 
+            Console.WriteLine();
 
             // Mútiples bloques catch
-    
+
             //Un bloque de código en una instancia try puede contener muchas instrucciones, cada una de las cuales puede
             // producir una o más clases diferentes de excepción.
             //Al haber muchas clases de excepciones distintas, es posible que haya muchos bloques catch y que cada uno de
@@ -57,7 +62,42 @@ namespace Clase_10
             {
                 Console.WriteLine($"Ocurrió una excepción: {e.Message}");
             }
+            finally
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Console.WriteLine($"{arr[i]}");
+                }
+            }
 
+        }
+
+        public static void Metodo1()
+        {
+            try
+            {
+                Console.WriteLine("Escriba el primer número");
+
+                int i = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Escriba el segundo número");
+
+                int j = int.Parse(Console.ReadLine());
+
+                int k = i / j;
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
