@@ -9,7 +9,7 @@ using Biblioteca;
 namespace Pruebas
 {
     [TestClass]
-    internal class StringExtensionTest
+    public class StringExtensionTest
     {
         [TestMethod]
         public void ContadorDeVocales_CuandoNoTieneVocales_DeberiaRetornarCero()
@@ -17,7 +17,71 @@ namespace Pruebas
             // Arrange 
             int resultadoEsperado = 0;
 
-            string texto = "tyRyu nwq! ;";
+            string texto = "¡ Pssst! ¡ Bzzzz!   ;?' Zzz..";
+
+            // Act
+            int resultado = StringExtension.ContadorDeVocales(texto);
+
+            // Assert 
+            Assert.AreEqual(resultadoEsperado, resultado);
+
+        }
+
+        [TestMethod]
+        public void ContadorDeVocales_CuandoTieneDosVocalesEnMinuscula_DeberiaRetornarDos()
+        {
+            // Arrange 
+            int resultadoEsperado = 2;
+
+            string texto = "¡ Pssat! ¡ Buzzz!   ;?' Zzz..";
+
+            // Act
+            int resultado = StringExtension.ContadorDeVocales(texto);
+
+            // Assert 
+            Assert.AreEqual(resultadoEsperado, resultado);
+
+        }
+
+        [TestMethod]
+        public void ContadorDeVocales_CuandoTieneTresVocalesEnMayuscula_DeberiaRetornarTres()
+        {
+            // Arrange 
+            int resultadoEsperado = 3;
+
+            string texto = "¡ PssAt! ¡ BUzzz! E  ;?' Zzz..";
+
+            // Act
+            int resultado = StringExtension.ContadorDeVocales(texto);
+
+            // Assert 
+            Assert.AreEqual(resultadoEsperado, resultado);
+
+        }
+
+        [TestMethod]
+        public void ContadorDeVocales_CuandoElTextoEsVacio_DeberiaRetornarCero()
+        {
+            // Arrange 
+            int resultadoEsperado = 0;
+
+            string texto = string.Empty;
+
+            // Act
+            int resultado = StringExtension.ContadorDeVocales(texto);
+
+            // Assert 
+            Assert.AreEqual(resultadoEsperado, resultado);
+
+        }
+
+        [TestMethod]
+        public void ContadorDeVocales_CuandoElTextoEsNulo_DeberiaRetornarCero()
+        {
+            // Arrange 
+            int resultadoEsperado = 0;
+
+            string texto = null;
 
             // Act
             int resultado = StringExtension.ContadorDeVocales(texto);
