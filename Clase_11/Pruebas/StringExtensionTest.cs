@@ -11,6 +11,8 @@ namespace Pruebas
     [TestClass]
     public class StringExtensionTest
     {
+        public object StringExtension { get; private set; }
+
         [TestMethod]
         public void ContadorDeVocales_CuandoNoTieneVocales_DeberiaRetornarCero()
         {
