@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Biblioteca;
+using System;
 
 namespace Pruebas
 {
@@ -23,7 +24,40 @@ namespace Pruebas
 
             // Assert 👉🏼 Evaluación de los resultados
 
-            Assert.Equals(resultadoEsperado, resultado);
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+
+        public void ContarPalabras_CuandoRecibeStringVacio_DeberiaLanzarArgumentException()
+        {
+            // Arrange
+            string texto = string.Empty;
+
+            // Act
+
+            texto.ContarPalabras();
+
+        }
+
+        [TestMethod]
+
+        public void ContarPalabras_CuandoRecibeDosPalabrasSeparadasPorGuion_DeberiaRetornarDos()
+        {
+            // Arrange
+
+            string texto = "Hola-Mundo";
+
+            int resultadoEsperado = 2;
+
+            // Act
+
+            int resultado = texto.ContarPalabras();
+
+            // Assert
+
+            Assert.AreEqual(resultadoEsperado, resultado);
         }
     }
 }

@@ -6,7 +6,11 @@ namespace Biblioteca
     {
         public static int ContarPalabras(this string str)
         {
-            return str.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length;
+            if (string.IsNullOrEmpty(str))
+            {
+                throw new ArgumentException();
+            }
+            return str.Split(new char[] { ' ', '-'}, StringSplitOptions.RemoveEmptyEntries).Length;
         }
     }
 }
