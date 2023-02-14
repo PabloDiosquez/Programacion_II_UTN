@@ -6,20 +6,22 @@ namespace Int32Extendido
     {
         public static string FizzBuzz(this int numero)
         {
+            string resultado = numero.ToString();
+
             if (numero % 3 == 0 && numero % 5 == 0)
             {
-                return "FizzBuzz";
+                resultado = "FizzBuzz";
             }
             else if (numero % 3 == 0)
             {
-                return "Fizz";
+                resultado = "Fizz";
             }
             else if (numero % 5 == 0)
             {
-                return "Buzz";
+                resultado =  "Buzz";
             }
             
-            return numero.ToString();
+            return resultado;
         }
     }
 }
