@@ -10,7 +10,7 @@ namespace Consola
 
             try
             {
-                string resultado = DevolverPalabra(palabras, " recipiente");
+                string resultado = DevolverPalabra(palabras, "acertijo");
 
                 Console.WriteLine(resultado);
             }
@@ -27,10 +27,18 @@ namespace Consola
         {
             for (int i = 0; i < palabras.Length; i++)
             {
-                // Búsqueda exacta
-                if (palabras[i].Trim().ToLower() == palabra.Trim().ToLower())
+                try
                 {
-                    return palabras[i].Trim();
+                    // Búsqueda exacta
+                    if (palabras[i].Trim().ToLower() == palabra.Trim().ToLower())
+                    {
+                        return palabras[i].Trim();
+                    }
+                }
+                catch (NullReferenceException)
+                {
+
+                    Console.WriteLine("Falló porque enconrtró algo null. Revisar datos.");
                 }
             }
 
