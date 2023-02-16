@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace Login
 {
@@ -19,23 +20,31 @@ namespace Login
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            string nombre = txb_nombre.Text;
-
-            if (string.IsNullOrEmpty(nombre))
+            try
             {
-                throw new Exception("El nombre no puede ser nulo");
+                string nombre = txb_nombre.Text;
+
+                int edad = int.Parse(txb_edad.Text);
+
+                Usuario usuario = new Usuario(nombre, edad);
+
+                MessageBox.Show(usuario.ToString());
+
             }
-
-            int edad;
-
-            if (!int.TryParse(txb_edad.Text, out edad) || edad < 0)
+            catch (FormatException ex)
             {
-                throw new Exception("Algo salió mal...");
+                MessageBox.Show(ex.Message);
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Validar los datos ingresados");
+            }
+            
 
-            Usuario usuario = new Usuario(nombre, edad);
 
-            MessageBox.Show(usuario.ToString());
+
+
+
         }
     }
 }

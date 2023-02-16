@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.csproj", "{5BC4F5D1-EAC4-448A-8BA3-25742E012A80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{AAF98F95-844D-4082-9891-EFE904278418}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login", "Login\Login.csproj", "{AAF98F95-844D-4082-9891-EFE904278418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{91F449E3-1734-4D65-9140-A7283DE8FD25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AAF98F95-844D-4082-9891-EFE904278418}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAF98F95-844D-4082-9891-EFE904278418}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAF98F95-844D-4082-9891-EFE904278418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F449E3-1734-4D65-9140-A7283DE8FD25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F449E3-1734-4D65-9140-A7283DE8FD25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F449E3-1734-4D65-9140-A7283DE8FD25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F449E3-1734-4D65-9140-A7283DE8FD25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
