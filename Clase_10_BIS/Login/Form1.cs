@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
+
 
 namespace Login
 {
@@ -26,18 +27,14 @@ namespace Login
 
                 int edad = int.Parse(txb_edad.Text);
 
-                Usuario usuario = new Usuario(nombre, edad);
+                string res = LogicaNegocio.CargarUsuario(nombre, edad);
 
-                MessageBox.Show(usuario.ToString());
+                MessageBox.Show(res);
 
             }
-            catch (FormatException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Validar los datos ingresados");
             }
             
 

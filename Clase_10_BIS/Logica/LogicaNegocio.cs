@@ -8,19 +8,35 @@ namespace Logica
 {
     public static class LogicaNegocio
     {
-        public static void CargarUsuario(string nombre, int edad)
+
+        static LogicaNegocio()
         {
-            if (string.IsNullOrEmpty(nombre))
+            List<Usuario> usuarios = new List<Usuario>();
+        }
+        public static string CargarUsuario(string nombre, int edad)
+        {
+            try
             {
-                throw new ArgumentNullException("Ingreso nombre nulo");
-            }
+                if (string.IsNullOrEmpty(nombre))
+                {
+                    throw new ArgumentNullException("Ingreso nombre nulo o vacío");
+                }
 
-            if (edad < 0)
+                if (edad < 0)
+                {
+                    throw new Exception($"La edad no puede ser negativa. El Form recibió {edad}");
+                }
+
+                Usuario usuario = new Usuario(nombre, edad);
+
+                return usuario.ToString();
+
+            }
+            catch (Exception ex)
             {
-                throw new Exception("La edad no puede ser negativa.");
-            }
 
-            Usuario usuario = new Usuario(nombre, edad);
+                throw new Exception("Verificar la información", ex);
+            }
         }
 
     }
