@@ -16,6 +16,8 @@ namespace Clase_10
 
             //int div = num1 / num2; System.DivideByZeroException: 'Attempted to divide by zero.'
 
+            // 1.
+
             try
             {
                 arr[arr.Length] = 8;
@@ -38,6 +40,8 @@ namespace Clase_10
             //Al haber muchas clases de excepciones distintas, es posible que haya muchos bloques catch y que cada uno de
             //ellos capture un tipo específico de excepción.
             //El runtime captura automáticamente objetos excepción de un tipo concreto en un bloque catch para ese tipo.
+
+            // 2.
 
             try
             {
@@ -70,6 +74,18 @@ namespace Clase_10
                 }
             }
 
+
+            // 3. 
+
+            try
+            {
+                Metodo2();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
 
         public static void Metodo1()
@@ -97,6 +113,21 @@ namespace Clase_10
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
+        }
+        public static void Metodo2()
+        {
+            try
+            {
+                int dividendo = 2;
+
+                int divisor = 0;
+
+                int res = dividendo / divisor;
+            }
+            catch (DivideByZeroException ex)
+            {
+                throw new MiExcepcion("BOOM!! No se puede dividir por cero.", ex);
             }
         }
     }
