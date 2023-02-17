@@ -26,25 +26,30 @@ namespace Atrapame_si_puedes
                 {
                     throw new ParametrosVaciosException("Alguno de los campos está vacío");
                 }
+
+                int kilometros = int.Parse(tbx_kilometros.Text);
+
+                int litros = int.Parse(tbx_litros.Text);
+
+                rtb_contenedor.Text = $"km / litros = {Calculador.Calcular(kilometros, litros)}";
+
             }
             catch (ParametrosVaciosException ex)
             {
-
                 MessageBox.Show(ex.Message);
-
             }
-
-            //try
-            //{
-            //    int kilometros = int.Parse(tbx_kilometros.Text);
-
-            //    int litros = int.Parse(tbx_litros.Text); 
-            //}
-            //catch (Exception)
-            //{
-
-            //    throw;
-            //}
+            catch (FormatException ex)
+            {
+                MessageBox.Show("El formato de entrada no es el correcto");
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("No se puede dividir por cero");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Algo salió mal 😢");
+            }
         }
     }
 }
