@@ -6,7 +6,12 @@ namespace Biblioteca
     {
         public double Dividir(double dividendo, double divisor)
         {
-            return double.MinValue;
+            if (divisor == 0)
+            {
+                return double.MaxValue;
+            }
+
+            return dividendo / divisor;
         }
     }
 }
