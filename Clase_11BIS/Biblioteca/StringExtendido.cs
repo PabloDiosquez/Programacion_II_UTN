@@ -14,11 +14,14 @@ namespace Biblioteca
 
             int cont = 0;
 
-            foreach (char caracter in texto.ToLower())
+            if (!string.IsNullOrEmpty(texto))
             {
-                if (vocales.Contains(caracter))
+                foreach (char caracter in texto.ToLower())
                 {
-                    cont++;
+                    if (vocales.Contains(caracter))
+                    {
+                        cont++;
+                    }
                 }
             }
 

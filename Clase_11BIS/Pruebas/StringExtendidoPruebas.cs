@@ -66,6 +66,42 @@ namespace Pruebas
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
+        [TestMethod]
+        public void ContadorDeVocales_CuandoElStringEsNulo_DeberiaRetornarCero()
+        {
+            // Arrange
+
+            string texto = null;
+
+            int resultadoEsperado = 0;
+
+            // Act 
+
+            int resultado = StringExtendido.ContadorDeVocales(texto);
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        public void ContadorDeVocales_CuandoElStringEsVacio_DeberiaRetornarCero()
+        {
+            // Arrange
+
+            string texto = string.Empty;
+
+            int resultadoEsperado = 0;
+
+            // Act 
+
+            int resultado = StringExtendido.ContadorDeVocales(texto);
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
 
     }
 }
