@@ -41,7 +41,7 @@ namespace Pruebas
 
             // Act 
 
-            int resultado = StringExtendido.ContadorDeVocales(texto);
+            int resultado = texto.ContadorDeVocales(); // Método de extensión 🖖🏼
 
             // Assert 
 
@@ -59,7 +59,7 @@ namespace Pruebas
 
             // Act 
 
-            int resultado = StringExtendido.ContadorDeVocales(texto);
+            int resultado = texto.ContadorDeVocales();
 
             // Assert 
 
@@ -77,7 +77,7 @@ namespace Pruebas
 
             // Act 
 
-            int resultado = StringExtendido.ContadorDeVocales(texto);
+            int resultado = texto.ContadorDeVocales();
 
             // Assert 
 
@@ -95,7 +95,7 @@ namespace Pruebas
 
             // Act 
 
-            int resultado = StringExtendido.ContadorDeVocales(texto);
+            int resultado = texto.ContadorDeVocales();
 
             // Assert 
 

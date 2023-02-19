@@ -8,7 +8,7 @@ namespace Biblioteca
 {
     public static class StringExtendido
     {
-        public static int ContadorDeVocales(string texto)
+        public static int ContadorDeVocales(this string texto)
         {
             char[] vocales = new char[] { 'a', 'e', 'i', 'o', 'u'};
 
