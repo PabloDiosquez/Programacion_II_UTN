@@ -28,14 +28,11 @@ namespace Biblioteca
                 throw new BusinessException("El texto no puede ser nulo.");
             }
 
-            if (texto != string.Empty)
+            foreach (char caracter in texto)
             {
-                foreach (char caracter in texto)
+                if (caracteres.Contains(caracter))
                 {
-                    if (caracteres.Contains(caracter))
-                    {
-                        cont++;
-                    }
+                    cont++;
                 }
             }
 
