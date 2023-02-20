@@ -17,5 +17,10 @@ namespace Biblioteca_I02
 
             return cont;
         }
+
+        public static int ContadorDigitosII(this Int32 numero)
+        {
+            return Math.Abs(numero).ToString().Length;
+        }
     }
 }
