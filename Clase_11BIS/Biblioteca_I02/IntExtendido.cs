@@ -20,7 +20,7 @@ namespace Biblioteca_I02
 
         public static int ContadorDigitosII(this Int32 numero)
         {
-            return Math.Abs(numero).ToString().Length;
+            return numero.ToString().Replace("-","").Length;
         }
     }
 }
