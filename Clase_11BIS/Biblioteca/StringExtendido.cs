@@ -27,5 +27,24 @@ namespace Biblioteca
 
             return cont;
         }
+
+
+        public static int ContarCaracter(this string texto, char caracter)
+        {
+            int cont = 0;
+
+            if (!string.IsNullOrEmpty(texto))
+            {
+                foreach (char carac in texto)
+                {
+                    if (carac == caracter)
+                    {
+                        cont++;
+                    }
+                }
+            }
+
+            return cont;
+        }
     }
 }

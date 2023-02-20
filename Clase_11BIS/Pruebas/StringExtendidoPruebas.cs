@@ -102,6 +102,92 @@ namespace Pruebas
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
+        [TestMethod]
+
+        public void ContarCaracter_CuandoElStringEsNulo_DeberiaRetornarCero()
+        {
+            // Arrange
+
+            string texto = null;
+
+            int resultadoEsperado = 0;
+
+            char caracter = 'a';
+
+            // Act 
+
+            int resultado = texto.ContarCaracter(caracter);
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+
+
+        }
+
+        [TestMethod]
+
+        public void ContarCaracter_CuandoElStringEsVacio_DeberiaRetornarCero()
+        {
+            // Arrange
+
+            string texto = string.Empty;
+
+            int resultadoEsperado = 0;
+
+            char caracter = 'a';
+
+            // Act 
+
+            int resultado = texto.ContarCaracter(caracter);
+
+            // Assert
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+
+        public void ContarCaracter_CuandoElStringNoTieneAlCaracter_DeberiaRetornarCero()
+        {
+            // Arrange
+
+            string texto = "¡ Brerrr! U   -- ;¡ SAsssh!";
+
+            char caracter = 'a';
+
+            int resultadoEsperado = 0;
+
+            // Act 
+
+            int resultado = texto.ContarCaracter(caracter);
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+
+        public void ContarCaracter_CuandoElCaracterApareceUnaVezEnElString_DeberiaRetornarUno()
+        {
+            // Arrange
+
+            string texto = "¡ BrErrr! U   -- ;¡ SAsssh!";
+
+            char caracter = 'E';
+
+            int resultadoEsperado = 1;
+
+            // Act
+
+            int resultado = texto.ContarCaracter(caracter);
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
 
     }
 }
