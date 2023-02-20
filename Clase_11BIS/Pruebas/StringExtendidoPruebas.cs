@@ -148,7 +148,7 @@ namespace Pruebas
 
         [TestMethod]
 
-        public void ContarCaracter_CuandoElStringNoTieneAlCaracter_DeberiaRetornarCero()
+        public void ContarCaracter_CuandoElStringNoTieneElCaracter_DeberiaRetornarCero()
         {
             // Arrange
 
@@ -188,6 +188,26 @@ namespace Pruebas
             Assert.AreEqual(resultadoEsperado, resultado);
         }
 
+        [TestMethod]
+
+        public void ContarCaracter_CuandoElStringTieneElCaracterDosVeces_DeberiaRetornarDos()
+        {
+            // Arrange
+
+            string texto = "¡ BrErrr! U   -- ;¡ SEsssh!";
+
+            char caracter = 'E';
+
+            int resultadoEsperado = 2;
+
+            // Act
+
+            int resultado = texto.ContarCaracter(caracter);
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
 
     }
 }
