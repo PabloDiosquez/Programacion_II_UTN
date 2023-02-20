@@ -67,21 +67,16 @@ namespace Pruebas
         }
 
         [TestMethod]
-        public void ContadorDeVocales_CuandoElStringEsNulo_DeberiaRetornarCero()
+        [ExpectedException(typeof(BusinessException))]
+        public void ContadorDeVocales_CuandoElStringEsNulo_DeberiaLanzarBusinessException()
         {
             // Arrange
 
             string texto = null;
 
-            int resultadoEsperado = 0;
-
             // Act 
 
-            int resultado = texto.ContadorDeVocales();
-
-            // Assert 
-
-            Assert.AreEqual(resultadoEsperado, resultado);
+            texto.ContadorDeVocales();
         }
 
         [TestMethod]
@@ -103,26 +98,18 @@ namespace Pruebas
         }
 
         [TestMethod]
-
-        public void ContarCaracter_CuandoElStringEsNulo_DeberiaRetornarCero()
+        [ExpectedException(typeof(BusinessException))]
+        public void ContarCaracter_CuandoElStringEsNulo_DeberiaLanzarBusinessException()
         {
             // Arrange
 
             string texto = null;
 
-            int resultadoEsperado = 0;
-
             char caracter = 'a';
 
             // Act 
 
-            int resultado = texto.ContarCaracter(caracter);
-
-            // Assert 
-
-            Assert.AreEqual(resultadoEsperado, resultado);
-
-
+            texto.ContarCaracter(caracter);
         }
 
         [TestMethod]
