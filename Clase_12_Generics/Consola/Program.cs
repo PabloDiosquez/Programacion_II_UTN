@@ -7,7 +7,7 @@ namespace Consola
     {
         static void Main(string[] args)
         {
-            Lista<int> listaInt = new Lista<int>();
+            //Lista<int> listaInt = new Lista<int>();
 
             Lista<Persona> listaPersonas = new Lista<Persona>();
 

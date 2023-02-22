@@ -2,7 +2,8 @@
 
 namespace Biblioteca
 {
-    public class Lista<T>
+    public class Lista<T> 
+        where T : class, new()  
     {
         private T[] lista;
         public void Agregar(T objeto)
