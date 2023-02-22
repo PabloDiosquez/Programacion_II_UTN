@@ -10,5 +10,10 @@ namespace Biblioteca_Contabilidad
         {
             this.numero = numero;
         }
+
+        public int Numero
+        {
+            get { return numero; }
+        }
     }
 }
