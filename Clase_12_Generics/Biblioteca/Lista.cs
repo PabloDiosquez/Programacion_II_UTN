@@ -4,15 +4,27 @@ namespace Biblioteca
 {
     public class Lista<T>
     {
-        T[] lista;
+        private T[] lista;
         public void Agregar(T objeto)
         {
-
+            // ...
         }
 
         public T ObtenerElemento(int indice) 
         {
-            return;
+            return lista[indice];
+        }
+
+        public void Remover(T objeto)
+        {
+            // ...
+        }
+
+        // Métodos genéricos
+
+        public void Encontrar<U>(U item)
+        {
+            // ...
         }
     }
 }

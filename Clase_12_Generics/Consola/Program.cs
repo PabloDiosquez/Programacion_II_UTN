@@ -10,6 +10,8 @@ namespace Consola
             Lista<int> listaInt = new Lista<int>();
 
             Lista<Persona> listaPersonas = new Lista<Persona>();
+
+            listaPersonas.Encontrar<Persona>(new Persona());
         }
     }
 }
