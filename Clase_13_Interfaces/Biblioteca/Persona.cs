@@ -26,6 +26,6 @@ namespace Biblioteca
         public string Caminar()
         {
             return "Estoy caminando...";
-        }        
+        }
     }
 }

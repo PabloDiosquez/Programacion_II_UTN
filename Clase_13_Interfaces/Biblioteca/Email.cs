@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    internal class Paloma : Pajaro, IMensaje
+    internal class Email : IMensaje
     {
-        private int id;
+        private string origen;
 
         private string destino;
 
-        public Paloma(int id, string destino) : base("Paloma")
+        public Email(string origen, string destino)
         {
-            this.id = id;
+            this.origen = origen;
 
             this.destino = destino;
         }
 
         public string EnviarMensaje()
         {
-            return "Enviando mensaje a través de una paloma mensajera...";
+            return "Enviando el mensaje a través de un email...";
         }
     }
 }

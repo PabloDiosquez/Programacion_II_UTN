@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
+
     public interface IMiInterfaz
     {
+        public int Propiedad { get; }
         public string Saludar();
+
     }
 }
