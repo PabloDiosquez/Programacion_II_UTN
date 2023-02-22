@@ -19,11 +19,11 @@ namespace Biblioteca_Torneo
             this.fechaCreacion = fechaCreacion;
         }
 
-        public string Nombre { get; }
+        public string Nombre { get { return nombre; } }
 
         public string Ficha()
         {
-            return $"{nombre} fundado el {fechaCreacion}";
+            return $"{nombre} fundado el {fechaCreacion.ToString("dd/MM/yyyy")}";
         }
 
         public static bool operator ==(Equipo equipoA, Equipo equipoB)

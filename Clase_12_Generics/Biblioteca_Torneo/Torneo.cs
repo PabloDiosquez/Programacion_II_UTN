@@ -90,9 +90,9 @@ namespace Biblioteca_Torneo
 
                     do
                     {
-                        equipoA = equipos[rd.Next(0, equipos.Count - 1)];
+                        equipoA = equipos[rd.Next(0, equipos.Count)];
 
-                        equipoB = equipos[rd.Next(0, equipos.Count - 1)];
+                        equipoB = equipos[rd.Next(0, equipos.Count)];
 
                     } while (equipoA == equipoB);
 

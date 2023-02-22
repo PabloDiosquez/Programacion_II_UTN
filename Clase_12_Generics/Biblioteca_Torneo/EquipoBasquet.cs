@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Torneo
 {
-    internal class EquipoBasquet : Equipo
+    public class EquipoBasquet : Equipo
     {
+        public EquipoBasquet(string nombre, DateTime fechaCreacion) : base (nombre, fechaCreacion)
+        { } 
     }
 }
