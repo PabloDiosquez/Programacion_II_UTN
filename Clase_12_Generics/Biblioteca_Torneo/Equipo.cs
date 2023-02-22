@@ -16,7 +16,7 @@ namespace Biblioteca_Torneo
         {
             this.nombre = nombre;
 
-            this.fechaCreacion = fechaCreacion; 
+            this.fechaCreacion = fechaCreacion;
         }
 
         public string Nombre { get; }
@@ -33,7 +33,7 @@ namespace Biblioteca_Torneo
 
         public static bool operator !=(Equipo equipoA, Equipo equipoB)
         {
-            return !(equipoA == equipoB);   
+            return !(equipoA == equipoB);
         }
     }
 }

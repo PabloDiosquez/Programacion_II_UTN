@@ -23,9 +23,7 @@ namespace Biblioteca_Torneo
 
         public static bool operator ==(Torneo<T> torneo, Equipo equipo)
         {
-            //return torneo.equipos.Contains(equipo);
-
-            foreach (Equipo eq in torneo.equipos)
+            foreach (T eq in torneo.equipos)
             {
                 if (eq == equipo)
                 {
@@ -41,14 +39,16 @@ namespace Biblioteca_Torneo
             return !(torneo == equipo);
         }
 
-        public static Torneo<T> operator +(Torneo<T> torneo, Equipo equipo)
+        public static bool operator +(Torneo<T> torneo, Equipo equipo)
         {
-            if (!(torneo == equipo))
+            if (torneo is not null && equipo is not null && torneo != equipo)
             {
                 torneo.equipos.Add((T)equipo);
+
+                return true;    
             }
 
-            return torneo;
+            return false;
         }
 
         public string Mostrar()
@@ -61,7 +61,7 @@ namespace Biblioteca_Torneo
             {
                 sb.AppendLine(equipo.Ficha());
             }
-            
+
             return sb.ToString();
         }
 
@@ -69,13 +69,38 @@ namespace Biblioteca_Torneo
         {
             Random rd = new Random();
 
-            int scoreA = rd.Next(0, 10);
+            int marcadorA = rd.Next(0, 10);
 
-            int scoreB = rd.Next(0, 10);
+            int marcadorB = rd.Next(0, 10);
 
-            return $"{equipoA.Nombre}:{scoreA} -- {equipoB.Nombre}:{scoreB}";
+            return $"{equipoA.Nombre}:{marcadorA} -- {equipoB.Nombre}:{marcadorB}";
         }
 
-        
+        public string JugarPartido
+        {
+            get
+            {
+                if (equipos.Count >= 2)
+                {
+                    Random rd = new Random();
+
+                    T equipoA;
+
+                    T equipoB;
+
+                    do
+                    {
+                        equipoA = equipos[rd.Next(0, equipos.Count - 1)];
+
+                        equipoB = equipos[rd.Next(0, equipos.Count - 1)];
+
+                    } while (equipoA == equipoB);
+
+                    return CalcularPartido(equipoA, equipoB);
+                }
+
+                return "La lista debe contener al menos dos equipos...";
+            }
+        }
     }
 }

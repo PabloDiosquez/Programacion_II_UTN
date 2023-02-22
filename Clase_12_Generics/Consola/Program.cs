@@ -1,11 +1,11 @@
-﻿using System;
-using Biblioteca;
+﻿using Biblioteca;
+using System;
 
 namespace Consola
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //Lista<int> listaInt = new Lista<int>();
 

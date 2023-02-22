@@ -2,8 +2,8 @@
 
 namespace Biblioteca
 {
-    public class Lista<T> 
-        where T : class, new()  
+    public class Lista<T>
+        where T : class, new()
     {
         private T[] lista;
         public void Agregar(T objeto)
@@ -11,7 +11,7 @@ namespace Biblioteca
             // ...
         }
 
-        public T ObtenerElemento(int indice) 
+        public T ObtenerElemento(int indice)
         {
             return lista[indice];
         }
