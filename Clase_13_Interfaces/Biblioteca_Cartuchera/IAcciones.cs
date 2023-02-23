@@ -8,12 +8,12 @@ namespace Biblioteca_Cartuchera
 {
     internal interface IAcciones
     {
-        public ConsoleColor Color { get; set; }
+        ConsoleColor Color { get; set; }
 
-        public float UnidadesDeEscritura { get; set; }
+        float UnidadesDeEscritura { get; set; }
 
-        public EscrituraWrapper Escribir(string texto);
+        EscrituraWrapper Escribir(string texto);
 
-        public bool Recargar(int unidades);
+        bool Recargar(int unidades);
     }
 }

@@ -15,29 +15,25 @@ namespace Biblioteca_Cartuchera
             tamanioMina = unidades;
         }
 
-        public ConsoleColor Color
-        {
-            get { return ConsoleColor.Gray; }
+        public ConsoleColor Color { get => ConsoleColor.Gray; set => throw new NotImplementedException(); }
+        public float UnidadesDeEscritura { get => tamanioMina; set => throw new NotImplementedException(); }
 
-            set { throw new NotImplementedException(); }
-        }
-
-        public float UnidadesDeEscritura
+        public EscrituraWrapper Escribir(string texto)
         {
-            get { return tamanioMina; }
-        }
-
-        public void Escribir(string texto)
-        {
-            foreach (char caracter in texto)
+            if (tamanioMina >= texto.Length * 0.1F)
             {
-                tamanioMina -= 0.1F;
+                tamanioMina -= texto.Length * 0.1F;
+
+                return new EscrituraWrapper(texto, ((IAcciones)this).Color);
             }
+
+            return null;
+
         }
 
-        public bool Recargar(int unidadess)
+        public bool Recargar(int unidades)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 }

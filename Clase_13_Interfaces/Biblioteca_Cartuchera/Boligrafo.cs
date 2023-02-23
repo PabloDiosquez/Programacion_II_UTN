@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Cartuchera
 {
-    internal class Boligrafo
-    {
+    internal class Boligrafo : IAcciones
+        {
+//        El método Escribir reducirá la tinta en 0.3 por cada carácter escrito.
+//El método Recargar incrementará la tinta en tantas unidades como se agreguen.
+//La propiedad UnidadesDeEscritura retornará el valor del atributo tinta.
+
+
         private ConsoleColor colorTinta;
 
         private float tinta;
@@ -19,12 +24,39 @@ namespace Biblioteca_Cartuchera
             colorTinta = color;
         }
 
-        public void Escribir(string texto) 
+        public ConsoleColor Color 
         {
-            foreach (char caracter in texto)
-            {
-                tinta -= 0.3F;
-            }
+            get { return colorTinta; }
+
+            set { throw new NotImplementedException(); }
         }
+
+        public float UnidadesDeEscritura
+        {
+            get { return tinta; }
+
+            set { throw new NotImplementedException(); }
+        }
+
+        public EscrituraWrapper Escribir(string texto)
+        {
+            if (tinta > texto.Length * 0.3F)
+            {
+                tinta -= texto.Length * 0.3F;
+
+                return new EscrituraWrapper(texto, colorTinta);
+            }
+
+            return null;
+        }
+
+        public bool Recargar(int unidades)
+        {
+            tinta += unidades;
+
+            return true;
+        }
+
+        
     }
 }
