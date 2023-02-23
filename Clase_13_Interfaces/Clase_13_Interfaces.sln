@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{7BA9DF00-9FF2-4B59-B180-953F8B1E3102}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{7BA9DF00-9FF2-4B59-B180-953F8B1E3102}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", "{3D04228F-79BA-4025-9845-3C1EBE43DA5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Cartuchera", "Biblioteca_Cartuchera\Biblioteca_Cartuchera.csproj", "{B863FC23-B0C0-42A7-8320-B093B30CC3B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,10 @@ Global
 		{7BA9DF00-9FF2-4B59-B180-953F8B1E3102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BA9DF00-9FF2-4B59-B180-953F8B1E3102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BA9DF00-9FF2-4B59-B180-953F8B1E3102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B863FC23-B0C0-42A7-8320-B093B30CC3B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B863FC23-B0C0-42A7-8320-B093B30CC3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B863FC23-B0C0-42A7-8320-B093B30CC3B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B863FC23-B0C0-42A7-8320-B093B30CC3B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
