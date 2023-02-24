@@ -4,7 +4,7 @@ using Biblioteca_Aduana;
 namespace Pruebas_Aduana
 {
     [TestClass]
-    public class PaqueteFragilPrueba
+    public class PaqueteFragilPruebas
     {
         [TestMethod]
         public void TienePrioridadDeberiaRetornarTrue()

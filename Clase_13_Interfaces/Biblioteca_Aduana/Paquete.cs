@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Biblioteca_Aduana
 {
-    public abstract class Paquete
+    public abstract class Paquete : IAduana
     {
         private string codigoSeguimiento;
 
@@ -30,6 +30,8 @@ namespace Biblioteca_Aduana
 
         public abstract bool TienePrioridad { get; }
 
+        public decimal Impuestos => throw new NotImplementedException();
+
         public string ObtenerInformacionDePaquete()
         {
             StringBuilder sb = new StringBuilder();
@@ -43,5 +45,9 @@ namespace Biblioteca_Aduana
             return sb.ToString();   
         }
 
+        public decimal AplicarImpuestos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
