@@ -23,14 +23,14 @@ namespace Biblioteca_Cartuchera
         {
             get { return colorTinta; }
 
-            set { throw new NotImplementedException(); }
+            set { colorTinta = value; }
         }
 
         public float UnidadesDeEscritura
         {
             get { return tinta; }
 
-            set { throw new NotImplementedException(); }
+            set { tinta = value; }
         }
 
         public EscrituraWrapper Escribir(string texto)
@@ -47,9 +47,14 @@ namespace Biblioteca_Cartuchera
 
         public bool Recargar(int unidades)
         {
-            tinta += unidades;
+            if (unidades >= 0)
+            {
+                tinta += unidades;
 
-            return true;
+                return true;
+            }
+
+            return false;
         }
 
         public override string ToString()
