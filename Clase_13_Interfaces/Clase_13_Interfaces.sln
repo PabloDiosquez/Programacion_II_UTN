@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Control de Aduana", "Contro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Aduana", "Biblioteca_Aduana\Biblioteca_Aduana.csproj", "{53BD72FA-5C30-4CD6-A036-743311FA0410}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas_Aduana", "Pruebas_Aduana\Pruebas_Aduana.csproj", "{18DE099B-E759-4008-8E3D-93E43D1D4585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{53BD72FA-5C30-4CD6-A036-743311FA0410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53BD72FA-5C30-4CD6-A036-743311FA0410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53BD72FA-5C30-4CD6-A036-743311FA0410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18DE099B-E759-4008-8E3D-93E43D1D4585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18DE099B-E759-4008-8E3D-93E43D1D4585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18DE099B-E759-4008-8E3D-93E43D1D4585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18DE099B-E759-4008-8E3D-93E43D1D4585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{52F22731-FA81-4938-996C-AB9FFD598553} = {4FF3AD50-5222-4153-AD79-72C5080023E1}
 		{4FF3AD50-5222-4153-AD79-72C5080023E1} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
 		{195CEAE8-5A5A-46CA-A9FB-82B6DF3964BF} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
+		{53BD72FA-5C30-4CD6-A036-743311FA0410} = {195CEAE8-5A5A-46CA-A9FB-82B6DF3964BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BB31256-A705-4C8B-A191-4EE00E92A749}
