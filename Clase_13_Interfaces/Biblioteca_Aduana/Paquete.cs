@@ -30,7 +30,13 @@ namespace Biblioteca_Aduana
 
         public abstract bool TienePrioridad { get; }
 
-        public decimal Impuestos => throw new NotImplementedException();
+        public decimal Impuestos
+        {
+            get
+            {
+                return 0.35M * costoEnvio;
+            }
+        }
 
         public string ObtenerInformacionDePaquete()
         {
@@ -45,9 +51,9 @@ namespace Biblioteca_Aduana
             return sb.ToString();   
         }
 
-        public decimal AplicarImpuestos()
+        public virtual decimal AplicarImpuestos()
         {
-            throw new NotImplementedException();
+            return costoEnvio + Impuestos;
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Aduana
 {
-    internal interface IAduana
+    public interface IAfip
     {
-        decimal Impuestos { get; }
+        public decimal Impuestos { get; }
 
-        decimal AplicarImpuestos();
+        public decimal AplicarImpuestos();
     }
 }

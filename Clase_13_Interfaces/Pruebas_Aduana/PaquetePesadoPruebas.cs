@@ -9,7 +9,7 @@ using Biblioteca_Aduana;
 namespace Pruebas_Aduana
 {
     [TestClass]
-    internal class PaquetePesadoPruebas
+    public class PaquetePesadoPruebas
     {
         [TestMethod]
         public void TienePrioridad_DeberiaRetornarFalse()
@@ -25,6 +25,26 @@ namespace Pruebas_Aduana
             // Assert
             
             Assert.IsFalse(valorRetornado);
+        }
+
+        [TestMethod]
+        public void Impuestos_DeberiaRetornarValorImpuestoDel35PorcientoSobreCostoEnvio_CuandoEsImplementacionImplicita()
+        {
+            // Arrange
+
+            decimal costoEnvio = 100;
+
+            decimal valorEsperado = 35;
+
+            PaquetePesado paquetePesado = new PaquetePesado("test", costoEnvio, "test", "test", 1);
+
+            // Act
+              
+            decimal valorRetornado = paquetePesado.Impuestos;
+
+            // Assert
+
+            Assert.AreEqual(valorEsperado, valorRetornado); 
         }
     }
 }

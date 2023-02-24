@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Aduana
 {
-    public class PaquetePesado : Paquete
+    public class PaquetePesado : Paquete, IAfip
     {
         public PaquetePesado(string codigoSeguimiento, decimal costoEnvio, string destino, string origen, double pesoKg) 
             : base(codigoSeguimiento, costoEnvio, destino, origen, pesoKg)
@@ -14,5 +14,6 @@ namespace Biblioteca_Aduana
 
         }
         public override bool TienePrioridad => false;
+
     }
 }
