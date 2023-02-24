@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Cartuchera
 {
-    internal class Lapiz : IAcciones
+    public class Lapiz : IAcciones
     {
         private float tamanioMina;
 
@@ -34,6 +34,11 @@ namespace Biblioteca_Cartuchera
         public bool Recargar(int unidades)
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"Lápiz -- Color de escritura: {Color} -- Tamaño de la mina: {tamanioMina}";
         }
     }
 }

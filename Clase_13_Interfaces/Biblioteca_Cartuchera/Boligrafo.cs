@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Cartuchera
 {
-    internal class Boligrafo : IAcciones
-        {
-//        El método Escribir reducirá la tinta en 0.3 por cada carácter escrito.
-//El método Recargar incrementará la tinta en tantas unidades como se agreguen.
-//La propiedad UnidadesDeEscritura retornará el valor del atributo tinta.
-
-
+    public class Boligrafo : IAcciones
+    {
         private ConsoleColor colorTinta;
 
         private float tinta;
@@ -57,6 +52,11 @@ namespace Biblioteca_Cartuchera
             return true;
         }
 
-        
+        public override string ToString()
+        {
+            return $"Bolígrafo -- Color de escritura: {colorTinta} -- Nivel de tinta: {tinta}";
+        }
+
+
     }
 }

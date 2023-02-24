@@ -15,5 +15,9 @@ namespace Biblioteca_Cartuchera
             this.texto = texto; 
         }
 
+        public ConsoleColor Color { get { return color; } }
+
+        public string Texto { get { return texto; } }
+
     }
 }
