@@ -9,7 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_Cartuchera", "Biblioteca_Cartuchera\Biblioteca_Cartuchera.csproj", "{B863FC23-B0C0-42A7-8320-B093B30CC3B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola_Cartuchera", "Consola_Cartuchera\Consola_Cartuchera.csproj", "{52F22731-FA81-4938-996C-AB9FFD598553}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola_Cartuchera", "Consola_Cartuchera\Consola_Cartuchera.csproj", "{52F22731-FA81-4938-996C-AB9FFD598553}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cartuchera", "Cartuchera", "{4FF3AD50-5222-4153-AD79-72C5080023E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Control de Aduana", "Control de Aduana", "{195CEAE8-5A5A-46CA-A9FB-82B6DF3964BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Aduana", "Biblioteca_Aduana\Biblioteca_Aduana.csproj", "{53BD72FA-5C30-4CD6-A036-743311FA0410}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,13 +35,19 @@ Global
 		{52F22731-FA81-4938-996C-AB9FFD598553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52F22731-FA81-4938-996C-AB9FFD598553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52F22731-FA81-4938-996C-AB9FFD598553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53BD72FA-5C30-4CD6-A036-743311FA0410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BD72FA-5C30-4CD6-A036-743311FA0410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BD72FA-5C30-4CD6-A036-743311FA0410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BD72FA-5C30-4CD6-A036-743311FA0410}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B863FC23-B0C0-42A7-8320-B093B30CC3B6} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
-		{52F22731-FA81-4938-996C-AB9FFD598553} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
+		{B863FC23-B0C0-42A7-8320-B093B30CC3B6} = {4FF3AD50-5222-4153-AD79-72C5080023E1}
+		{52F22731-FA81-4938-996C-AB9FFD598553} = {4FF3AD50-5222-4153-AD79-72C5080023E1}
+		{4FF3AD50-5222-4153-AD79-72C5080023E1} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
+		{195CEAE8-5A5A-46CA-A9FB-82B6DF3964BF} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BB31256-A705-4C8B-A191-4EE00E92A749}
