@@ -66,11 +66,16 @@ namespace Consola
 
             string rutaNuevoEscritorio = Path.Combine(rutaEscritorio, "Clase 14 Archivos -- Prueba");
 
-            Console.WriteLine(Directory.Exists(rutaNuevoEscritorio));
+            VerificarSiExisteDirectorio(rutaNuevoEscritorio);
 
             Directory.CreateDirectory(rutaNuevoEscritorio);
 
-            Console.WriteLine(Directory.Exists(rutaNuevoEscritorio));
+            VerificarSiExisteDirectorio(rutaNuevoEscritorio);
+        }
+
+        static void VerificarSiExisteDirectorio(string rutaEscritorio)
+        {
+            Console.WriteLine($"¿Existe el directorio? {Directory.Exists(rutaEscritorio)}");
         }
     }
 }
