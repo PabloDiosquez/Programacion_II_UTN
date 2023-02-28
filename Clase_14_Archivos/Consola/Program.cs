@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Consola
 {
@@ -11,6 +12,8 @@ namespace Consola
             Console.WriteLine();
 
             ObtenerInformacionOS();
+
+            ObtenerInformacionAlmacenamiento(); 
         }
 
         static void verificarSistemaOperativo()
@@ -39,6 +42,20 @@ namespace Consola
             Console.WriteLine($"Arquitectura de 64 bits?: {Environment.Is64BitProcess}");
 
             Console.WriteLine($"Nombre de Usuario: {Environment.UserName}");
+        }
+
+        static void ObtenerInformacionAlmacenamiento()
+        {
+            DriveInfo[] volumenes = DriveInfo.GetDrives();
+
+            foreach (DriveInfo unidad in volumenes)
+            {
+                Console.WriteLine($"{unidad.Name}");
+                Console.WriteLine($"{unidad.DriveType}");
+                Console.WriteLine($"{unidad.DriveFormat}");
+                Console.WriteLine($"{unidad.TotalSize}");
+                Console.WriteLine($"{unidad.AvailableFreeSpace}");
+            }
         }
     }
 }
