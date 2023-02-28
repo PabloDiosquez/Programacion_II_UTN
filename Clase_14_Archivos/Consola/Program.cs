@@ -13,7 +13,9 @@ namespace Consola
 
             ObtenerInformacionOS();
 
-            ObtenerInformacionAlmacenamiento(); 
+            ObtenerInformacionAlmacenamiento();
+
+            CrearDirectorio();
         }
 
         static void verificarSistemaOperativo()
@@ -56,6 +58,19 @@ namespace Consola
                 Console.WriteLine($"{unidad.TotalSize}");
                 Console.WriteLine($"{unidad.AvailableFreeSpace}");
             }
+        }
+
+        static void CrearDirectorio()
+        {
+            string rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            string rutaNuevoEscritorio = Path.Combine(rutaEscritorio, "Clase 14 Archivos -- Prueba");
+
+            Console.WriteLine(Directory.Exists(rutaNuevoEscritorio));
+
+            Directory.CreateDirectory(rutaNuevoEscritorio);
+
+            Console.WriteLine(Directory.Exists(rutaNuevoEscritorio));
         }
     }
 }
