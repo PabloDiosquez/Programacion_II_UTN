@@ -29,6 +29,16 @@ namespace Consola
         static void ObtenerInformacionOS()
         {
             Console.WriteLine($"Sistema Operativo: {Environment.OSVersion}");
+
+            Console.WriteLine($"Plataforma: {Environment.OSVersion.Platform}");
+
+            Console.WriteLine($"Versión: {Environment.OSVersion.Version}");
+
+            Console.WriteLine($"Cantidad de procesadores lógicos: {Environment.ProcessorCount}");
+
+            Console.WriteLine($"Arquitectura de 64 bits?: {Environment.Is64BitProcess}");
+
+            Console.WriteLine($"Nombre de Usuario: {Environment.UserName}");
         }
     }
 }
