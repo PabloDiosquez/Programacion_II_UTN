@@ -29,7 +29,21 @@ Se compone de varias tablas y relaciones entre ellas.
 No pueden existir dos o más tablas con igual nombre.
 Las relaciones se llevarán a cabo a través de campos especiales, conocidos como claves primarias (primary key) y claves foráneas (foreign key).
 
-SQL
+🔴 Modelo Entidad - Relación
+
+Colección de conceptos empleados para describir la estrucura de una BD.
+
+Entidad 👉🏼 Una representación de un objeto, ser o concepto del mundo real que se describe en una BD.
+DB : Tablas
+
+Atributo 👉🏼 Las entidades tienen atributos que representan sus características o propiedades.
+DB : columnas de las tablas.
+
+Relaciones 👉🏼 La descripción de ciertas interdependencias entre una o más entidades.
+DB : PK y FK. 
+
+💥 SQL
+
 SQL es un lenguaje estructurado de consulta, no es una base de datos, sino el lenguaje para poder extraer de una base de datos la información que requerimos.
 
 Clasificación de SQL
@@ -90,12 +104,12 @@ Operadores de Comparación
 Asociado a la cláusula WHERE se agregan los operadores de comparación:
 
 Operador	Descripcion
-=	Igual a
-<	Menor a
->	Mayor a
->=	Mayor o igual a
-<=	Menor o igual a
-<>	No es igual a
+=		Igual a
+<		Menor a
+>		Mayor a
+>=		Mayor o igual a
+<=		Menor o igual a
+<>		No es igual a
 Se selecciona de la tabla Articulos la columna Nombre y muestra todos aquellos registros cuyo valor en la columna Código sea igual a 1:
 
 SELECT Nombre FROM Articulos WHERE Codigo = 1
@@ -108,9 +122,9 @@ Operadores Lógicos
 Para crear expresiones lógicas disponemos de varios operadores de comparación.
 
 Operador	Descripcion
-AND	Se debe cumplir todas las condiciones especificadas
-OR	Se debe cumplir al menos una de las conduiciones
-NOT	No debe cumplir las condiciones especificadas
+AND		Se debe cumplir todas las condiciones especificadas
+OR		Se debe cumplir al menos una de las conduiciones
+NOT		No debe cumplir las condiciones especificadas
 Si uno o los dos valores a comparar son NULL, el resultado es NULL. (Excepto con el operador <=> que es usado para una comparación con NULL segura).
 
 El operador <=> funciona igual que el operador =. Salvo que, si en la comparación una o ambas de las expresiones es nula, el resultado no es NULL. Si se comparan dos expresiones nulas, el resultado es verdadero.
@@ -144,8 +158,8 @@ Tanto si la cadena como el patrón son NULL, el resultado es NULL.
 Para definir estos patrones, se hace uso de comodines:
 
 Operador	Descripcion
-%	Coincidencia con cualquier número de caracteres, incluso ninguno
-_	Coincidencia con un único caracter
+%		Coincidencia con cualquier número de caracteres, incluso ninguno
+_		Coincidencia con un único caracter
 Se muestra de la tabla Articulos todos aquellos registros que en el campo nombre, figure la palabra Pala:
 
 SELECT * FROM Articulos 
