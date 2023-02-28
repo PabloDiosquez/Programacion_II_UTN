@@ -1,0 +1,5 @@
+Una Base de Datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados para su posterior uso.
+
+👉🏼 Persisten una gran cantidad de información.
+👉🏼 Segurizan el acceso a los datos.
+👉🏼 Organizan y estructuran los datos por tipo y relación.
