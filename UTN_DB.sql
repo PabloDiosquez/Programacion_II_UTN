@@ -57,3 +57,18 @@ WHERE TELEFONO IS NOT NULL;
 SELECT NOMBRE, APELLIDO
 FROM ALUMNO
 WHERE NOMBRE LIKE '%e%';
+
+-- Alumnos cuyo nombre empiece con L.
+SELECT NOMBRE, APELLIDO
+FROM ALUMNO
+WHERE NOMBRE LIKE 'L%';
+
+-- Alumnos cuyo nombre empiece con E y contenga iano.
+SELECT NOMBRE, APELLIDO
+FROM ALUMNO
+WHERE NOMBRE LIKE 'E%iano%';
+
+-- Alumnos cuyo nombre tenga la tercera letra igual a l.
+SELECT NOMBRE, APELLIDO 
+FROM ALUMNO
+WHERE NOMBRE LIKE '__l%'; -- 👉🏼 __ = _ _
