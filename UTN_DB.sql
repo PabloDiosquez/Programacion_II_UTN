@@ -102,3 +102,18 @@ WHERE PROMEDIO NOT BETWEEN 4 AND 7;
 SELECT * 
 FROM MATERIA
 WHERE CUATRIMESTRE IN (2,3);
+
+-- Ordenar los alumnos por su promedio de manera descendente.
+SELECT * 
+FROM ALUMNO
+ORDER BY PROMEDIO DESC;
+
+-- Ordenar los alumnos por su promedio de manera ascendente.
+SELECT * 
+FROM ALUMNO
+ORDER BY PROMEDIO ASC;
+
+-- Top 3 de los mejores alumnos
+SELECT TOP (3) *
+FROM ALUMNO
+ORDER BY PROMEDIO DESC;

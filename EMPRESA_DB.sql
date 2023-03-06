@@ -63,11 +63,44 @@ FROM EMPLEADOS
 WHERE APELLIDO LIKE 'B%';
 
 --Los empleados que estén activos y ganen más de $300.000,00.
+SELECT *
+FROM EMPLEADOS
+WHERE ESTA_ACTIVO = 1 AND SALARIO > 300000;
+
 --Los empleados que no tengan mail o no estén activos.
+SELECT *
+FROM EMPLEADOS
+WHERE EMAIL IS NULL OR ESTA_ACTIVO = 0 ;
+
 --Los empleados que tengan mail y su nombre contenga la letra "a".
---Los empleados que ganen $250.000,00 o más y hayan ingresado después del año 2000 inclusive, o aquellos que ganen menos de $250.000,00 y hayan ingresado antes del año 2000 sin incluir.
+SELECT * 
+FROM EMPLEADOS
+WHERE EMAIL IS NOT NULL AND NOMBRE LIKE '%a%';
+
+--Los empleados que ganen $250.000,00 o más y hayan ingresado después del año 2000
+--inclusive, o aquellos que ganen menos de $250.000,00 y hayan ingresado antes del
+--año 2000 sin incluir.
+SELECT *
+FROM EMPLEADOS
+WHERE (SALARIO >= 250000 AND FECHA_ALTA > '2000-12-31') OR
+(SALARIO < 250000 AND FECHA_ALTA < '2000-01-01');
+
 --Los empleados cuyo salario esté entre $100.000,00 y $250.000,00.
+SELECT *
+FROM EMPLEADOS
+WHERE SALARIO BETWEEN 100000 AND 250000;
+
 --Los empleados cuyo salario NO esté entre $100.000,00 y $250.000,00.
+SELECT *
+FROM EMPLEADOS
+WHERE SALARIO NOT BETWEEN 100000 AND 250000;
+
 --Los puestos con nivel de autorización 0, 1 o 2.
+SELECT * 
+FROM PUESTOS WHERE NIVEL_AUTORIZACION IN (0,1,2);
+
 --Los puestos con nivel de autorización distinto a 0, 1 y 2.
+SELECT * 
+FROM PUESTOS WHERE NIVEL_AUTORIZACION NOT IN (0,1,2);
+
 
