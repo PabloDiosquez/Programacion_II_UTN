@@ -22,7 +22,7 @@ INSERT INTO ALUMNO (NOMBRE, APELLIDO, PROMEDIO, ESTA_ACTIVO, FECHA_INSCRIPCION, 
 VALUES
 ('Lio', 'Messi', 9.8, 1, '1990-12-21', null, '1234 5678', 0, 2),
 ('Julián', 'Álvarez', 9.2, 1, '1990-12-21', null, '1111 2222', 0, 1),
-('Emiliano', 'Martínez', 7.4, 1, '1990-12-21', '1990-12-21', '3333 4444', 1, 3),
-('Marcelo', 'Gallardo', 7.8, 1, '1990-12-21', '1990-12-21', '1234 5677', 1, 3),
+('Emiliano', 'Martínez', 7.4, 1, '1990-12-21', '1990-12-21', '3333 4444', 1, NULL),
+('Marcelo', 'Gallardo', 7.8, 1, '1990-12-21', '1990-12-21', '1234 5677', 1, NULL),
 ('Juan', 'Riquelme', 7.7, 1, '1990-12-21', null, '8888 4442', 0, 4),
 ('Javier', 'Saviola', 6.3, 1, '1990-12-21', null, '1234 2272', 0, 6);
