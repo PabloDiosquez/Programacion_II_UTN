@@ -72,3 +72,33 @@ WHERE NOMBRE LIKE 'E%iano%';
 SELECT NOMBRE, APELLIDO 
 FROM ALUMNO
 WHERE NOMBRE LIKE '__l%'; -- 👉🏼 __ = _ _
+
+-- Alumnos con teléfono y promedio mayor a 7.
+SELECT *
+FROM ALUMNO
+WHERE TELEFONO IS NOT NULL AND PROMEDIO > 7;
+
+-- Alumnos que se hayan graduado o que no estén activos.
+SELECT NOMBRE, APELLIDO
+FROM ALUMNO
+WHERE ESTA_GRADUADO = 1 OR ESTA_ACTIVO = 0;
+
+-- Alumnos que estén activos y que se no hayan recibido o su promedio sea menor a 7.
+SELECT * 
+FROM ALUMNO
+WHERE ESTA_ACTIVO = 1 AND (ESTA_GRADUADO = 0 OR PROMEDIO < 7);
+
+-- Alumnos cuyo promedio esté entre 4 y 7.
+SELECT *
+FROM ALUMNO
+WHERE PROMEDIO BETWEEN 4 AND 7;
+
+-- Alumnos cuyo promedio no esté entre 4 y 7.
+SELECT *
+FROM ALUMNO
+WHERE PROMEDIO NOT BETWEEN 4 AND 7;
+
+-- Materias que sean del 2° o 3° cuatrimestre.
+SELECT * 
+FROM MATERIA
+WHERE CUATRIMESTRE IN (2,3);

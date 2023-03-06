@@ -1,4 +1,4 @@
-USE EMPRESA_DB;
+﻿USE EMPRESA_DB;
 
 INSERT INTO PUESTOS (ID_PUESTO, NOMBRE, NIVEL_AUTORIZACION)
 VALUES 
@@ -17,17 +17,17 @@ VALUES
 ('Hayden', 'Moss', 4, 212695.50, 0, '2012-06-07', '2015-02-10', 'hmoss@gmail.com'),
 ('Amal', 'Colon', 2, 388933.60, 1, '2019-09-03', NULL, NULL);
 
--- Consultas 
+-- Consultas ✌
 
 --Todos los empleados con todos sus datos.
 SELECT * 
 FROM EMPLEADOS;
 
---El nombre (y s�lo eso) de todos los puestos.
+--El nombre (y sólo eso) de todos los puestos.
 SELECT NOMBRE 
 FROM PUESTOS;
 
---S�lo los empleados que est�n activos (ESTA_ACTIVO = 1).
+--Sólo los empleados que estén activos (ESTA_ACTIVO = 1).
 SELECT *
 FROM EMPLEADOS
 WHERE ESTA_ACTIVO = 1;
@@ -61,4 +61,13 @@ WHERE EMAIL LIKE '%gmail%';
 SELECT NOMBRE, APELLIDO, SALARIO
 FROM EMPLEADOS
 WHERE APELLIDO LIKE 'B%';
+
+--Los empleados que estén activos y ganen más de $300.000,00.
+--Los empleados que no tengan mail o no estén activos.
+--Los empleados que tengan mail y su nombre contenga la letra "a".
+--Los empleados que ganen $250.000,00 o más y hayan ingresado después del año 2000 inclusive, o aquellos que ganen menos de $250.000,00 y hayan ingresado antes del año 2000 sin incluir.
+--Los empleados cuyo salario esté entre $100.000,00 y $250.000,00.
+--Los empleados cuyo salario NO esté entre $100.000,00 y $250.000,00.
+--Los puestos con nivel de autorización 0, 1 o 2.
+--Los puestos con nivel de autorización distinto a 0, 1 y 2.
 
