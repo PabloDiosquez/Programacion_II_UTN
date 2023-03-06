@@ -17,4 +17,48 @@ VALUES
 ('Hayden', 'Moss', 4, 212695.50, 0, '2012-06-07', '2015-02-10', 'hmoss@gmail.com'),
 ('Amal', 'Colon', 2, 388933.60, 1, '2019-09-03', NULL, NULL);
 
+-- Consultas 
+
+--Todos los empleados con todos sus datos.
+SELECT * 
+FROM EMPLEADOS;
+
+--El nombre (y sólo eso) de todos los puestos.
+SELECT NOMBRE 
+FROM PUESTOS;
+
+--Sólo los empleados que estén activos (ESTA_ACTIVO = 1).
+SELECT *
+FROM EMPLEADOS
+WHERE ESTA_ACTIVO = 1;
+
+--Los empleados cuyo salario sea mayor a $200.000,00.
+SELECT * 
+FROM EMPLEADOS
+WHERE SALARIO > 200000;
+
+--Los empleados cuya fecha de alta sea menor o igual al 07/06/2012.
+SELECT * 
+FROM EMPLEADOS
+WHERE FECHA_ALTA <= '2012-06-07';
+
+--Los empleados que no tengan mail cargado.
+SELECT NOMBRE, APELLIDO
+FROM EMPLEADOS
+WHERE EMAIL IS NULL;
+
+--Los empleados que tengan mail cargado.
+SELECT NOMBRE, APELLIDO, EMAIL
+FROM EMPLEADOS
+WHERE EMAIL IS NOT NULL;
+
+--Los empleados cuyo mail sea de gmail.
+SELECT * 
+FROM EMPLEADOS
+WHERE EMAIL LIKE '%gmail%';
+
+--Los empleados cuyo apellido empiece con la letra "B".
+SELECT NOMBRE, APELLIDO, SALARIO
+FROM EMPLEADOS
+WHERE APELLIDO LIKE 'B%';
 
