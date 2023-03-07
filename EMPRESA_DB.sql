@@ -185,10 +185,26 @@ WHERE SALARIO > 250000;
 
 --La cantidad de empleados que ingresaron antes del año 2010.
 --El salario más alto.
+SELECT MAX(SALARIO) AS SALARIO_MAXIMO
+FROM EMPLEADOS;
+
 --Los puestos con el nivel de autorización más bajo.
+SELECT P.*
+FROM PUESTOS P
+WHERE NIVEL_AUTORIZACION IN (SELECT MIN(NIVEL_AUTORIZACION)
+							 FROM PUESTOS);
+
 --El nombre completo de todos los empleados (concatenado).
+SELECT CONCAT(NOMBRE, ' ', APELLIDO) AS NOMBRE_COMPLETO
+FROM EMPLEADOS;
+
 --El nombre completo de todos los empleados (concatenado), el nombre de su puesto
 --y su nivel de autorización.
+SELECT CONCAT(E.NOMBRE, ' ', APELLIDO) AS NOMBRE_COMPLETO, P.NOMBRE AS PUESTO, NIVEL_AUTORIZACION
+FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO;
+
 --El nombre completo de todos los empleados (concatenado), el nombre de su puesto
 --y su nivel de autorización. Y los puestos con su nivel de autorización que no 
 --tengan empleados asociados. Todo en una misma consulta.
+SELECT P.ID_PUESTO, P.NOMBRE AS PUESTO, CONCAT(E.NOMBRE, ' ', APELLIDO) AS NOMBRE_COMPLETO, NIVEL_AUTORIZACION
+FROM EMPLEADOS E RIGHT JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO;
