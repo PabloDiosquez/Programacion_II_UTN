@@ -135,7 +135,7 @@ FROM EMPLEADOS E INNER JOIN PUESTOS P
 ON E.ID_PUESTO = P.ID_PUESTO;
 
 --Los empleados que tengan un puesto con nivel de autorización igual a 3.
-SELECT E.NOMBRE, E.APELLIDO, NIVEL_AUTORIZACION
+SELECT E.NOMBRE, APELLIDO, NIVEL_AUTORIZACION
 FROM EMPLEADOS E INNER JOIN PUESTOS P
 ON E.ID_PUESTO = P.ID_PUESTO
 WHERE P.NIVEL_AUTORIZACION = 3;
@@ -160,15 +160,29 @@ WHERE ESTA_ACTIVO = 1
 ORDER BY NIVEL_AUTORIZACION ASC;
 
 --Los puestos que no tengan empleados asociados.
-
+SELECT P.*
+FROM PUESTOS P LEFT JOIN EMPLEADOS E ON P.ID_PUESTO = E.ID_PUESTO
+WHERE ID_EMPLEADO IS NULL;
 
 --Los puestos que tienen empleados asociados.
-SELECT P.NOMBRE
+SELECT DISTINCT P.*
 FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO;
 
 --El promedio de los salarios de todos los empleados que estén activos.
+SELECT AVG(SALARIO) AS SALARIO_PROMEDIO_EMPLEADOS_ACTIVOS
+FROM EMPLEADOS
+WHERE ESTA_ACTIVO = 1;
+
 --La suma de los salarios de todos los empleados que estén activos.
+SELECT SUM(SALARIO) AS SUMA_SALARIO_EMPLEADOS_ACTIVOS
+FROM EMPLEADOS
+WHERE ESTA_ACTIVO = 1;
+
 --La cantidad de empleados que ganan más de $250.000,00.
+SELECT COUNT(ID_EMPLEADO)
+FROM EMPLEADOS
+WHERE SALARIO > 250000;
+
 --La cantidad de empleados que ingresaron antes del año 2010.
 --El salario más alto.
 --Los puestos con el nivel de autorización más bajo.
