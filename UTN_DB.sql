@@ -132,3 +132,9 @@ ON A.ID_MATERIA = M.ID_MATERIA;
 SELECT DESCRIPCION, ID_ALUMNO
 FROM ALUMNO A RIGHT JOIN MATERIA M
 ON A.ID_MATERIA = M.ID_MATERIA;
+
+--UPDATE 👉🏼 Modificar registros 
+--⚠ Si no se coloca el WHERE, se actualizan TODOS los registros de la tabla.
+
+--DELETE 👉🏼 Elimina registros 
+--⚠ Si no se coloca el WHERE, se eliminan TODOS los registros de la tabla.

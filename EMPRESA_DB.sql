@@ -208,3 +208,44 @@ FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO;
 --tengan empleados asociados. Todo en una misma consulta.
 SELECT P.ID_PUESTO, P.NOMBRE AS PUESTO, CONCAT(E.NOMBRE, ' ', APELLIDO) AS NOMBRE_COMPLETO, NIVEL_AUTORIZACION
 FROM EMPLEADOS E RIGHT JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO;
+
+--La cantidad de empleados por puesto.
+--El promedio del salario por puesto.
+--Nombre, apellido y salario del empleado que más gana.
+--Los empleados con el nivel de autorización más alto.
+--Los datos del empleado más viejo.
+--Los salarios por encima del promedio.
+----La cantidad de empleados que ganan por encima del promedio.
+
+--Agregar el mail mbrock@yahoo.com a Maya Brock filtrando por su ID_EMPLEADO. Verificar con una consulta la correcta ejecución del comando.
+UPDATE EMPLEADOS
+SET EMAIL = 'mbrock@yahoo.com'
+WHERE ID_EMPLEADO = 3;
+
+--Cambiar el puesto de Maya Brock a Administrativo y su salario a $210.000,00.
+UPDATE EMPLEADOS
+SET ID_PUESTO = 4, SALARIO = 210000
+WHERE ID_EMPLEADO = 3;
+
+--Dar un aumento del 25% a todos los empleados que ganen menos de $250.000,00.
+UPDATE EMPLEADOS
+SET SALARIO = 1.25*SALARIO
+WHERE SALARIO < 250000;
+
+--Exportar la base de datos.
+
+--Hacer una baja lógica del empleado con ID = 1, sin olvidar cargar su fecha de baja.
+--Verificar con una consulta la correcta ejecución del comando.
+UPDATE EMPLEADOS
+SET ESTA_ACTIVO = 0, FECHA_BAJA = GETDATE()
+WHERE ID_EMPLEADO = 1;
+
+SELECT * 
+FROM EMPLEADOS
+WHERE ID_EMPLEADO = 1;
+
+--Hacer una baja física a todos los empleados que no estén activos. Verificar con una consulta la correcta ejecución del comando.
+DELETE EMPLEADOS
+WHERE ESTA_ACTIVO = 0;
+
+--Eliminar la base de datos y volverla a crear a partir del archivo generado en el punto 8.
