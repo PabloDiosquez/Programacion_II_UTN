@@ -82,7 +82,7 @@ WHERE EMAIL IS NOT NULL AND NOMBRE LIKE '%a%';
 --año 2000 sin incluir.
 SELECT *
 FROM EMPLEADOS
-WHERE (SALARIO >= 250000 AND FECHA_ALTA > '2000-12-31') OR
+WHERE (SALARIO >= 250000 AND FECHA_ALTA >= '2000-01-01') OR
 (SALARIO < 250000 AND FECHA_ALTA < '2000-01-01');
 
 --Los empleados cuyo salario esté entre $100.000,00 y $250.000,00.
@@ -129,3 +129,27 @@ ORDER BY SALARIO DESC;
 SELECT DISTINCT NIVEL_AUTORIZACION
 FROM PUESTOS;
 
+--El nombre y apellido de los empleados, junto al nombre de su puesto.
+SELECT E.NOMBRE, E.APELLIDO, P.NOMBRE
+FROM EMPLEADOS E INNER JOIN PUESTOS P
+ON E.ID_PUESTO = P.ID_PUESTO;
+
+--Los empleados que tengan un puesto con nivel de autorización igual a 3.
+--El nombre y apellido de los empleados, junto al nombre de su puesto, ordenados alfabéticamente por apellido del empleado de manera ascendente.
+--El nombre y apellido de los empleados, junto al nombre de su puesto, ordenados alfabéticamente por nombre del puesto de manera ascendente.
+--Nombre, apellido y nombre del puesto de los empleados que estén activos, ordenados por su nivel de autorización de forma ascendente.
+--Los puestos que no tengan empleados asociados.
+--Los puestos que tienen empleados asociados.
+
+--El promedio de los salarios de todos los empleados que estén activos.
+--La suma de los salarios de todos los empleados que estén activos.
+--La cantidad de empleados que ganan más de $250.000,00.
+--La cantidad de empleados que ingresaron antes del año 2010.
+--El salario más alto.
+--Los puestos con el nivel de autorización más bajo.
+--El nombre completo de todos los empleados (concatenado).
+--El nombre completo de todos los empleados (concatenado), el nombre de su puesto
+--y su nivel de autorización.
+--El nombre completo de todos los empleados (concatenado), el nombre de su puesto
+--y su nivel de autorización. Y los puestos con su nivel de autorización que no 
+--tengan empleados asociados. Todo en una misma consulta.
