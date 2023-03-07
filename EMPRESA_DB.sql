@@ -135,11 +135,36 @@ FROM EMPLEADOS E INNER JOIN PUESTOS P
 ON E.ID_PUESTO = P.ID_PUESTO;
 
 --Los empleados que tengan un puesto con nivel de autorización igual a 3.
---El nombre y apellido de los empleados, junto al nombre de su puesto, ordenados alfabéticamente por apellido del empleado de manera ascendente.
---El nombre y apellido de los empleados, junto al nombre de su puesto, ordenados alfabéticamente por nombre del puesto de manera ascendente.
---Nombre, apellido y nombre del puesto de los empleados que estén activos, ordenados por su nivel de autorización de forma ascendente.
+SELECT E.NOMBRE, E.APELLIDO, NIVEL_AUTORIZACION
+FROM EMPLEADOS E INNER JOIN PUESTOS P
+ON E.ID_PUESTO = P.ID_PUESTO
+WHERE P.NIVEL_AUTORIZACION = 3;
+
+--El nombre y apellido de los empleados, junto al nombre de su puesto,
+--ordenados alfabéticamente por apellido del empleado de manera ascendente.
+SELECT E.NOMBRE, APELLIDO, P.NOMBRE
+FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO
+ORDER BY APELLIDO ASC;
+
+--El nombre y apellido de los empleados, junto al nombre de su puesto, 
+--ordenados alfabéticamente por nombre del puesto de manera ascendente.
+SELECT E.NOMBRE, APELLIDO, P.NOMBRE
+FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO
+ORDER BY P.NOMBRE ASC;
+
+--Nombre, apellido y nombre del puesto de los empleados que estén activos,
+--ordenados por su nivel de autorización de forma ascendente.
+SELECT E.NOMBRE, APELLIDO, P.NOMBRE
+FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO
+WHERE ESTA_ACTIVO = 1
+ORDER BY NIVEL_AUTORIZACION ASC;
+
 --Los puestos que no tengan empleados asociados.
+
+
 --Los puestos que tienen empleados asociados.
+SELECT P.NOMBRE
+FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO;
 
 --El promedio de los salarios de todos los empleados que estén activos.
 --La suma de los salarios de todos los empleados que estén activos.
