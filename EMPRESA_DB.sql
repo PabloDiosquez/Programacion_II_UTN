@@ -103,4 +103,29 @@ FROM PUESTOS WHERE NIVEL_AUTORIZACION IN (0,1,2);
 SELECT * 
 FROM PUESTOS WHERE NIVEL_AUTORIZACION NOT IN (0,1,2);
 
+--Los empleados activos ordenados alfabéticamente por su apellido de manera
+--ascendente.
+SELECT *
+FROM EMPLEADOS
+WHERE ESTA_ACTIVO = 1
+ORDER BY APELLIDO ASC;
+
+--Los tres empleados más viejos.
+SELECT TOP(3) * 
+FROM EMPLEADOS
+ORDER BY FECHA_ALTA ASC;
+
+--Los tres empleados que más ganan.
+SELECT TOP(3) NOMBRE, APELLIDO, SALARIO
+FROM EMPLEADOS
+ORDER BY SALARIO DESC;
+
+--Todos los datos de los empleados ordenados por el valor de sus salarios de manera descendente.
+SELECT *
+FROM EMPLEADOS
+ORDER BY SALARIO DESC;
+
+--Los distintos niveles de autorización de los puestos, sin repetir.
+SELECT DISTINCT NIVEL_AUTORIZACION
+FROM PUESTOS;
 
