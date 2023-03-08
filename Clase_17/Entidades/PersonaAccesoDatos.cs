@@ -14,5 +14,18 @@ namespace Entidades
         static SqlCommand comando;
 
         static SqlConnection conexion;
+
+        static PersonaAccesoDatos()
+        {
+            cadenaConexion = @"Data Source=.\SQLEXPRESS; Initial Catalog=EMPRESA_DB; Integrated Security=True";
+
+            comando = new SqlCommand();
+
+            conexion = new SqlConnection(cadenaConexion);
+
+            comando.Connection = conexion;
+
+            comando.CommandType = System.Data.CommandType.Text;
+        }
     }
 }
