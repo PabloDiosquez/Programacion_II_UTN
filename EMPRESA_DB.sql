@@ -210,8 +210,20 @@ SELECT P.ID_PUESTO, P.NOMBRE AS PUESTO, CONCAT(E.NOMBRE, ' ', APELLIDO) AS NOMBR
 FROM EMPLEADOS E RIGHT JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO;
 
 --La cantidad de empleados por puesto.
+SELECT P.NOMBRE, COUNT(E.ID_EMPLEADO) AS CANTIDAD_EMPLEADOS
+FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO
+GROUP BY P.NOMBRE;
+
 --El promedio del salario por puesto.
+SELECT P.NOMBRE, AVG(E.SALARIO) AS PROM_SALARIO
+FROM PUESTOS P INNER JOIN EMPLEADOS E ON P.ID_PUESTO = E.ID_PUESTO
+GROUP BY P.NOMBRE;
+
 --Nombre, apellido y salario del empleado que más gana.
+SELECT TOP(1) NOMBRE, APELLIDO, SALARIO
+FROM EMPLEADOS
+ORDER BY SALARIO DESC;
+
 --Los empleados con el nivel de autorización más alto.
 --Los datos del empleado más viejo.
 --Los salarios por encima del promedio.
