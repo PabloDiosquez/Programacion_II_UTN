@@ -27,5 +27,35 @@ namespace Entidades
 
             comando.CommandType = System.Data.CommandType.Text;
         }
+
+        public static List<Persona> Leer()
+        {
+            List<Persona> personas = new List<Persona>();
+
+            try
+            {
+                conexion.Open();
+
+                comando.CommandText = "SELECT * FROM EMPLEADOS";
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    personas.Add(new Persona(lector["NOMBRE"].ToString(), lector["APELLIDO"].ToString()));
+                }
+
+                return personas;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally 
+            {
+                conexion.Close();
+            }
+        }
     }
 }
