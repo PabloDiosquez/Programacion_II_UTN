@@ -225,7 +225,14 @@ FROM EMPLEADOS
 ORDER BY SALARIO DESC;
 
 --Los empleados con el nivel de autorización más alto.
+SELECT E.*, NIVEL_AUTORIZACION
+FROM EMPLEADOS E INNER JOIN PUESTOS P ON E.ID_PUESTO = P.ID_PUESTO
+
 --Los datos del empleado más viejo.
+SELECT TOP(1) *
+FROM EMPLEADOS
+ORDER BY FECHA_ALTA;
+
 --Los salarios por encima del promedio.
 ----La cantidad de empleados que ganan por encima del promedio.
 
@@ -244,7 +251,7 @@ UPDATE EMPLEADOS
 SET SALARIO = 1.25*SALARIO
 WHERE SALARIO < 250000;
 
---Exportar la base de datos.
+--Exportar la base de datos. ✅
 
 --Hacer una baja lógica del empleado con ID = 1, sin olvidar cargar su fecha de baja.
 --Verificar con una consulta la correcta ejecución del comando.
