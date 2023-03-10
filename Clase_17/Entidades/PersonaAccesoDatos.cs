@@ -49,13 +49,33 @@ namespace Entidades
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally 
             {
                 conexion.Close();
             }
+        }
+
+        public static void Eliminar(int id)
+        {
+            try
+            {
+                conexion.Open();
+
+                comando.CommandText = $"DELETE FROM EMPLEADOS WHERE ID = {id}";
+
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            } 
         }
     }
 }

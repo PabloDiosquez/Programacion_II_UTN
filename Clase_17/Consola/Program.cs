@@ -15,7 +15,6 @@ namespace Consola
                 Console.WriteLine(persona.ToString());
             }    
 
-
         }
     }
 }
