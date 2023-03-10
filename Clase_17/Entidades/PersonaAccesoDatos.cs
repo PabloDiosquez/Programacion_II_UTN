@@ -63,7 +63,9 @@ namespace Entidades
             {
                 conexion.Open();
 
-                comando.CommandText = $"DELETE FROM EMPLEADOS WHERE ID = {id}";
+                comando.CommandText = $"DELETE FROM EMPLEADOS WHERE ID = @id";
+
+                comando.Parameters.AddWithValue("@id",id);
 
                 comando.ExecuteNonQuery();
 
