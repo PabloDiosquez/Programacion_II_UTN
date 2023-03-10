@@ -61,6 +61,8 @@ namespace Entidades
         {
             try
             {
+                comando.Parameters.Clear(); // Al trabajar con miembros estáticos, se deben limpiar los parámetros.
+
                 conexion.Open();
 
                 comando.CommandText = $"DELETE FROM EMPLEADOS WHERE ID = @id";
@@ -69,6 +71,32 @@ namespace Entidades
 
                 comando.ExecuteNonQuery();
 
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            } 
+        }
+
+        public static void Guardar(Persona persona)
+        {
+            try
+            {
+                comando.Parameters.Clear();
+
+                conexion.Open();
+
+                comando.CommandText = $"INSERT INTO EMPLEADOS (NOMBRE, APELLIDO) VALUES (@NOMBRE, @APELLIDO)";
+
+                comando.Parameters.AddWithValue("@NOMBRE", persona.Nombre);
+
+                comando.Parameters.AddWithValue("@APELLIDO", persona.Apellido);
+
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {

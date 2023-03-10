@@ -10,14 +10,17 @@ namespace Entidades
 
         public Persona(string nombre, string apellido)
         {
-            this.nombre = nombre;
+            this.Nombre = nombre;
 
-            this.apellido = apellido;   
+            this.Apellido = apellido;   
         }
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
 
         public override string ToString()
         {
-            return $"Nombre: {nombre} -- Apellido: {apellido}";
+            return $"Nombre: {Nombre} -- Apellido: {Apellido}";
         }
 
 
