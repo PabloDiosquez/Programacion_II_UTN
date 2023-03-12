@@ -13,7 +13,9 @@ namespace Consola
             foreach (Persona persona in personas)
             {
                 Console.WriteLine(persona.ToString());
-            }    
+            }
+
+            PersonaAccesoDatos.Eliminar(2);
 
         }
     }
