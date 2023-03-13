@@ -89,5 +89,33 @@ namespace Entidades
                 conexion.Close();
             }
         }
+
+        public static Juego LeerPorId(Int32 codigo_juego)
+        {
+            Juego juego = null;
+
+            try
+            {
+                comando.Parameters.Clear();
+
+                conexion.Open();
+
+                comando.CommandText = "SELECT * FROM JUEGOS WHERE CODIGO_JUEGO = @codigo_juego";
+
+                comando.Parameters.AddWithValue("@ID", codigo_juego);
+
+                SqlDataReader lector = comando.ExecuteReader();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+
+            }
+
+            return juego;
+        }
     }
 }
