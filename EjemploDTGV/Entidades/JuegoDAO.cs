@@ -62,5 +62,32 @@ namespace Entidades
 
             return lista;
         }
+
+        public static void Guardar(Juego juego)
+        {
+            try
+            {
+                comando.Parameters.Clear();
+
+                conexion.Open();
+
+                comando.CommandText = "INSERT INTO JUEGOS (CODIGO_USUARIO, NOMBRE, PRECIO, GENERO) VALUES (@codigo_usuario, @nombre, @precio, @genero)";
+
+                comando.Parameters.AddWithValue("@codigo_usuario", Convert.ToInt32(juego.CodigoUsuario));
+                comando.Parameters.AddWithValue("@nombre", juego.Nombre);
+                comando.Parameters.AddWithValue("@precio", juego.Precio);
+                comando.Parameters.AddWithValue("@genero", juego.Genero);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
     }
 }
