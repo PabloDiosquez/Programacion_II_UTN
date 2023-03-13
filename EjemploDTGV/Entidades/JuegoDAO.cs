@@ -100,11 +100,18 @@ namespace Entidades
 
                 conexion.Open();
 
-                comando.CommandText = "SELECT * FROM JUEGOS WHERE CODIGO_JUEGO = @codigo_juego";
-
-                comando.Parameters.AddWithValue("@ID", codigo_juego);
+                comando.CommandText = $"SELECT * FROM JUEGOS WHERE CODIGO_JUEGO = {codigo_juego}";
 
                 SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    juego = new Juego(lector["NOMBRE"].ToString(), Convert.ToDouble(lector["PRECIO"]), lector["GENERO"].ToString(), 
+                        Convert.ToInt32(lector["CODIGO_JUEGO"]), Convert.ToInt32(lector["CODIGO_USUARIO"]));
+                }
+
+                lector.Close();
+
             }
             catch (Exception)
             {
@@ -112,7 +119,7 @@ namespace Entidades
             }
             finally
             {
-
+                conexion.Close();
             }
 
             return juego;
