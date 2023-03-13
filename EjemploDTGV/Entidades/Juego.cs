@@ -18,22 +18,21 @@ namespace Entidades
 
         private double precio;
 
-        public Juego(string nombre, double precio, string genero, int codigoJuego, int codigoUsuario)
+        public Juego(string nombre, double precio, string genero, int codigoJuego, int codigoUsuario) 
+            : this(nombre, precio, genero, codigoUsuario)
+        {
+            this.CodigoJuego = codigoJuego;   
+        }
+
+        public Juego(string nombre, double precio, string genero, int codigoUsuario)
         {
             this.nombre = nombre;
 
-            this.precio = precio;   
+            this.precio = precio;
 
-            this.genero = genero;   
-
-            this.codigoJuego = codigoJuego;
+            this.genero = genero;
 
             this.codigoUsuario = codigoUsuario;
-        }
-
-        public Juego(string nombre, double precio, string genero, int codigoUsuario) : this(nombre, precio, genero, 0, codigoUsuario)
-        {
-            
         }
 
 
