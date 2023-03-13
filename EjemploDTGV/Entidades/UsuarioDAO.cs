@@ -42,13 +42,14 @@ namespace Entidades
 
                 while (lector.Read())
                 {
-                    usuarios.Add(new Usuario(lector["USERNAME"].ToString(), (int)lector["CODIGO_USUARIO"])
+                    usuarios.Add(new Usuario(lector["USERNAME"].ToString(), Convert.ToInt32(lector["CODIGO_USUARIO"]))
                     {
 
                     });
                 }
 
-                return usuarios;
+                lector.Close();
+
             }
             catch (Exception)
             {
@@ -59,6 +60,7 @@ namespace Entidades
                 conexion.Close();
             } 
 
+            return usuarios;
         }
 
     }
