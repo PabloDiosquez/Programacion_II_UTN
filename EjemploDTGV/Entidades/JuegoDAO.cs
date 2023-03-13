@@ -31,7 +31,7 @@ namespace Entidades
 
         public static List<Biblioteca> Leer()
         {
-            List<Biblioteca> lista = new List<Biblioteca>();
+            List<Biblioteca> biblioteca = new List<Biblioteca>();
 
             try
             {
@@ -45,7 +45,7 @@ namespace Entidades
 
                 while (lector.Read())
                 {
-                    lista.Add(new Biblioteca(lector["USERNAME"].ToString(), lector["GENERO"].ToString(), lector["NOMBRE"].ToString(), Convert.ToInt32(lector["CODIGO_JUEGO"])));
+                    biblioteca.Add(new Biblioteca(lector["USERNAME"].ToString(), lector["GENERO"].ToString(), lector["NOMBRE"].ToString(), Convert.ToInt32(lector["CODIGO_JUEGO"])));
                 }
 
                 lector.Close();
@@ -60,7 +60,7 @@ namespace Entidades
                 conexion.Close();
             } 
 
-            return lista;
+            return biblioteca;
         }
 
         public static void Guardar(Juego juego)
