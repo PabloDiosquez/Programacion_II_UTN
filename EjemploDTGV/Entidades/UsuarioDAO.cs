@@ -17,11 +17,48 @@ namespace Entidades
 
         static UsuarioDAO()
         {
-            cadenaConexion = "";
+            cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=EJERCICIOS_UTN;Integrated Security=True";
 
             comando = new SqlCommand();
 
             conexion = new SqlConnection(cadenaConexion);
+
+            comando.Connection = conexion;
+
+            comando.CommandType = System.Data.CommandType.Text; 
+        }
+
+        private static List<Usuario> Leer()
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+
+            try
+            {
+                conexion.Open();
+
+                comando.CommandText = "SELECT CODIGO_USUARIO, USERNAME FROM USUARIOS;";
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    usuarios.Add(new Usuario(lector["USERNAME"].ToString(), (int)lector["CODIGO_USUARIO"])
+                    {
+
+                    });
+                }
+
+                return usuarios;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            } 
+
         }
 
     }
