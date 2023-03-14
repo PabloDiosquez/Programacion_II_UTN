@@ -16,15 +16,15 @@ namespace Entidades
 
         private string nombre;
 
-        private double precio;
+        private float precio;
 
-        public Juego(string nombre, double precio, string genero, int codigoJuego, int codigoUsuario) 
+        public Juego(string nombre, float precio, string genero, int codigoJuego, int codigoUsuario) 
             : this(nombre, precio, genero, codigoUsuario)
         {
             this.CodigoJuego = codigoJuego;   
         }
 
-        public Juego(string nombre, double precio, string genero, int codigoUsuario)
+        public Juego(string nombre, float precio, string genero, int codigoUsuario)
         {
             this.nombre = nombre;
 

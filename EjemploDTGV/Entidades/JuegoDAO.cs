@@ -112,7 +112,7 @@ namespace Entidades
 
                 while (lector.Read())
                 {
-                    juego = new Juego(lector["NOMBRE"].ToString(), Convert.ToDouble(lector["PRECIO"]), lector["GENERO"].ToString(), 
+                    juego = new Juego(lector["NOMBRE"].ToString(), (float)lector["PRECIO"], lector["GENERO"].ToString(), 
                         Convert.ToInt32(lector["CODIGO_JUEGO"]), Convert.ToInt32(lector["CODIGO_USUARIO"]));
                 }
 

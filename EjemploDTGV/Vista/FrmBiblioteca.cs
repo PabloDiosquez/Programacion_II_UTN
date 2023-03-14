@@ -49,6 +49,8 @@ namespace Vista
         {
             FrmAlta alta = new FrmAlta();
 
+            // TO DO: try -- catch
+
             if (alta.ShowDialog() == DialogResult.OK)
             {
                 RefrescarBiblioteca();

@@ -17,7 +17,7 @@ namespace Entidades
 
         static UsuarioDAO()
         {
-            cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=EJERCICIOS_UTN;Integrated Security=True";
+            cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=EJERCICIOS_UTN;Integrated Security=true; Encrypt=False";
 
             comando = new SqlCommand();
 

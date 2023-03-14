@@ -37,14 +37,15 @@ namespace Vista
 
         protected virtual void btnGuardar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-
             if (btnGuardar.Text != "Modificar")
             {
-                Juego juego = new Juego(txtNombre.Text, Convert.ToDouble(nupPrecio.Value), txtGenero.Text,
+                Juego juego = new Juego(txtNombre.Text, (float)nupPrecio.Value, txtGenero.Text,
                     ((Usuario)cmbUsuarios.SelectedItem).CodigoUsuario);
+
+                JuegoDAO.Guardar(juego);
             }
             
+            DialogResult = DialogResult.OK;
         }
     }
 }
