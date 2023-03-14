@@ -124,5 +124,29 @@ namespace Entidades
 
             return juego;
         }
+
+        public static void Eliminar(Int32 codigo_juego)
+        {
+            try
+            {
+                comando.Parameters.Clear();
+
+                conexion.Open();
+
+                comando.CommandText = "DELETE FROM JUEGOS WHERE CODIGO_JUEGO = @codigo_juego";
+
+                comando.Parameters.AddWithValue("@codigo_juego", codigo_juego);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
     }
 }
