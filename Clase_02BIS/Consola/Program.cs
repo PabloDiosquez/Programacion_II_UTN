@@ -1,4 +1,5 @@
 ﻿using System;
+using Entidades;
 
 namespace Consola
 {
@@ -11,6 +12,12 @@ namespace Consola
             string celsius = Console.ReadLine();
 
             Console.WriteLine($"Celsius: {celsius} -- Fahrenheit: {ConvertirCelsiusAFahrenheit(celsius)}");
+
+            // Usando el Cotizador...
+
+            decimal pesos = Cotizador.CotizarVentaDolares(100);
+
+            Console.WriteLine(pesos);
         }
 
         public static double ConvertirCelsiusAFahrenheit(string temperaturaCelsius)

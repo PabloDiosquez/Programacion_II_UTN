@@ -1,0 +1,15 @@
+Cuando programamos podemos encontrarnos escribiendo las mismas sentencias una y otra vez a lo largo del código. Para evitar esto, podemos trasformar esas sentencias duplicadas en un método.
+
+Los métodos estáticos son pequeñas piezas de código que se encargan de realizar una tarea concreta. También se los suele llamar como métodos de clase.
+
+Por ejemplo, dentro de una aplicación financiera podríamos tener un método que realice el cálculo de impuestos y reutilizar esa funcionalidad en varios lugares sin necesidad de rescribir el algoritmo una y otra vez.
+
+Al igual que los programas, los métodos estáticos usualmente tienen datos de entrada y de salida. A menudo se los describe como cajas negras, donde ingresamos materias primas por un agujero y salen productos manufacturados desde otro.
+
+Si están bien diseñados, una vez creados los métodos no debería preocuparnos cómo resuelven la tarea, sólo el qué hacen.
+
+Los métodos estáticos están compuestos de una firma que define el qué hace y de un cuerpo que contiene la implementación, el cómo lo hace.
+
+La firma del método lo define y funciona como una declaración del mismo. Su sintaxis es la siguiente:
+
+Modificador de acceso Otros modificadores Tipo de retorno Identificador (Parámetros de entrada)
