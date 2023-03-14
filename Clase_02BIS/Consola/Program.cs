@@ -13,9 +13,16 @@ namespace Consola
 
             Console.WriteLine($"Celsius: {celsius} -- Fahrenheit: {ConvertirCelsiusAFahrenheit(celsius)}");
 
-            // Usando el Cotizador...
+            /* Llamo al método estático CotizarVentaDolares de la clase Cotizador.
+             Le paso entre paréntesis el único argumento que recibe, que es el monto de dólares a vender.
 
-            decimal pesos = Cotizador.CotizarVentaDolares(100);
+             El método retorna un valor de tipo decimal que es el monto en pesos. 
+             Lo guardo en una variable. 
+            */
+
+            //decimal pesos = Entidades.Cotizador.CotizarVentaDolares(100); // Sin la directiva using...
+
+            decimal pesos = Cotizador.CotizarVentaDolares(100); 
 
             Console.WriteLine(pesos);
         }

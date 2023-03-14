@@ -8,6 +8,11 @@ namespace Entidades
 
         private const decimal pesosPorDolarVendido = 102.82M;
 
+        /// <summary>
+        /// Cotiza la venta de un monto de dólares dado, retornando el costo en pesos.
+        /// </summary>
+        /// <param name="montoDolaresAVender">Cantidad de dólares que se desean vender.</param>
+        /// <returns>Costo en pesos de la venta.</returns>
         public static decimal CotizarVentaDolares(decimal montoDolaresAVender)
         {
             decimal costoEnPesos = montoDolaresAVender * pesosPorDolarComprado;
