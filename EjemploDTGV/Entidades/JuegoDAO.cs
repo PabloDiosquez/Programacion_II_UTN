@@ -148,5 +148,29 @@ namespace Entidades
                 conexion.Close();
             }
         }
+
+        public static void Modificar(Juego juego)
+        {
+            try
+            {
+                conexion.Open();
+
+                //UPDATE table_name
+                //SET column1 = value1, column2 = value2, ...
+                //WHERE condition;
+
+                comando.CommandText = $"UPDATE JUEGOS SET NOMBRE = {juego.Nombre}, PRECIO = {juego.Precio}, GENERO = {juego.Genero} WHERE CODIGO_JUEGO = {juego.CodigoJuego}";
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally 
+            {
+                conexion.Close();
+            }
+        }
     }
 }
