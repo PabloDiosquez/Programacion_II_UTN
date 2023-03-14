@@ -18,7 +18,7 @@ namespace Entidades
 
         static JuegoDAO()
         {
-            cadenaConexion = @"Data Source = .\SQLEXPRESS; Database = EJERCICIOS_UTN; Trusted_Connection = True;";
+            cadenaConexion = @"Data Source = .\SQLEXPRESS; Database = EJERCICIOS_UTN; Integrated Security=true;Encrypt=False";
 
             comando = new SqlCommand();
 
