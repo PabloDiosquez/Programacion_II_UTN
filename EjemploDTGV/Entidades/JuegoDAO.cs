@@ -18,7 +18,7 @@ namespace Entidades
 
         static JuegoDAO()
         {
-            cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=EJERCICIOS_UTN;Integrated Security=True";
+            cadenaConexion = @"Data Source = .\SQLEXPRESS; Database = EJERCICIOS_UTN; Trusted_Connection = True;";
 
             comando = new SqlCommand();
 
@@ -27,6 +27,7 @@ namespace Entidades
             comando.Connection = conexion;
 
             comando.CommandType = System.Data.CommandType.Text;
+
         }
 
         public static List<Biblioteca> Leer()
@@ -39,20 +40,21 @@ namespace Entidades
 
                 conexion.Open();
 
-                comando.CommandText = "SELECT USERNAME, GENERO, NOMBRE, CODIGO_JUEGO FROM USUARIOS AS U INNER JOIN JUEGOS AS J ON U.CODIGO_USUARIO = J.CODIGO_USUARIO;";
+                comando.CommandText = "SELECT USERNAME, GENERO, NOMBRE, CODIGO_JUEGO FROM USUARIOS AS U INNER JOIN JUEGOS AS J" +
+                    " ON U.CODIGO_USUARIO = J.CODIGO_USUARIO;";
 
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
-                    biblioteca.Add(new Biblioteca(lector["USERNAME"].ToString(), lector["GENERO"].ToString(), lector["NOMBRE"].ToString(), Convert.ToInt32(lector["CODIGO_JUEGO"])));
+                    biblioteca.Add(new Biblioteca(lector["USERNAME"].ToString(), lector["GENERO"].ToString(), lector["NOMBRE"].ToString(),
+                        Convert.ToInt32(lector["CODIGO_JUEGO"])));
                 }
 
                 lector.Close();
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally
@@ -71,11 +73,15 @@ namespace Entidades
 
                 conexion.Open();
 
-                comando.CommandText = "INSERT INTO JUEGOS (CODIGO_USUARIO, NOMBRE, PRECIO, GENERO) VALUES (@codigo_usuario, @nombre, @precio, @genero)";
+                comando.CommandText = "INSERT INTO JUEGOS (CODIGO_USUARIO, NOMBRE, PRECIO, GENERO) " +
+                    "VALUES (@codigo_usuario, @nombre, @precio, @genero)";
 
                 comando.Parameters.AddWithValue("@codigo_usuario", Convert.ToInt32(juego.CodigoUsuario));
+
                 comando.Parameters.AddWithValue("@nombre", juego.Nombre);
+
                 comando.Parameters.AddWithValue("@precio", juego.Precio);
+
                 comando.Parameters.AddWithValue("@genero", juego.Genero);
 
                 comando.ExecuteNonQuery();
@@ -157,7 +163,8 @@ namespace Entidades
 
                 conexion.Open();
 
-                comando.CommandText = $"UPDATE JUEGOS SET NOMBRE = @nombre, PRECIO = @precio, GENERO = @genero WHERE CODIGO_JUEGO = @codigo_juego";
+                comando.CommandText = $"UPDATE JUEGOS SET NOMBRE = @nombre, PRECIO = @precio, GENERO = @genero" +
+                    $" WHERE CODIGO_JUEGO = @codigo_juego";
 
                 comando.Parameters.AddWithValue("@nombre", juego.Nombre);
 
