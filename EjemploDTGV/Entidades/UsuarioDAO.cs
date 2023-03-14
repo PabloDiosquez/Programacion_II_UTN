@@ -28,7 +28,7 @@ namespace Entidades
             comando.CommandType = System.Data.CommandType.Text; 
         }
 
-        private static List<Usuario> Leer()
+        public static List<Usuario> Leer()
         {
             List<Usuario> usuarios = new List<Usuario>();
 

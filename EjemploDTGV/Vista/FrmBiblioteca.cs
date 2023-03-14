@@ -47,12 +47,17 @@ namespace Vista
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
+            FrmAlta alta = new FrmAlta();
 
+            if (alta.ShowDialog() == DialogResult.OK)
+            {
+                RefrescarBiblioteca();
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+           
         }
 
     }

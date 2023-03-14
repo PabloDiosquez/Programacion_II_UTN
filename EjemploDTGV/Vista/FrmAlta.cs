@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Vista
 {
@@ -31,12 +32,19 @@ namespace Vista
 
         private void FrmAlta_Load(object sender, EventArgs e)
         {
-            //cmbUsuarios.DataSource = UsuarioDao.Leer();
+            cmbUsuarios.DataSource = UsuarioDAO.Leer();
         }
 
         protected virtual void btnGuardar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+
+            if (btnGuardar.Text != "Modificar")
+            {
+                Juego juego = new Juego(txtNombre.Text, Convert.ToDouble(nupPrecio.Value), txtGenero.Text,
+                    ((Usuario)cmbUsuarios.SelectedItem).CodigoUsuario);
+            }
+            
         }
     }
 }
