@@ -153,13 +153,19 @@ namespace Entidades
         {
             try
             {
+                comando.Parameters.Clear();
+
                 conexion.Open();
 
-                //UPDATE table_name
-                //SET column1 = value1, column2 = value2, ...
-                //WHERE condition;
+                comando.CommandText = $"UPDATE JUEGOS SET NOMBRE = @nombre, PRECIO = @precio, GENERO = @genero WHERE CODIGO_JUEGO = @codigo_juego";
 
-                comando.CommandText = $"UPDATE JUEGOS SET NOMBRE = {juego.Nombre}, PRECIO = {juego.Precio}, GENERO = {juego.Genero} WHERE CODIGO_JUEGO = {juego.CodigoJuego}";
+                comando.Parameters.AddWithValue("@nombre", juego.Nombre);
+
+                comando.Parameters.AddWithValue("@precio", juego.Precio);
+
+                comando.Parameters.AddWithValue("@genero", juego.Genero);
+
+                comando.Parameters.AddWithValue("@codigo_juego", juego.CodigoJuego);
 
                 comando.ExecuteNonQuery();
             }
