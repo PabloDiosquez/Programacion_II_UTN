@@ -76,7 +76,7 @@ namespace Entidades
                 comando.CommandText = "INSERT INTO JUEGOS (CODIGO_USUARIO, NOMBRE, PRECIO, GENERO) " +
                     "VALUES (@codigo_usuario, @nombre, @precio, @genero)";
 
-                comando.Parameters.AddWithValue("@codigo_usuario", Convert.ToInt32(juego.CodigoUsuario));
+                comando.Parameters.AddWithValue("@codigo_usuario", juego.CodigoUsuario);
 
                 comando.Parameters.AddWithValue("@nombre", juego.Nombre);
 

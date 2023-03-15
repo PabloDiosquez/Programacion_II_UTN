@@ -42,7 +42,14 @@ namespace Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (dtgvBiblioteca.SelectedRows.Count > 0) 
+            {
+                Biblioteca biblioteca = dtgvBiblioteca.CurrentRow.DataBoundItem as Biblioteca;
 
+                JuegoDAO.Eliminar(biblioteca.CodigoJuego);
+
+                RefrescarBiblioteca();
+            }
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
