@@ -66,7 +66,17 @@ namespace Vista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-           
+            if (dtgvBiblioteca.SelectedRows.Count > 0)
+            {
+                Biblioteca biblioteca = dtgvBiblioteca.CurrentRow.DataBoundItem as Biblioteca;
+
+                FrmAlta frmAlta = new FrmAlta(biblioteca.CodigoJuego);
+
+                if (frmAlta.ShowDialog() == DialogResult.OK) 
+                {
+                   
+                }
+            }
         }
 
     }
