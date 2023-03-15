@@ -17,13 +17,22 @@ namespace Vista
         public FrmAlta(int codigoJuego) : this()
         {
             btnGuardar.Text = "Modificar";
+            cmbUsuarios.Hide();
+            lblUsuarios.Text = string.Empty;
+            this.codigoJuego = codigoJuego; 
             nupPrecio.Maximum = 10000;
             PintarForm();
         }
 
         private void PintarForm()
         {
+            Juego juego = JuegoDAO.LeerPorId(codigoJuego);
 
+            txtNombre.Text = juego.Nombre;
+
+            txtGenero.Text = juego.Genero;
+
+            nupPrecio.Value = (decimal)juego.Precio;
         }
         public FrmAlta()
         {
@@ -43,6 +52,13 @@ namespace Vista
                     ((Usuario)cmbUsuarios.SelectedItem).CodigoUsuario);
 
                 JuegoDAO.Guardar(juego);
+            }
+            else
+            {
+                Juego juego = new Juego(txtNombre.Text, (float)nupPrecio.Value, txtGenero.Text,
+                    ((Usuario)cmbUsuarios.SelectedItem).CodigoUsuario,codigoJuego);
+
+                JuegoDAO.Modificar(juego);
             }
             
             DialogResult = DialogResult.OK;
