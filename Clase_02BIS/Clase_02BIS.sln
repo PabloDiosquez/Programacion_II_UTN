@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{DEBF5FB8-C077-439F-ABA1-8994E365F331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{DEBF5FB8-C077-439F-ABA1-8994E365F331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola", "Consola\Consola.csproj", "{634AF04E-3327-44EE-8DEC-105E267FB4C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.csproj", "{634AF04E-3327-44EE-8DEC-105E267FB4C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", "{ED503DDD-0638-4E0C-8D61-784CCBA543DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{2F1E973D-CADB-4AEB-95C7-755FA5AE1056}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola_Conversor", "Consola_Conversor\Consola_Conversor.csproj", "{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,21 @@ Global
 		{634AF04E-3327-44EE-8DEC-105E267FB4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{634AF04E-3327-44EE-8DEC-105E267FB4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{634AF04E-3327-44EE-8DEC-105E267FB4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1E973D-CADB-4AEB-95C7-755FA5AE1056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1E973D-CADB-4AEB-95C7-755FA5AE1056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1E973D-CADB-4AEB-95C7-755FA5AE1056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1E973D-CADB-4AEB-95C7-755FA5AE1056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F1E973D-CADB-4AEB-95C7-755FA5AE1056} = {ED503DDD-0638-4E0C-8D61-784CCBA543DB}
+		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3} = {ED503DDD-0638-4E0C-8D61-784CCBA543DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71A50DE7-57F5-4158-9876-0F388F9D6BA9}
