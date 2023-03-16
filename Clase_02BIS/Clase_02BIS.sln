@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola_Conversor", "Consola_Conversor\Consola_Conversor.csproj", "{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola_Calculador", "Consola_Calculador\Consola_Calculador.csproj", "{8C306E5C-9B9E-4301-AF51-320BC896E35C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C306E5C-9B9E-4301-AF51-320BC896E35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C306E5C-9B9E-4301-AF51-320BC896E35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C306E5C-9B9E-4301-AF51-320BC896E35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C306E5C-9B9E-4301-AF51-320BC896E35C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2F1E973D-CADB-4AEB-95C7-755FA5AE1056} = {ED503DDD-0638-4E0C-8D61-784CCBA543DB}
 		{C5EA346E-AE94-420F-BA80-7F39F7DBA4D3} = {ED503DDD-0638-4E0C-8D61-784CCBA543DB}
+		{8C306E5C-9B9E-4301-AF51-320BC896E35C} = {ED503DDD-0638-4E0C-8D61-784CCBA543DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71A50DE7-57F5-4158-9876-0F388F9D6BA9}
