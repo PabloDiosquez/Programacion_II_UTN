@@ -16,7 +16,7 @@ namespace Biblioteca
 
             while (numeroEntero > 0)
             {
-                res += $"{numeroEntero % 2}";
+                res = $"{numeroEntero % 2}" + res;
 
                 numeroEntero = numeroEntero / 2;
             }
@@ -26,14 +26,25 @@ namespace Biblioteca
 
         //El método ConvertirBinarioADecimal que convierte un número entero del sistema binario al sistema decimal.
 
-        //public int ConvertirBinarioADecimal(int numeroEntero) { }
+        public static int ConvertirBinarioADecimal(int numeroEntero)
+        {
+            int res = 0;
 
+            int i = 0;
 
+            while (numeroEntero > 0)
+            {
+                int digito = numeroEntero % 10;
 
+                res += digito * Convert.ToInt32(Math.Pow(2,i));
 
+                numeroEntero = numeroEntero / 10;
 
-
-
+                i++;
+            }
+            
+            return res;
+        }
 
     }
 }

@@ -7,7 +7,9 @@ namespace Consola_Conversor
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Conversor.ConvertirDecimalABinario(21));
+            Console.WriteLine(Conversor.ConvertirDecimalABinario(52));
+
+            Console.WriteLine(Conversor.ConvertirBinarioADecimal(0));
         }
     }
 }
