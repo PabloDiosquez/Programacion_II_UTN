@@ -24,7 +24,7 @@ namespace Biblioteca
 
         //El usuario decidirá cuándo finalizar el programa.
 
-        public static double Calcular(double operando1, double operando2, string operacion)
+        public static string Calcular(double operando1, double operando2, string operacion)
         {
             double res = 0;
 
@@ -49,12 +49,15 @@ namespace Biblioteca
                     }
                     else
                     {
-                        return Double.MaxValue;
+                        return Double.MaxValue.ToString();
                     }
                     break;
+                default:
+                    return "Esta operación NO es válida";
+                    
             }
 
-            return res;
+            return res.ToString();
         }
 
         public static bool Validar(double divisor)

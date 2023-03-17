@@ -9,8 +9,6 @@ namespace Consola_Calculador
         {
             do
             {
-                Console.WriteLine("Operandos:");
-
                 double operando1 = 0;
 
                 double operando2 = 0;
@@ -30,6 +28,8 @@ namespace Consola_Calculador
 
         public static void ValidarOperando(ref double operando)
         {
+            Console.WriteLine("Operando:");
+
             while (!double.TryParse(Console.ReadLine(), out operando))
             {
                 Console.WriteLine("Asegúrese de ingresar un número...");
