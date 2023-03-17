@@ -11,19 +11,13 @@ namespace Consola_Calculador
             {
                 Console.WriteLine("Operandos:");
 
-                double operando1;
+                double operando1 = 0;
 
-                double operando2;
+                double operando2 = 0;
 
-                while (!double.TryParse(Console.ReadLine(), out operando1))
-                {
-                    Console.WriteLine("Asegúrese de ingresar un número...");
-                }
+                ValidarOperando(ref operando1);
 
-                while (!double.TryParse(Console.ReadLine(), out operando2))
-                {
-                    Console.WriteLine("Asegúrese de ingresar un número...");
-                }
+                ValidarOperando(ref operando2);
 
                 Console.WriteLine("Operación:");
 
@@ -32,6 +26,14 @@ namespace Consola_Calculador
                 Console.WriteLine("Resultado: {0}", Calculadora.Calcular(operando1, operando2, operacion));
 
             } while (Continuar());
+        }
+
+        public static void ValidarOperando(ref double operando)
+        {
+            while (!double.TryParse(Console.ReadLine(), out operando))
+            {
+                Console.WriteLine("Asegúrese de ingresar un número...");
+            }
         }
 
         public static bool Continuar()
