@@ -10,6 +10,11 @@ namespace Biblioteca
 
         //public string ConvertirDecimalABinario(int numeroEntero) { }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="numeroEntero"></param>
+        /// <returns></returns>
         public static string ConvertirDecimalABinario(int numeroEntero)
         {
             string res = "";

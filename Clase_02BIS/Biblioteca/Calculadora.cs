@@ -43,7 +43,14 @@ namespace Biblioteca
                     break;
 
                 case "/":
-                    res =  operando1 / operando2;
+                    if (Validar(operando2))
+                    {
+                        res = operando1 / operando2;
+                    }
+                    else
+                    {
+                        return Double.MaxValue;
+                    }
                     break;
             }
 
@@ -59,8 +66,5 @@ namespace Biblioteca
 
             return false;
         }
-
-
-
     }
 }
