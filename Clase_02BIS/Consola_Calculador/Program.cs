@@ -17,18 +17,22 @@ namespace Consola_Calculador
 
                 while (!double.TryParse(Console.ReadLine(), out operando1))
                 {
-                    Console.WriteLine("Asegúrese de ingresar UN número");
+                    Console.WriteLine("Asegúrese de ingresar un número...");
                 }
 
+                while (!double.TryParse(Console.ReadLine(), out operando2))
+                {
+                    Console.WriteLine("Asegúrese de ingresar un número...");
+                }
 
+                Console.WriteLine("Operación:");
 
+                string operacion = Console.ReadLine();
 
-                Console.WriteLine();
-                Console.WriteLine();
+                Console.WriteLine("Resultado: {0}", Calculadora.Calcular(operando1, operando2, operacion));
 
             } while (Continuar());
         }
-
 
         public static bool Continuar()
         {
