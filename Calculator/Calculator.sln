@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorConsoleApp1", "Calculator\CalculatorConsoleApp1.csproj", "{8F0E7ED1-86BB-4E24-A436-D33F0526573B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculator Console App2", "Calculator Console App2", "{0B2247E3-5599-4530-9098-B38BDF57D0F7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorConsoleApp2", "CalculatorConsoleApp2\CalculatorConsoleApp2.csproj", "{FDC53B2F-5341-4437-B7C3-D9F5BC6B4AFE}"
 EndProject
 Global
