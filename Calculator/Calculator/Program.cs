@@ -8,7 +8,7 @@ namespace Calculator
         {
             // Declare variables and then initialize to zero.
 
-            int num1 = 0, num2 = 0;
+            double num1 = 0, num2 = 0;
 
             // Display title as the C# console calculator app.
 
@@ -18,15 +18,15 @@ namespace Calculator
 
             // Ask the user to type the first number.
 
-            Console.WriteLine("Type a number, and then press Enter");
+            Console.WriteLine("Type a number, and then press Enter:");
 
-            num1 = Convert.ToInt32(Console.ReadLine());
+            num1 = Convert.ToDouble(Console.ReadLine());
 
             // Ask the user to type the second number.
 
-            Console.WriteLine("Type another number, and then press Enter");
+            Console.WriteLine("Type another number, and then press Enter:");
 
-            num2 = Convert.ToInt32(Console.ReadLine());
+            num2 = Convert.ToDouble(Console.ReadLine());
 
             // Ask the user to choose an option.
 
@@ -42,6 +42,38 @@ namespace Calculator
 
             Console.WriteLine("Your option? ");
 
+            // Use a switch statement to do the math.
+
+            switch (Console.ReadLine())
+            {
+                case "a":
+                    Console.WriteLine("Your result: {0} + {1} = {2}", num1, num2, num1+num2);
+                    break;
+                case "s":
+                    Console.WriteLine("Your result: {0} - {1} = {2}", num1, num2, num1 - num2);
+                    break;
+                case "m":
+                    Console.WriteLine("Your result: {0} * {1} = {2}", num1, num2, num1 * num2);
+                    break;
+                case "d":
+                    if (num2 != 0)
+                    {
+                        Console.WriteLine("Your result: {0} / {1} = {2}", num1, num2, num1 / num2);
+                    }
+                    else
+                    {
+                        Console.WriteLine(double.MaxValue);
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Wrong option.");
+                    break;
+            }
+
+            // Wait for the user to respond before closing.
+            Console.WriteLine("Press any key to close the Calculator Console App");
+
+            Console.ReadKey();
 
         }
     }
