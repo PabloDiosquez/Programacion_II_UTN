@@ -56,22 +56,19 @@ namespace Calculator
                     Console.WriteLine("Your result: {0} * {1} = {2}", num1, num2, num1 * num2);
                     break;
                 case "d":
-                    if (num2 != 0)
+                    while (num2 == 0)
                     {
-                        Console.WriteLine("Your result: {0} / {1} = {2}", num1, num2, num1 / num2);
+                        Console.WriteLine("Enter a non-zero divisor: ");
+                        num2 = Convert.ToDouble(Console.ReadLine());
                     }
-                    else
-                    {
-                        Console.WriteLine(double.MaxValue);
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Wrong option.");
+
+                    Console.WriteLine("Your result: {0} / {1} = {2}", num1, num2, num1 / num2);
                     break;
             }
 
             // Wait for the user to respond before closing.
             Console.WriteLine("Press any key to close the Calculator Console App");
+
 
             Console.ReadKey();
 
