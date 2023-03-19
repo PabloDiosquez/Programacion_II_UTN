@@ -18,5 +18,10 @@ namespace Pitagoras_estaria_orgulloso
 
 
         }
+
+        public static double AplicarElTeoremaDePitagoras(double longitudBase, double longitudAltura)
+        {
+            return Math.Sqrt(Math.Pow(longitudBase,2) + Math.Pow(longitudAltura,2));
+        }    
     }
 }
