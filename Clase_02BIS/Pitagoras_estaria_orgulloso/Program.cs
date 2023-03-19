@@ -14,14 +14,37 @@ namespace Pitagoras_estaria_orgulloso
 
             //Mostrar el resultado en la consola
 
+            Console.WriteLine("◾ Teorema de Pitágoras ◾");
 
+            Console.WriteLine("------------------------");
 
+            Console.WriteLine("Base: ");
+
+            double longBase = 0;
+
+            AsignarNumero(ref longBase);
+
+            Console.WriteLine("Altura: ");
+
+            double longAltura = 0;
+
+            AsignarNumero(ref longAltura);
+
+            Console.WriteLine("\nHipotenusa: {0}", AplicarElTeoremaDePitagoras(longBase, longAltura));
 
         }
 
         public static double AplicarElTeoremaDePitagoras(double longitudBase, double longitudAltura)
         {
             return Math.Sqrt(Math.Pow(longitudBase,2) + Math.Pow(longitudAltura,2));
-        }    
+        }
+
+        public static void AsignarNumero(ref double numero)
+        {
+            while (!double.TryParse(Console.ReadLine(), out numero))
+            {
+                Console.WriteLine("Asegúrese de ingresar un número...");
+            }
+        }
     }
 }
