@@ -15,13 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola_Conversor", "Consol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola_Calculador", "Consola_Calculador\Consola_Calculador.csproj", "{8C306E5C-9B9E-4301-AF51-320BC896E35C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aprende_las_tablas", "Aprende_las_tablas\Aprende_las_tablas.csproj", "{A6D41ADE-0502-4B81-8A2E-CD76F50A3833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aprende_las_tablas", "Aprende_las_tablas\Aprende_las_tablas.csproj", "{A6D41ADE-0502-4B81-8A2E-CD76F50A3833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculo_de_Areas", "Calculo_de_Areas\Calculo_de_Areas.csproj", "{0CD6AE26-1698-4E9C-AC22-6E4CCD36D391}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculo_de_Areas", "Calculo_de_Areas\Calculo_de_Areas.csproj", "{0CD6AE26-1698-4E9C-AC22-6E4CCD36D391}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pitagoras_estaria_orgulloso", "Pitagoras_estaria_orgulloso\Pitagoras_estaria_orgulloso.csproj", "{37A01EBB-2E3B-4AA7-B2FB-0E3CC1601977}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pitagoras_estaria_orgulloso", "Pitagoras_estaria_orgulloso\Pitagoras_estaria_orgulloso.csproj", "{37A01EBB-2E3B-4AA7-B2FB-0E3CC1601977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcular_un_factorial", "Calcular_un_factorial\Calcular_un_factorial.csproj", "{D1A83F17-E76B-42AF-83F9-E9583FF409B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calcular_un_factorial", "Calcular_un_factorial\Calcular_un_factorial.csproj", "{D1A83F17-E76B-42AF-83F9-E9583FF409B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola_Teorica", "Consola_Teorica\Consola_Teorica.csproj", "{3F69CB6F-C6C9-40BB-8F01-4847BB331C19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{D1A83F17-E76B-42AF-83F9-E9583FF409B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1A83F17-E76B-42AF-83F9-E9583FF409B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1A83F17-E76B-42AF-83F9-E9583FF409B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F69CB6F-C6C9-40BB-8F01-4847BB331C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F69CB6F-C6C9-40BB-8F01-4847BB331C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F69CB6F-C6C9-40BB-8F01-4847BB331C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F69CB6F-C6C9-40BB-8F01-4847BB331C19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

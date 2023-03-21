@@ -26,8 +26,5 @@ namespace Entidades
 
             return pagoEnPesos;
         }
-
-
-
     }
 }
