@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pitagoras_estaria_orgulloso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calcular_un_factorial", "Calcular_un_factorial\Calcular_un_factorial.csproj", "{D1A83F17-E76B-42AF-83F9-E9583FF409B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consola_Teorica", "Consola_Teorica\Consola_Teorica.csproj", "{3F69CB6F-C6C9-40BB-8F01-4847BB331C19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "Consola_Teorica\Vista.csproj", "{3F69CB6F-C6C9-40BB-8F01-4847BB331C19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

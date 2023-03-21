@@ -16,5 +16,12 @@ namespace Entidades
 
             return temperaturaKelvin;
         }
+
+        public static float ConvertirKelvinACelsius(float temperaturaKelvin)
+        {
+            float temperaturaCelsius = temperaturaKelvin - ceroAbsoluto;
+
+            return temperaturaCelsius;
+        }
     }
 }
