@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{744EA89B-11A1-4612-8142-BC3BEC2456F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{744EA89B-11A1-4612-8142-BC3BEC2456F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", "{93B04D91-C6FF-4312-8FA0-602BC7373EDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Ejercicio I01", "Biblioteca_Ejercicio I01\Biblioteca_Ejercicio I01.csproj", "{9AE19956-235D-4AD8-B6FC-8D0FAAC8D16E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_Ejercicio I01", "Biblioteca_Ejercicio I01\Biblioteca_Ejercicio I01.csproj", "{9AE19956-235D-4AD8-B6FC-8D0FAAC8D16E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_EjercicioI02", "Biblioteca_EjercicioI02\Biblioteca_EjercicioI02.csproj", "{91FB55C0-6500-4BDC-AB91-747C772EA2F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +25,17 @@ Global
 		{9AE19956-235D-4AD8-B6FC-8D0FAAC8D16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AE19956-235D-4AD8-B6FC-8D0FAAC8D16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AE19956-235D-4AD8-B6FC-8D0FAAC8D16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FB55C0-6500-4BDC-AB91-747C772EA2F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FB55C0-6500-4BDC-AB91-747C772EA2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FB55C0-6500-4BDC-AB91-747C772EA2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FB55C0-6500-4BDC-AB91-747C772EA2F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9AE19956-235D-4AD8-B6FC-8D0FAAC8D16E} = {93B04D91-C6FF-4312-8FA0-602BC7373EDF}
+		{91FB55C0-6500-4BDC-AB91-747C772EA2F4} = {93B04D91-C6FF-4312-8FA0-602BC7373EDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93530A12-F227-428A-B872-A0C9A6A5AA76}
