@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Console_Ejercicio_I04___Invento_argentino</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ejercicio I04 - Invento argentino\Ejercicio I04 - Invento argentino.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio I03 - El ejemplo 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio I04 - Invento argentino", "Ejercicio I04 - Invento argentino\Ejercicio I04 - Invento argentino.csproj", "{8FD2AFE9-4E26-4FF4-8AEF-D08CDAE71848}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console Ejercicio I04 - Invento argentino", "Console Ejercicio I04 - Invento argentino\Console Ejercicio I04 - Invento argentino.csproj", "{C2BB2D7D-6BCD-49D1-85CF-AF10750903FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{8FD2AFE9-4E26-4FF4-8AEF-D08CDAE71848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FD2AFE9-4E26-4FF4-8AEF-D08CDAE71848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FD2AFE9-4E26-4FF4-8AEF-D08CDAE71848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BB2D7D-6BCD-49D1-85CF-AF10750903FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BB2D7D-6BCD-49D1-85CF-AF10750903FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BB2D7D-6BCD-49D1-85CF-AF10750903FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BB2D7D-6BCD-49D1-85CF-AF10750903FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,8 @@ Global
 		{9AE19956-235D-4AD8-B6FC-8D0FAAC8D16E} = {93B04D91-C6FF-4312-8FA0-602BC7373EDF}
 		{91FB55C0-6500-4BDC-AB91-747C772EA2F4} = {93B04D91-C6FF-4312-8FA0-602BC7373EDF}
 		{DD7B8211-64CE-4D86-877F-63EADB343929} = {93B04D91-C6FF-4312-8FA0-602BC7373EDF}
+		{8FD2AFE9-4E26-4FF4-8AEF-D08CDAE71848} = {93B04D91-C6FF-4312-8FA0-602BC7373EDF}
+		{C2BB2D7D-6BCD-49D1-85CF-AF10750903FE} = {93B04D91-C6FF-4312-8FA0-602BC7373EDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93530A12-F227-428A-B872-A0C9A6A5AA76}

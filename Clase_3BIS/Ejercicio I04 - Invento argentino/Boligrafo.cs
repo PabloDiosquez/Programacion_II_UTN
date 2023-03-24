@@ -43,24 +43,33 @@ namespace Ejercicio_I04___Invento_argentino
             tinta = cantidadTintaMaxima;
         }
 
+        /// <summary>
+        ///El método Pintar resta la tinta gastada. El parámetro gasto representará la cantidad de unidades de tinta a utilizar y
+        //utilizará tanta tinta como tenga disponible sin quedar en negativo. Por ejemplo:
+            //Si no había nada de tinta retornará una cadena de texto vacía.
+            //Si el nivel de tinta era 10 y la cantidad a gastar 2, entonces retonará **.
+            //Si el nivel de tinta era 3 y la cantidad a gastar 10, entonces retornará ***
+        /// </summary>
+        /// <param name="gasto">Representa la cantidad de unidades de tinta a utilizarcomo unidades de tinta haya gastado</param>
+        /// <param name="dibujo">Informa el resultado retornando tantos * como unidades de tinta haya gastado</param>
+        /// <returns>Una cadena de **dibujo**</returns>
+        public string Pintar(int gasto, string dibujo = "*")
+        {
+            string dibujoResultante = string.Empty;
 
+            int cantidad = 0;
 
+            while (tinta > 0 && cantidad < gasto)
+            {
+                dibujoResultante += dibujo;
 
+                SetTinta(-1);
 
+                cantidad++;
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            return dibujoResultante;
+        }
 
     }
 }
