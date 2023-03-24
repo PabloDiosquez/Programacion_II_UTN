@@ -22,6 +22,8 @@ namespace Calcular_un_factorial
             }
 
             Console.WriteLine("\nFactorial: {0}", CalcularFactorial(numero));
+
+            Console.WriteLine("\nFactorial: {0}", CalcularFactorialV2(numero));
         }
 
         public static Int32 CalcularFactorial(int numero)
@@ -32,6 +34,18 @@ namespace Calcular_un_factorial
             }
 
             return CalcularFactorial(numero - 1) * numero;
+        }
+
+        public static Int32 CalcularFactorialV2(Int32 numero)
+        {
+            int resultado = 1;
+
+            for (int i = 1; i <= numero; i++)
+            {
+                resultado *= i;
+            }
+
+            return resultado;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Biblioteca_Ejercicio_I01
         {
             this.titular = titular;
 
-            this.cantidad = cantidad;   
+            this.cantidad = cantidad;
         }
 
         public string Titular { get { return titular; } }
@@ -58,7 +58,7 @@ namespace Biblioteca_Ejercicio_I01
         /// <param name="monto"></param>
         public void Retirar(decimal monto)
         {
-            cantidad -= monto;  
+            cantidad -= monto;
         }
     }
 }

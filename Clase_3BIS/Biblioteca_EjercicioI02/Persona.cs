@@ -11,9 +11,9 @@ namespace Biblioteca_EjercicioI02
 
         private int dni;
 
-        public Persona(string nombre, DateTime fechaDeNacimiento, int dni )
+        public Persona(string nombre, DateTime fechaDeNacimiento, int dni)
         {
-            this.nombre = nombre;   
+            this.nombre = nombre;
 
             this.fechaDeNacimiento = fechaDeNacimiento;
 

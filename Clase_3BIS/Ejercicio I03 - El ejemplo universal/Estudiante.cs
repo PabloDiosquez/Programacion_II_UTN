@@ -19,18 +19,18 @@ namespace Ejercicio_I03___El_ejemplo_universal
 
         static Estudiante()
         {
-            random = new Random();  
+            random = new Random();
         }
 
-        public int notaRandom = random.Next(6,10);
+        public int notaRandom = random.Next(6, 10);
 
         public Estudiante(string apellido, string nombre, string legajo)
         {
             this.apellido = apellido;
 
-            this.legajo = nombre;   
+            this.legajo = nombre;
 
-            this.nombre = legajo;   
+            this.nombre = legajo;
         }
 
         public void SetNotaPrimerParcial(int notaPrimerParcial)
@@ -83,7 +83,7 @@ namespace Ejercicio_I03___El_ejemplo_universal
             {
                 sb.AppendLine($"Nota final: {notaFinal}");
             }
-            else 
+            else
             {
                 sb.AppendLine("Alumno desaprobado.");
             }
