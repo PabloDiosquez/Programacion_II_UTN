@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Ejercicio_I03___El_ejemplo_universal</RootNamespace>
+  </PropertyGroup>
+
+</Project>
