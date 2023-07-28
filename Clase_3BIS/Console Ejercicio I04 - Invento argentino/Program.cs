@@ -17,10 +17,9 @@ namespace Console_Ejercicio_I04___Invento_argentino
 
             Boligrafo boligrafo2 = new Boligrafo(50, ConsoleColor.Red);
 
-
             Console.ForegroundColor = boligrafo1.GetColor();
 
-            Console.WriteLine(boligrafo1.Pintar(10));
+            boligrafo1.Pintar(10);
 
         }
     }
