@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio_2", "Ejercicio_2\Ejercicio_2.csproj", "{072555A7-30D1-4F17-B6AF-8C67EAC88988}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_3", "Ejercicio_3\Ejercicio_3.csproj", "{C80D3765-4A9A-43C3-BF7D-5CE859F60107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio_3", "Ejercicio_3\Ejercicio_3.csproj", "{C80D3765-4A9A-43C3-BF7D-5CE859F60107}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{06C7F71C-A4AA-4B0E-9E05-E6BED8D2E971} = {F0B21665-7ADB-4453-9F79-561CACD951BC}
 		{072555A7-30D1-4F17-B6AF-8C67EAC88988} = {F0B21665-7ADB-4453-9F79-561CACD951BC}
+		{C80D3765-4A9A-43C3-BF7D-5CE859F60107} = {F0B21665-7ADB-4453-9F79-561CACD951BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A7E1F4A-BAEB-4C35-8414-5DF7F9BFDCA9}
