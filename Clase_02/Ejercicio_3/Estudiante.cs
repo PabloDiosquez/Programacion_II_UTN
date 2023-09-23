@@ -21,7 +21,7 @@ namespace Ejercicio_3
 
         private static Random random = new Random();
 
-        // Constructores 👷🏼‍'s 
+        // Constructor 👷🏼‍ 
 
         public Estudiante(string nombre, string apellido, string legajo)
         {
@@ -32,7 +32,6 @@ namespace Ejercicio_3
             this.apellido = apellido;   
 
         }
-
 
         // Métodos de instancia 
 
