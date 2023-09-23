@@ -19,7 +19,7 @@ namespace Ejercicio_3
 
         private int notaSegundoParcial;
 
-        private static Random random;
+        private static Random random = new Random();
 
         // Constructores 👷🏼‍'s 
 
@@ -33,11 +33,6 @@ namespace Ejercicio_3
 
         }
 
-        // Constructor estático que inicializa el atributo estático random.
-        static Estudiante()
-        {
-            Random random = new Random();
-        }
 
         // Métodos de instancia 
 
@@ -79,7 +74,7 @@ namespace Ejercicio_3
         {
             if (notaPrimerParcial >= 4 && notaSegundoParcial >= 4)
             {
-                return random.Next(6, 10);
+                return Estudiante.random.Next(6, 10);
             }
 
             return -1;
@@ -97,8 +92,9 @@ namespace Ejercicio_3
             sb.AppendLine($"Nombre, Apellido y Legajo: {nombre}, {apellido} - {legajo}");
             sb.AppendLine($"Notas del primer y del segundo parcial: {notaPrimerParcial} - {notaSegundoParcial}");
             sb.AppendLine($"Promedio: {CalcularPromedio()}");
-            if (CalcularNotaFinal() != -1)
-                sb.AppendLine($"{CalcularNotaFinal()}");
+            double notaFinal = CalcularNotaFinal();
+            if (notaFinal!= -1)
+                sb.AppendLine($"Nota final: {notaFinal}");
             else
                 sb.AppendLine($"Alumno desaprobado");
 

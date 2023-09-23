@@ -22,6 +22,27 @@ namespace Ejercicio_3
             //Crear tres instancias de la clase Estudiante(tres objetos) en el método Main.
             //Cargar las notas del primer y segundo parcial a todos los alumnos. Dos deberán estar aprobados y uno desaprobado.
             //Mostrar los datos de todos los alumnos.
+
+            Estudiante estudiante1 = new Estudiante("Lio", "Messi", "123");
+            Estudiante estudiante2 = new Estudiante("Dibu", "Martinez", "122");
+            Estudiante estudiante3 = new Estudiante("Ángel", "Di María", "321");
+
+            // Notas de los estudiantes 
+
+            estudiante1.SetNotaPrimerParcial(9);
+            estudiante1.SetNotaSegundoParcial(7);
+
+            estudiante2.SetNotaPrimerParcial(9);
+            estudiante2.SetNotaSegundoParcial(6);
+
+            estudiante3.SetNotaPrimerParcial(3);
+            estudiante3.SetNotaSegundoParcial(2);
+
+            // Datos de los estudiantes 
+
+            Console.WriteLine(estudiante1.Mostrar());
+            Console.WriteLine(estudiante2.Mostrar());
+            Console.WriteLine(estudiante3.Mostrar());
         }
     }
 }
