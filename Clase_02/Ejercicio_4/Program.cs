@@ -21,7 +21,13 @@ namespace Ejercicio_4
             //Utilizar todos los métodos y mostrar los resultados por consola.
             //Al utilizar el método Pintar, si corresponde, se deberá dibujar por pantalla con el color de dicho bolígrafo.
 
+            Boligrafo boligrafo = new Boligrafo(10, ConsoleColor.Blue);
 
+            string dibujo;
+
+            boligrafo.Pintar(11, out dibujo);
+
+            Console.WriteLine(dibujo);
         }
     }
 }
