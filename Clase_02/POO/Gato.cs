@@ -26,9 +26,9 @@ namespace Veterinaria
         {
             AsignarNombre(nombre);
 
-            this.fechaNacimiento = fechaNacimiento;
+            AsignarFechaNacimiento(fechaNacimiento);
 
-            this.tipoDePelo = tipoDePelo;
+            AsignarTipoDePelo(tipoDePelo);
 
         }
 
