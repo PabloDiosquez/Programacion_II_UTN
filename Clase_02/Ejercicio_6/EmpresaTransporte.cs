@@ -33,6 +33,15 @@ namespace Ejercicio_6
             conductores = new List<Conductor>();
         }
 
+        /// <summary>
+        /// Describe la lista de conductores de una empresa.
+        /// </summary>
+        /// <returns>Lista de conductores</returns>
+        public List<Conductor> Conductores() 
+        {
+            return conductores;
+        }
+
         // Métodos de instancia 
 
         /// <summary>
