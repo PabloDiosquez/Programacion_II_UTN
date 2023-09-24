@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_7
 {
-    internal class Cliente
+    public class Cliente
     {
         // Atributos 
         private string nombre;

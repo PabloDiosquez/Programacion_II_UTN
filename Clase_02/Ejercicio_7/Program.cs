@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ejercicio_7
+﻿namespace Ejercicio_7
 {
     internal class Program
     {
@@ -24,7 +22,7 @@ namespace Ejercicio_7
             //Un cliente con un gato sin vacunas y un perro con la vacuna contra la rabia.
             //Mostrar por consola todos los datos de los clientes instanciados y sus mascotas.
 
-
+            
 
         }
     }
