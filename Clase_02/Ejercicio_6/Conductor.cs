@@ -33,21 +33,25 @@ namespace Ejercicio_6
 
         // Métodos de instancia 
 
+        // Describe el legajo de un conductor.
         public int GetLegajo()
         {
             return legajo;
         }
 
+        // Describe el apellido de un conductor.
         public string GetApellido() 
         {
             return apellido;
         }
 
+        // Describe el nombre de un conductor.
         public string GetNombre()
         {
             return nombre;
         }
 
+        // Permite cargar la cantidad de kilométros recorridos por un conductor en cada día de la semana.
         public void CargarKilometrosRecorridosPorDia() 
         {
             for (int i = 0; i < diasSemana.Length; i++) 
@@ -58,6 +62,8 @@ namespace Ejercicio_6
             } 
         }
 
+        // Describe la cantidad de kilómetros recorridos por un conductor el día 'diaSemana' de la semana actual.
+        // Pre: 'diaSemana' debe ser un día de la semana.
         public int GetKilometrosRecorridosEnDia(string diaSemana)
         {
             diaSemana = diaSemana.ToLower();
@@ -96,15 +102,31 @@ namespace Ejercicio_6
             return kilometrosRecorridos;
         }
 
+        // Describe la cantidad total de kilometros recorridos por un conductor en la semana.
+        public int TotalKilometrosRecorridos() 
+        {
+            int kilometrosTotales = 0;
+
+            foreach (int kilometros in diasSemana)
+            {
+                kilometrosTotales += kilometros;
+            }
+
+            return kilometrosTotales;
+        }
+
+        // Muestra la información de un conductor de la empresa de transporte.
         public void MostrarInfoConductor()
         {
             Console.WriteLine($"Legajo: {GetLegajo()}");
 
             Console.WriteLine($"Apellido: {GetApellido()}");
 
+            Console.WriteLine($"Nombre: {GetNombre()}");
+
             for (int i = 0; i < diasSemana.Length; i++)
             {
-                Console.WriteLine($"Día {i+1}: {diasSemana[i]}");
+                Console.WriteLine($"Día {i + 1}: {diasSemana[i]} kilómetros");
             }
         }
 
