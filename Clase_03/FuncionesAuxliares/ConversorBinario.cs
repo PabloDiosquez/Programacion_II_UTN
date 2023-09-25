@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FuncionesAuxliares
+namespace ConversorBinarioRecargado
 {
     /// <summary>
     /// Clase que proporciona métodos para la conversión entre el sistema decimal y binario.
