@@ -39,10 +39,10 @@ namespace Veterinaria
         /// <param name="nombre">El nombre a asignar</param>
         public void AsignarNombre(string nombre)
         {
-            if (string.IsNullOrWhiteSpace(nombre))
-                this.nombre = "NN";
-            else
+            if (!string.IsNullOrWhiteSpace(nombre))
                 this.nombre = nombre.Trim();
+            else
+                this.nombre = "NN";
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Veterinaria
         /// <param name="tipoDePelo"></param>
         public void AsignarTipoDePelo(string tipoDePelo)
         {
-            if (!string.IsNullOrEmpty(tipoDePelo))
+            if (!string.IsNullOrWhiteSpace(tipoDePelo))
                 this.tipoDePelo = tipoDePelo;
             else
                 tipoDePelo = "Sin especificar";
