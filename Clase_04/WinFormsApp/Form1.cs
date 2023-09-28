@@ -19,7 +19,9 @@ namespace WinFormsApp
 
         private void btn_mensaje_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Este es un mensaje envíado a través del espacio-tiempo 🚀");
+            string usuario = this.tbx_usuario.Text;
+
+            MessageBox.Show($"Hola {usuario}! Este es un mensaje envíado a través del espacio-tiempo 🚀");
         }
     }
 }
