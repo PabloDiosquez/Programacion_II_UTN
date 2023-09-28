@@ -19,9 +19,24 @@ namespace WinFormsApp
 
         private void btn_mensaje_Click(object sender, EventArgs e)
         {
+            // TODO: 1 - Detectar el texto en el textbox. 
             string usuario = this.tbx_usuario.Text;
 
-            MessageBox.Show($"Hola {usuario}! Este es un mensaje envíado a través del espacio-tiempo 🚀");
+            // TODO: 2 - Enviar un mensaje a través de un MessageBox con el texto detectado.
+            if (string.IsNullOrEmpty(usuario))
+                MessageBox.Show("No ingresaste un nombre de usuario válido 🤔");
+            else
+                MessageBox.Show($"Hola {usuario}! Este es un mensaje envíado a través del espacio-tiempo 🚀");
+        }
+
+        private void btn_mensaje_MouseHover(object sender, EventArgs e)
+        {
+            this.btn_mensaje.BackColor = Color.LightBlue;
+        }
+
+        private void btn_mensaje_MouseLeave(object sender, EventArgs e)
+        {
+            this.btn_mensaje.BackColor= SystemColors.Control;   
         }
     }
 }

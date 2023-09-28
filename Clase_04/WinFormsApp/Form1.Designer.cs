@@ -43,6 +43,8 @@
             this.btn_mensaje.Text = "Mensaje";
             this.btn_mensaje.UseVisualStyleBackColor = false;
             this.btn_mensaje.Click += new System.EventHandler(this.btn_mensaje_Click);
+            this.btn_mensaje.MouseLeave += new System.EventHandler(this.btn_mensaje_MouseLeave);
+            this.btn_mensaje.MouseHover += new System.EventHandler(this.btn_mensaje_MouseHover);
             // 
             // tbx_usuario
             // 
