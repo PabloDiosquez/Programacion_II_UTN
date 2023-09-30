@@ -40,7 +40,14 @@ namespace Login
                 // Muestra un mensaje de éxito con el nombre de usuario.
                 this.BackColor = Color.LightBlue;
 
-                MessageBox.Show($"Usuario {nombreUsuario} logueado 🖖🏼");
+                // Crea una instancia de la clase MenuPrincipal
+                MenuPrincipal frm_menuPrincipal = new MenuPrincipal(nombreUsuario);
+
+                // Muestra el Form menuPrincipal
+                frm_menuPrincipal.Show();
+
+                this.Hide(); // Oculta el Form Login 
+                
             }
             else
             {
