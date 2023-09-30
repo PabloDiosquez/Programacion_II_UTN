@@ -49,6 +49,7 @@
             // 
             this.tbx_usuario_pass.Location = new System.Drawing.Point(144, 121);
             this.tbx_usuario_pass.Name = "tbx_usuario_pass";
+            this.tbx_usuario_pass.PasswordChar = '*';
             this.tbx_usuario_pass.PlaceholderText = "Contraseña usuario";
             this.tbx_usuario_pass.Size = new System.Drawing.Size(162, 23);
             this.tbx_usuario_pass.TabIndex = 2;

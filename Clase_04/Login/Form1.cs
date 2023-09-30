@@ -17,26 +17,49 @@ namespace Login
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón de inicio de sesión.
+        /// </summary>
+        /// <param name="sender">El objeto que desencadenó el evento.</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void btn_loguear_Click(object sender, EventArgs e)
         {
+            // Obtiene el nombre de usuario ingresado en el cuadro de texto.
             string nombreUsuario = this.tbx_usuario_nombre.Text;
 
-            string passUsuario   = this.tbx_usuario_pass.Text;
+            // Obtiene la contraseña ingresada en el cuadro de texto.
+            string passUsuario = this.tbx_usuario_pass.Text;
 
-            if (nombreUsuario == "Lio Messi" && passUsuario == "Francia2")
+            if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(passUsuario))
             {
+                MessageBox.Show("Asegúrese de completar todos los campos 🤔");
+            }
+            // Comprueba si las credenciales son válidas.
+            else if(nombreUsuario == "Lio Messi" && passUsuario == "Francia2")
+            {
+                // Muestra un mensaje de éxito con el nombre de usuario.
+                this.BackColor = Color.LightBlue;
+
                 MessageBox.Show($"Usuario {nombreUsuario} logueado 🖖🏼");
             }
-            else 
+            else
             {
+                // Muestra un mensaje de error y anima al usuario a intentarlo nuevamente.
                 MessageBox.Show("¡Usuario incorrecto! Intente de nuevo 🕵🏼‍.");
             }
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón para completar datos de usuario.
+        /// </summary>
+        /// <param name="sender">El objeto que desencadenó el evento.</param>
+        /// <param name="e">Los argumentos del evento.</param>
         private void btn_completar_Click(object sender, EventArgs e)
         {
+            // Establece el nombre de usuario en "Lio Messi".
             this.tbx_usuario_nombre.Text = "Lio Messi";
 
+            // Establece la contraseña del usuario en "Francia2".
             this.tbx_usuario_pass.Text = "Francia2";
         }
     }
