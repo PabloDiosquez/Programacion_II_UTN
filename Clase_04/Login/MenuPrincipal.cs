@@ -12,6 +12,9 @@ namespace Login
 {
     public partial class MenuPrincipal : Form
     {
+        // Atributos
+
+        private string nombreUsuario;
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -19,7 +22,7 @@ namespace Login
 
         public MenuPrincipal(string nombreUsuario): this()
         {
-            this.lb_bienvenido.Text += $" {nombreUsuario}";
+            this.nombreUsuario = nombreUsuario;
         }
 
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -29,7 +32,7 @@ namespace Login
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            
+            this.lb_bienvenido.Text += $" {nombreUsuario}";
         }
     }
 }
