@@ -69,5 +69,10 @@ namespace Login
             // Establece la contraseña del usuario en "Francia2".
             this.tbx_usuario_pass.Text = "Francia2";
         }
+
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido 🐻");
+        }
     }
 }

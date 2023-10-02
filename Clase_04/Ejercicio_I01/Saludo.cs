@@ -21,11 +21,13 @@ namespace Ejercicio_I01
 
         private string apellido;
 
+        private string materiaFavorita;
+
         /// <summary>
         /// Constructor predeterminado de la clase Saludo.
         /// Inicializa los componentes del formulario.
         /// </summary>
-        public Saludo()
+        private Saludo()
         {
             InitializeComponent();
         }
@@ -36,10 +38,11 @@ namespace Ejercicio_I01
         /// </summary>
         /// <param name="nombre">El nombre del usuario.</param>
         /// <param name="apellido">El apellido del usuario.</param>
-        public Saludo(string nombre, string apellido) : this()
+        public Saludo(string nombre, string apellido, string materiaFavorita) : this()
         {
             this.nombre = nombre;
             this.apellido = apellido;
+            this.materiaFavorita = materiaFavorita;
         }
 
         /// <summary>
@@ -50,7 +53,7 @@ namespace Ejercicio_I01
         /// <param name="e">Los datos del evento.</param>
         private void Saludo_Load(object sender, EventArgs e)
         {
-            this.lb_nombre.Text += $"Soy {nombre} {apellido} 🖖🏼";
+            this.lb_nombre.Text += $"Soy {nombre} {apellido} y mi materia favorita es {materiaFavorita}";
         }
 
         /// <summary>

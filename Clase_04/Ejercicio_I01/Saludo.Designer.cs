@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 150);
+            this.ClientSize = new System.Drawing.Size(432, 164);
             this.Controls.Add(this.lb_nombre);
             this.Controls.Add(this.lb_saludo);
             this.MaximizeBox = false;

@@ -15,7 +15,7 @@ namespace Login
         // Atributos
 
         private string nombreUsuario;
-        public MenuPrincipal()
+        private MenuPrincipal()
         {
             InitializeComponent();
         }

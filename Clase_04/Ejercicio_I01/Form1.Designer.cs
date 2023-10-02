@@ -33,6 +33,8 @@
             this.lb_nombre = new System.Windows.Forms.Label();
             this.lb_apellido = new System.Windows.Forms.Label();
             this.btn_saludar = new System.Windows.Forms.Button();
+            this.cb_materias = new System.Windows.Forms.ComboBox();
+            this.lb_materia = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbx_nombre
@@ -82,12 +84,33 @@
             this.btn_saludar.UseVisualStyleBackColor = false;
             this.btn_saludar.Click += new System.EventHandler(this.btn_saludar_Click);
             // 
+            // cb_materias
+            // 
+            this.cb_materias.FormattingEnabled = true;
+            this.cb_materias.Location = new System.Drawing.Point(12, 111);
+            this.cb_materias.Name = "cb_materias";
+            this.cb_materias.Size = new System.Drawing.Size(181, 23);
+            this.cb_materias.TabIndex = 5;
+            this.cb_materias.Text = "Materias";
+            // 
+            // lb_materia
+            // 
+            this.lb_materia.AutoSize = true;
+            this.lb_materia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lb_materia.Location = new System.Drawing.Point(13, 91);
+            this.lb_materia.Name = "lb_materia";
+            this.lb_materia.Size = new System.Drawing.Size(98, 15);
+            this.lb_materia.TabIndex = 6;
+            this.lb_materia.Text = "Materia Favorita";
+            // 
             // Ingreso_Datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(412, 153);
+            this.Controls.Add(this.lb_materia);
+            this.Controls.Add(this.cb_materias);
             this.Controls.Add(this.btn_saludar);
             this.Controls.Add(this.lb_apellido);
             this.Controls.Add(this.lb_nombre);
@@ -100,6 +123,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "¡Hola, Windows Forms!";
+            this.Load += new System.EventHandler(this.Ingreso_Datos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,5 +136,7 @@
         private System.Windows.Forms.Label lb_nombre;
         private System.Windows.Forms.Label lb_apellido;
         private System.Windows.Forms.Button btn_saludar;
+        private System.Windows.Forms.ComboBox cb_materias;
+        private System.Windows.Forms.Label lb_materia;
     }
 }
