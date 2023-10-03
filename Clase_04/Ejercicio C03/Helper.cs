@@ -62,12 +62,33 @@ namespace Ejercicio_C03
 
             int numeroDecimal = 0;
 
-            for (int index = 0; index < orden; index++)
+            for (int index = orden-1; index >= 0; index--)
             {
-                numeroBinario += Convert.ToInt32(numeroBinario[index]) * Math.Pow(2, orden - index - 1);
+                // Debes restar '0' para convertir un carácter numérico en su valor entero.
+                int digito = Convert.ToInt32(numeroBinario[index]) - '0';
+
+                numeroDecimal += digito * (int)Math.Pow(2,orden - 1 - index);
             }
 
             return numeroDecimal;
+        }
+
+        /// <summary>
+        /// Indica si la cadena de caracteres dada es una cadena binaria, es decir, si sólo esta formada por 0's 
+        /// y 1's.
+        /// </summary>
+        /// <param name="cadena">La cadena según la cual se describe true o false</param>
+        /// <returns>Boolean</returns>
+        public static bool esBinario(string cadena) 
+        {
+            char[] ceroYUno = new char[] { '0', '1' };
+ 
+            foreach (char caracter in cadena)
+            {
+                if (!ceroYUno.Contains(caracter)) return false;
+            }
+
+            return true;
         }
     }
 }
