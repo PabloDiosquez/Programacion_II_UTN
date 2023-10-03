@@ -69,7 +69,7 @@
             this.gbx_nombre_direccion_edad.Size = new System.Drawing.Size(232, 199);
             this.gbx_nombre_direccion_edad.TabIndex = 0;
             this.gbx_nombre_direccion_edad.TabStop = false;
-            this.gbx_nombre_direccion_edad.Text = "Detalles del usuario";
+            this.gbx_nombre_direccion_edad.Text = "Detalles del ingresante";
             // 
             // nud_edad
             // 
@@ -251,6 +251,7 @@
             this.btn_ingresar.TabIndex = 5;
             this.btn_ingresar.Text = "Ingresar";
             this.btn_ingresar.UseVisualStyleBackColor = true;
+            this.btn_ingresar.Click += new System.EventHandler(this.btn_ingresar_Click);
             // 
             // Registro
             // 

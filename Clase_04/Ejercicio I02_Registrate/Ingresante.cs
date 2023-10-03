@@ -16,11 +16,11 @@ namespace Ejercicio_I02_Registrate
         private string genero;         // Almacena el género del ingresante
         private string pais;           // Almacena el país de origen del ingresante
         private string direccion;      // Almacena la dirección del ingresante
-        private string[] cursos;       // Almacena los cursos en los que está inscrito el ingresante
+        private List<string> cursos;       // Almacena los cursos en los que está inscrito el ingresante
 
         // Constructor
 
-        public Ingresante(string nombre, string apellido, int edad, string genero, string pais, string direccion, string[] cursos)
+        public Ingresante(string nombre, string apellido, int edad, string genero, string pais, string direccion, List<string> cursos)
         {
             // Inicializa los atributos con los valores proporcionados al crear una instancia de la clase
             this.nombre = nombre;
