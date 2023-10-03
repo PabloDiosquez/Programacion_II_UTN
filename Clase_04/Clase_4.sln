@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp", "WinFormsApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login", "Login\Login.csproj", "{7474B902-FEB8-48F0-ADBD-1DCD5A23121F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_I01", "Ejercicio_I01\Ejercicio_I01.csproj", "{FB411A11-5A72-4875-815A-01271B4876DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio_I01", "Ejercicio_I01\Ejercicio_I01.csproj", "{FB411A11-5A72-4875-815A-01271B4876DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio I02_Registrate", "Ejercicio I02_Registrate\Ejercicio I02_Registrate.csproj", "{09A4F4E1-F884-4206-97B1-9044B0692B74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{FB411A11-5A72-4875-815A-01271B4876DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB411A11-5A72-4875-815A-01271B4876DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB411A11-5A72-4875-815A-01271B4876DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A4F4E1-F884-4206-97B1-9044B0692B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A4F4E1-F884-4206-97B1-9044B0692B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A4F4E1-F884-4206-97B1-9044B0692B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A4F4E1-F884-4206-97B1-9044B0692B74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
