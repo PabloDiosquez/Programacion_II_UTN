@@ -43,7 +43,11 @@ namespace Ejercicio_I02_Registrate
             sb.AppendLine($"Género: {genero}");           // Agrega el género del ingresante a la cadena
             sb.AppendLine($"País: {pais}");               // Agrega el país de origen del ingresante a la cadena
             sb.AppendLine($"Dirección: {direccion}");     // Agrega la dirección del ingresante a la cadena
-
+            sb.AppendLine("Curso/s:");
+            foreach (string curso in cursos)              // Agrega los cursos del ingresante en la cadena.
+            {
+                sb.AppendLine($"{curso}");
+            }
             return sb.ToString();  // Convierte el StringBuilder a una cadena y la devuelve
         }
     }
