@@ -75,7 +75,7 @@ namespace Ejercicio_1
             }
 
         }
-        public static int Comparacion(int num1, int num2) 
+        private static int Comparacion(int num1, int num2) 
         {
             return num2 - num1;
         }
