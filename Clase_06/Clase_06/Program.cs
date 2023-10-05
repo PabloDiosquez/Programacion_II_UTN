@@ -109,7 +109,7 @@ namespace Clase_06
             //    Console.WriteLine();
             //}
 
-            //// Se peuden recorrer sólo los valores o las claves...
+            //// Se pueden recorrer sólo los valores o las claves...
 
             //foreach (int clave in dicc.Keys)
             //{

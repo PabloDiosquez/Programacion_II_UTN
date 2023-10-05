@@ -15,45 +15,28 @@ namespace Ejercicio_1
             // Por último, mostrar los negativos ordenados en forma creciente.
 
             int[] numeros = new int[20];
-            Random random = new Random();
 
             // Carga del vector
-            for (int i = 0; i < numeros.Length; i++) 
-            {
-                int randInt = random.Next(-100, 101);
-
-                if (randInt != 0)
-                {
-                    numeros[i] = randInt;
-                }
-                else 
-                {
-                    i--;
-                }
-            }
+            Helper.CargaEnterosEnArray(numeros);
 
             // a)
 
             Console.WriteLine("Array original");
-
-            for (int i = 0; i < numeros.Length; i++)
-            {
-                Console.WriteLine($"{i+1}: {numeros[i]}");
-            }
+            Helper.MostrarEnterosEnArray(numeros);
 
             // b) 
 
             Console.WriteLine("Números positivos ordenados en forma decreciente:");
 
-            // Ordenar la lista de forma decreciente
+            //Ordenar la lista de forma decreciente
 
-            Array.Sort(numeros,Comparacion);
+            Array.Sort(numeros, Comparacion);
 
             for (int i = 0; i < numeros.Length; i++)
             {
-                if (numeros[i] >  0) 
+                if (numeros[i] > 0)
                 {
-                    Console.WriteLine($"{i+1}: {numeros[i]}");
+                    Console.WriteLine($"{i + 1}: {numeros[i]}");
                 }
             }
 
@@ -64,7 +47,7 @@ namespace Ejercicio_1
 
             Console.WriteLine("Números negativos ordenados de forma creciente: ");
 
-            Array.Sort(numeros);
+            Helper.OrdenarArrayDeMenorAMayor(numeros);
 
             for (int i = 0; i < numeros.Length; i++)
             {

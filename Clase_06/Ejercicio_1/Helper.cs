@@ -14,13 +14,13 @@ namespace Ejercicio_1
         /// </summary>
         /// <param name="numeros">Array de números enteros</param>
         /// <param name="cantidad">Cantidad de elementos del array</param>
-        public static void CargaEnterosEnArray(int[] numeros, int cantidad)
+        public static void CargaEnterosEnArray(int[] numeros)
         {
             Random rd = new Random();
             int index = 0;
             int randInt;
 
-            while (index < cantidad)
+            while (index < numeros.Length)
             {
                 randInt = rd.Next(-100, 101); // El rango de números aleatorios (-100 a 100).
 
@@ -67,11 +67,11 @@ namespace Ejercicio_1
         /// <param name="numeros">El array de enteros en el que se buscará el mínimo.</param>
         /// <param name="desde">El índice a partir del cual se iniciará la búsqueda del mínimo.</param>
         /// <returns>El índice del valor mínimo encontrado en el array.</returns>
-        private static int ObtenerElIndiceDelMinimoEnElArrayDesde(int[] numeros, int desde) 
+        private static int ObtenerElIndiceDelMinimoEnElArrayDesde(int[] numeros, int desde)
         {
             int indiceDelMinimo = desde;
 
-            for (int index = desde+1; index < numeros.Length; index++)
+            for (int index = desde + 1; index < numeros.Length; index++)
             {
                 if (numeros[index] < numeros[indiceDelMinimo])
                 {
@@ -79,7 +79,7 @@ namespace Ejercicio_1
                 }
             }
 
-            return indiceDelMinimo; 
+            return indiceDelMinimo;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Ejercicio_1
         {
             if (numero1 < numero2) return numero1;
 
-            return numero2; 
+            return numero2;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Ejercicio_1
         /// <param name="array">El array en el que se realizará el intercambio.</param>
         /// <param name="indiceA">El índice del primer elemento a intercambiar.</param>
         /// <param name="indiceB">El índice del segundo elemento a intercambiar.</param>
-        public static void Intercambiar(int[] array, int indiceA, int indiceB)
+        private static void Intercambiar(int[] array, int indiceA, int indiceB)
         {
             int auxiliar = array[indiceA];
             array[indiceA] = array[indiceB];
