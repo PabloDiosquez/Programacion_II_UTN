@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Jugadores_UI
+namespace Clase_7
 {
     internal static class Program
     {
@@ -17,7 +17,7 @@ namespace Jugadores_UI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_menu_principal());
+            Application.Run(new Bienvenida());
         }
     }
 }
