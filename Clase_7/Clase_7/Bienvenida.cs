@@ -16,5 +16,17 @@ namespace Clase_7
         {
             InitializeComponent();
         }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            AltaJugador frm_AltaJugador = new AltaJugador();
+            
+            frm_AltaJugador.ShowDialog();
+        }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
     }
 }

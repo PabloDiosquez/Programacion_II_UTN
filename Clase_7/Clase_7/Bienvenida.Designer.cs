@@ -57,6 +57,7 @@
             this.btn_agregar.TabIndex = 1;
             this.btn_agregar.Text = "Agregar";
             this.btn_agregar.UseVisualStyleBackColor = false;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // btn_mostrar
             // 
@@ -83,6 +84,7 @@
             this.btn_cerrar.TabIndex = 3;
             this.btn_cerrar.Text = "Cerrar App";
             this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // Bienvenida
             // 
