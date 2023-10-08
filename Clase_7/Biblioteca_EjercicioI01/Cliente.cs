@@ -6,8 +6,8 @@ namespace Biblioteca_EjercicioI01
     {
         // Atributos
 
-        private string nombre; // Nombre del cliente
-        private int numero;    // Número de identificación del cliente
+        public string Nombre { get; set; } // Nombre del cliente
+        public int Numero { get; }         // Número de identificación del cliente
 
         // Constructor
 
@@ -17,7 +17,7 @@ namespace Biblioteca_EjercicioI01
         /// <param name="numero">El número de identificación del cliente.</param>
         public Cliente(int numero)
         {
-            this.numero = numero;
+            this.Numero = numero;
         }
 
         /// <summary>
@@ -27,19 +27,7 @@ namespace Biblioteca_EjercicioI01
         /// <param name="nombre">El nombre del cliente.</param>
         public Cliente(int numero, string nombre) : this(numero)
         {
-            this.nombre = nombre;
-        }
-
-        // Propiedades
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        public int Numero
-        {
-            get { return numero; }
+            Nombre = nombre;
         }
 
         // Sobrecarga de operadores 

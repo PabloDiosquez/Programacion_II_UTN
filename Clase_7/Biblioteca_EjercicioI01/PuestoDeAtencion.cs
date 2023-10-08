@@ -54,9 +54,9 @@ namespace Biblioteca_EjercicioI01
         /// <returns>Devuelve true si la atención fue exitosa, false en caso contrario.</returns>
         public bool AtenderCliente(Cliente cliente)
         {
-            Console.WriteLine("Inicia la atención al cliente.");
+            Console.WriteLine($"Atendiendo al cliente {cliente.Numero}");
             Thread.Sleep(4000); // Simula un proceso de atención que dura 4 segundos.
-            Console.WriteLine("Cliente atendido.");
+            Console.WriteLine($"Cliente {cliente.Numero} atendido");
             return true;
         }
 

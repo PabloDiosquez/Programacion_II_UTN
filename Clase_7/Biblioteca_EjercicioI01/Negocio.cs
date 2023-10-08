@@ -32,7 +32,7 @@ namespace Biblioteca_EjercicioI01
         /// Constructor que crea una instancia de la clase Negocio con un nombre especificado.
         /// </summary>
         /// <param name="nombre">El nombre del negocio.</param>
-        public Negocio(string nombre)
+        public Negocio(string nombre):this()
         {
             this.nombre = nombre;
         }
@@ -70,11 +70,13 @@ namespace Biblioteca_EjercicioI01
         /// <returns>True si el cliente no está en la cola, false en caso contrario.</returns>
         public static bool operator ==(Negocio negocio, Cliente clienteNuevo)
         {
+            if (negocio.clientes is null) return false;
+
             foreach (Cliente cliente in negocio.clientes)
             {
-                if (cliente == clienteNuevo) return false;
+                if (cliente == clienteNuevo) return true;
             }
-            return true;
+            return false;
         }
 
         /// <summary>
