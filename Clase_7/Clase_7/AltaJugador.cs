@@ -29,25 +29,49 @@ namespace Clase_7
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            string apellido = tbx_apellido.Text;
+            if (string.IsNullOrEmpty(tbx_apellido.Text) || string.IsNullOrEmpty(tbx_nombre.Text) || string.IsNullOrEmpty(tbx_equipo.Text))
+            {
+                string mensajeError = "Debe completar todos los campos solicitados.\nCampos a completar:\n";
 
-            string nombre = tbx_nombre.Text;
+                if (string.IsNullOrEmpty(tbx_apellido.Text)) 
+                {
+                    mensajeError += "Apellido\n";
+                }
 
-            Posicion posicion = (Posicion)cbx_posicion.SelectedItem;
+                if (string.IsNullOrEmpty(tbx_nombre.Text)) 
+                {
+                    mensajeError += "Nombre\n";
+                }
 
-            string equipo = tbx_equipo.Text;
+                if (string.IsNullOrEmpty(tbx_equipo.Text)) 
+                {
+                    mensajeError += "Equipo\n";
+                }
 
-            int numeroCamiseta = Convert.ToInt16(nud_camiseta.Value);
+                MessageBox.Show(mensajeError, "Error 🥴", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string apellido = tbx_apellido.Text;
 
-            jugador = new Jugador(apellido, nombre);
+                string nombre = tbx_nombre.Text;
 
-            jugador.Posicion = posicion;
+                Posicion posicion = (Posicion)cbx_posicion.SelectedItem;
 
-            jugador.Equipo = equipo;
+                string equipo = tbx_equipo.Text;
 
-            jugador.Camiseta = (short)numeroCamiseta;
+                int numeroCamiseta = Convert.ToInt16(nud_camiseta.Value);
 
-            DialogResult = DialogResult.OK;
+                jugador = new Jugador(apellido, nombre);
+
+                jugador.Posicion = posicion;
+
+                jugador.Equipo = equipo;
+
+                jugador.Camiseta = (short)numeroCamiseta;
+
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void AltaJugador_Load(object sender, EventArgs e)
