@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase_7", "Clase_7\Clase_7.csproj", "{3289862A-B79C-4128-9BFA-30DA9D85A9E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clase_7", "Clase_7\Clase_7.csproj", "{3289862A-B79C-4128-9BFA-30DA9D85A9E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{8832C2B6-C8B1-40D4-8B0F-603EC21192CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{8832C2B6-C8B1-40D4-8B0F-603EC21192CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", "{D9833B1E-18B5-4158-B5FE-B912A69EB928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_EjercicioI01", "Biblioteca_EjercicioI01\Biblioteca_EjercicioI01.csproj", "{9494D172-1331-4108-A97C-C3854973A78A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,10 @@ Global
 		{8832C2B6-C8B1-40D4-8B0F-603EC21192CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8832C2B6-C8B1-40D4-8B0F-603EC21192CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8832C2B6-C8B1-40D4-8B0F-603EC21192CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9494D172-1331-4108-A97C-C3854973A78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9494D172-1331-4108-A97C-C3854973A78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9494D172-1331-4108-A97C-C3854973A78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9494D172-1331-4108-A97C-C3854973A78A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
