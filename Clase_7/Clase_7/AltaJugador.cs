@@ -22,11 +22,32 @@ namespace Clase_7
         }
 
         // Properties 
-        public Jugador Jugador { get; }
+        public Jugador GetJugador() 
+        {
+            return jugador;
+        }
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            string apellido = tbx_apellido.Text;
 
+            string nombre = tbx_nombre.Text;
+
+            Posicion posicion = (Posicion)cbx_posicion.SelectedItem;
+
+            string equipo = tbx_equipo.Text;
+
+            int numeroCamiseta = Convert.ToInt16(nud_camiseta.Value);
+
+            jugador = new Jugador(apellido, nombre);
+
+            jugador.Posicion = posicion;
+
+            jugador.Equipo = equipo;
+
+            jugador.Camiseta = (short)numeroCamiseta;
+
+            DialogResult = DialogResult.OK;
         }
 
         private void AltaJugador_Load(object sender, EventArgs e)
@@ -40,6 +61,11 @@ namespace Clase_7
             };
 
             cbx_posicion.DataSource = posiciones;
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

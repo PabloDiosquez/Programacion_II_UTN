@@ -71,6 +71,7 @@
             this.btn_mostrar.TabIndex = 2;
             this.btn_mostrar.Text = "Ver lista";
             this.btn_mostrar.UseVisualStyleBackColor = false;
+            this.btn_mostrar.Click += new System.EventHandler(this.btn_mostrar_Click);
             // 
             // btn_cerrar
             // 
