@@ -16,15 +16,30 @@ namespace Biblioteca
     /// </summary>
     public class Jugador
     {
+        /// <summary>
+        /// Esta es una propiedad estática que representa el ID del jugador.
+        /// </summary>
+        private static int id;
         // Atributos
 
+        private int id_jugador;
         private string apellido;
         private string nombre;
         private Posicion posicion;
         private short numeroCamiseta;
         private string equipo;
 
-        // Constructor
+        // Constructores
+
+        /// <summary>
+        /// Este es el constructor estático de la clase Jugador.
+        /// Se llama automáticamente una vez cuando se carga la clase o se crea una instancia de la clase por primera vez.
+        /// Establece el valor inicial del id del jugador en 1.
+        /// </summary>
+        static Jugador() 
+        {
+            id = 1;
+        }
 
         /// <summary>
         /// Inicializa una nueva instancia de la clase Jugador con un apellido y un nombre.
@@ -33,6 +48,7 @@ namespace Biblioteca
         /// <param name="nombre">El nombre del jugador.</param>
         public Jugador(string apellido, string nombre)
         {
+            this.id_jugador = id++;
             this.apellido = apellido;
             this.nombre = nombre;
             numeroCamiseta = 0;
@@ -94,7 +110,7 @@ namespace Biblioteca
         /// <returns>Una cadena que contiene el apellido, el nombre, el equipo y la posición del jugador.</returns>
         public override string ToString()
         {
-            return $"Nombre completo: {apellido}, {nombre} -- Equipo: {equipo} -- Posición: {posicion.ToString()}";
+            return $"ID: {id_jugador} -- Nombre completo: {apellido}, {nombre} -- Equipo: {equipo} -- Posición: {posicion.ToString()}";
         }
     }
 }

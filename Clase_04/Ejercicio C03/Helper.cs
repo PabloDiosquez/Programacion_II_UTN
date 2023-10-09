@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_C03
 {
-    public static class Helper
+    public abstract class Helper
     {
         /// <summary>
         /// El propósito del método DeDecimalABinario es tomar un número decimal como entrada y 
