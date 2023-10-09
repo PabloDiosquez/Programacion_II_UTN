@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Bi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", "{D9833B1E-18B5-4158-B5FE-B912A69EB928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_EjercicioI01", "Biblioteca_EjercicioI01\Biblioteca_EjercicioI01.csproj", "{9494D172-1331-4108-A97C-C3854973A78A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca_EjercicioI01", "Biblioteca_EjercicioI01\Biblioteca_EjercicioI01.csproj", "{9494D172-1331-4108-A97C-C3854973A78A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_I01", "Ejercicio_I01\Ejercicio_I01.csproj", "{D775F77A-9821-40FE-B037-30F0C29378C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio_I01", "Ejercicio_I01\Ejercicio_I01.csproj", "{D775F77A-9821-40FE-B037-30F0C29378C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Ejercicio_I02", "Biblioteca_Ejercicio_I02\Biblioteca_Ejercicio_I02.csproj", "{43CF33B9-3493-4F52-B0F4-004F2036D272}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{D775F77A-9821-40FE-B037-30F0C29378C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D775F77A-9821-40FE-B037-30F0C29378C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D775F77A-9821-40FE-B037-30F0C29378C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43CF33B9-3493-4F52-B0F4-004F2036D272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43CF33B9-3493-4F52-B0F4-004F2036D272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43CF33B9-3493-4F52-B0F4-004F2036D272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43CF33B9-3493-4F52-B0F4-004F2036D272}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
