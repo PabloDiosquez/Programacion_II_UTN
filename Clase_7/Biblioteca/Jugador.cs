@@ -48,11 +48,13 @@ namespace Biblioteca
         /// <param name="nombre">El nombre del jugador.</param>
         public Jugador(string apellido, string nombre)
         {
-            this.id_jugador = id++;
+            this.id_jugador = id;
             this.apellido = apellido;
             this.nombre = nombre;
             numeroCamiseta = 0;
             equipo = string.Empty;
+
+            id++;
         }
 
         // Properties

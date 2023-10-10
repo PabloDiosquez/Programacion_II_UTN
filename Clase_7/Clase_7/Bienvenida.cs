@@ -38,7 +38,7 @@ namespace Clase_7
 
             if (frm_AltaJugador.DialogResult is DialogResult.OK)
             {
-                jugadores.Add(frm_AltaJugador.GetJugador());
+                jugadores.Add(frm_AltaJugador.Jugador);
             }
         }
 

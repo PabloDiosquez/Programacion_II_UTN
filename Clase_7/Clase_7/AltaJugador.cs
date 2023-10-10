@@ -25,11 +25,11 @@ namespace Clase_7
         }
 
         // Propiedades
-        public Jugador GetJugador()
+        public Jugador Jugador
         {
             // Propósito: Obtener el objeto Jugador ingresado o modificado en la ventana de alta.
             // Precondiciones: La ventana de alta debe haberse completado y cerrado correctamente.
-            return jugador;
+            get { return jugador; }
         }
 
         // Manejador de eventos para el botón "Agregar"
