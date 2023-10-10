@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicios", "Ejercicios", "{AB95F03A-CE69-44B6-A33E-B557030CF339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centralita", "Centralita\Centralita.csproj", "{2F753352-DC9C-4E73-9A88-A9DAA3642F2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Centralita", "Centralita\Centralita.csproj", "{2F753352-DC9C-4E73-9A88-A9DAA3642F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_I01", "Ejercicio_I01\Ejercicio_I01.csproj", "{936521AD-44EB-4F46-B86C-57624CDB6C19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{2F753352-DC9C-4E73-9A88-A9DAA3642F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F753352-DC9C-4E73-9A88-A9DAA3642F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F753352-DC9C-4E73-9A88-A9DAA3642F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936521AD-44EB-4F46-B86C-57624CDB6C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936521AD-44EB-4F46-B86C-57624CDB6C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936521AD-44EB-4F46-B86C-57624CDB6C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936521AD-44EB-4F46-B86C-57624CDB6C19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
