@@ -150,6 +150,7 @@
             // 
             // cbx_posicion
             // 
+            this.cbx_posicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_posicion.FormattingEnabled = true;
             this.cbx_posicion.Location = new System.Drawing.Point(167, 134);
             this.cbx_posicion.Name = "cbx_posicion";
