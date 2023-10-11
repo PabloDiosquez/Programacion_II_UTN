@@ -44,8 +44,10 @@ namespace Ejercicio_C03_Centralita
             get { return numeroOrigen; }   // Devuelve el número de origen de la llamada.
         }
 
+        public TipoLlamada TipoLlamada { get { return TipoLlamada.Todas; } }
+
         // Método de instancia Mostrar
-        public string Mostrar()
+        public virtual string Mostrar()
         {
             // Crea una cadena de texto detallada con información sobre la llamada.
             StringBuilder sb = new StringBuilder();
