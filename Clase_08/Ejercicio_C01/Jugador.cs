@@ -30,11 +30,6 @@ namespace Ejercicio_C01
         /// </summary>
         private int totalGoles;
 
-        /// <summary>
-        /// Promedio de goles por partido del jugador.
-        /// </summary>
-        private float promedioGoles;
-
         // Constructores
 
         /// <summary>
@@ -44,7 +39,6 @@ namespace Ejercicio_C01
         {
             this.partidosJugados = 0;
             this.totalGoles = 0;
-            this.promedioGoles = 0;
         }
 
         /// <summary>
@@ -71,17 +65,41 @@ namespace Ejercicio_C01
             this.partidosJugados = totalPartidos;
         }
 
-        // Métodos de instancia
+        // Propiedades 
 
-        /// <summary>
-        /// Calcula el promedio de goles por partido del jugador.
-        /// </summary>
-        /// <returns>El promedio de goles por partido.</returns>
-        public float GetPromedioGoles()
+        public string Nombre
         {
-            this.promedioGoles = partidosJugados > 0 ? (float)totalGoles / partidosJugados : 0;
-            return promedioGoles;
+            get { return this.Nombre; }
+
+            set {this.nombre = (!string.IsNullOrEmpty(value)) ? value : "NN";}
         }
+
+        public int Dni 
+        {
+            get { return this.dni; }
+            set { this.dni = (value > 0 ? value : -1);  }
+        }
+
+        public int PartidosJugados
+        {
+            get { return partidosJugados; }
+        }
+
+        public int TotalGoles 
+        {
+            get { return totalGoles; }
+        }
+
+        public float PromedioGoles 
+        {
+            get 
+            {
+                if (this.PartidosJugados > 0) return this.TotalGoles / this.PartidosJugados;
+                return 0;
+            }
+        }
+
+        // Métodos de instancia
 
         /// <summary>
         /// Devuelve una representación en forma de cadena de los datos del jugador.
@@ -91,11 +109,11 @@ namespace Ejercicio_C01
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(" *** Datos del jugador *** ");
-            sb.AppendLine($"DNI: {dni}");
-            sb.AppendLine($"Nombre: {nombre}");
-            sb.AppendLine($"Partidos jugados: {partidosJugados}");
-            sb.AppendLine($"Total goles: {totalGoles}");
-            sb.AppendLine($"Promedio de gol: {promedioGoles}");
+            sb.AppendLine($"DNI: {Dni}");
+            sb.AppendLine($"Nombre: {Nombre}");
+            sb.AppendLine($"Partidos jugados: {PartidosJugados}");
+            sb.AppendLine($"Total goles: {TotalGoles}");
+            sb.AppendLine($"Promedio de gol: {PromedioGoles}");
             return sb.ToString();
         }
 
