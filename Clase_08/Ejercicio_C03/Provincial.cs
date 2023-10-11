@@ -42,9 +42,12 @@ namespace Ejercicio_C03_Centralita
             get { return CalcularCosto(); } // Devuelve el costo de la llamada provincial.
         }
 
+        // Propiedad de sólo lectura Franja
+        public Franja Franja { get; }
+
         // Getter TipoLlamada
 
-        public TipoLlamada TipoLlamada { get { return TipoLlamada.Provincial; } }
+        public new TipoLlamada TipoLlamada { get { return TipoLlamada.Provincial; } }
 
         // Método de instancia Mostrar (sobrescrito)
         public override string Mostrar()
