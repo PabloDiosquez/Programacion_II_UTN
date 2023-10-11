@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Ejercicio_C03
+namespace Ejercicio_C03_Centralita
 {
     // Enumeración TipoLlamada
     public enum TipoLlamada
