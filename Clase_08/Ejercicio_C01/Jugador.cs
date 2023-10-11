@@ -6,7 +6,7 @@ namespace Ejercicio_C01
     /// <summary>
     /// Clase que representa un jugador en un equipo deportivo.
     /// </summary>
-    public class Jugador
+    public class Jugador : Persona
     {
         // Atributos
 
@@ -33,23 +33,17 @@ namespace Ejercicio_C01
         // Constructores
 
         /// <summary>
-        /// Constructor privado de la clase Jugador. Inicializa los atributos.
-        /// </summary>
-        private Jugador()
-        {
-            this.partidosJugados = 0;
-            this.totalGoles = 0;
-        }
-
-        /// <summary>
         /// Constructor de la clase Jugador que inicializa el DNI y el nombre del jugador.
+        /// Inicializa los datos estadísticos del jugador en 0.
         /// </summary>
         /// <param name="dni">El DNI del jugador.</param>
         /// <param name="nombre">El nombre del jugador.</param>
-        public Jugador(int dni, string nombre) : this()
+        public Jugador(int dni, string nombre) : base(dni, nombre)
         {
             this.dni = dni;
             this.nombre = nombre;
+            this.partidosJugados = 0;
+            this.totalGoles = 0;
         }
 
         /// <summary>
@@ -66,20 +60,6 @@ namespace Ejercicio_C01
         }
 
         // Propiedades 
-
-        public string Nombre
-        {
-            get { return this.Nombre; }
-
-            set {this.nombre = (!string.IsNullOrEmpty(value)) ? value : "NN";}
-        }
-
-        public int Dni 
-        {
-            get { return this.dni; }
-            set { this.dni = (value > 0 ? value : -1);  }
-        }
-
         public int PartidosJugados
         {
             get { return partidosJugados; }
@@ -109,8 +89,7 @@ namespace Ejercicio_C01
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(" *** Datos del jugador *** ");
-            sb.AppendLine($"DNI: {Dni}");
-            sb.AppendLine($"Nombre: {Nombre}");
+            sb.AppendLine(base.ToString());
             sb.AppendLine($"Partidos jugados: {PartidosJugados}");
             sb.AppendLine($"Total goles: {TotalGoles}");
             sb.AppendLine($"Promedio de gol: {PromedioGoles}");
