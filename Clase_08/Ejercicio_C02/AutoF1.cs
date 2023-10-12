@@ -63,21 +63,19 @@ namespace Ejercicio_C02
         }
 
         /// <summary>
-        /// Obtiene o establece el nombre de la escudería a la que pertenece el auto.
+        /// Obtiene el nombre de la escudería a la que pertenece el auto.
         /// </summary>
         public string Escuderia
         {
             get { return escuderia; }
-            set { if (string.IsNullOrEmpty(value)) this.escuderia = value; }
         }
 
         /// <summary>
-        /// Obtiene o establece el número identificativo del auto.
+        /// Obtiene el número identificativo del auto.
         /// </summary>
         public short Numero
         {
             get { return numero; }
-            set { if (value > 0) this.numero = value; }
         }
 
         /// <summary>
