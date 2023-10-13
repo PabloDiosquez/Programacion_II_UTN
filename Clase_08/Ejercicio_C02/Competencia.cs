@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Ejercicio_C02
 {
     /// <summary>
-    /// Clase que representa una competencia de autos de Fórmula 1.
+    /// Clase que representa una competencia de vehículos de carrera.
     /// </summary>
     public class Competencia
     {
@@ -24,9 +25,14 @@ namespace Ejercicio_C02
         private short cantidadVueltas;
 
         /// <summary>
-        /// Lista de competidores (autos de Fórmula 1) en la competencia.
+        /// Lista de competidores en la competencia.
         /// </summary>
-        private List<AutoF1> competidores;
+        private List<VehiculoDeCarrera> competidores;
+
+        /// <summary>
+        /// Tipo de competencia.
+        /// </summary>
+        private TipoCompetencia tipoCompetencia;
 
         // Constructores
 
@@ -35,7 +41,7 @@ namespace Ejercicio_C02
         /// </summary>
         private Competencia()
         {
-            this.competidores = new List<AutoF1>();
+            this.competidores = new List<VehiculoDeCarrera>();
         }
 
         /// <summary>
@@ -43,28 +49,54 @@ namespace Ejercicio_C02
         /// </summary>
         /// <param name="cantidadVueltas">Cantidad de vueltas en la competencia.</param>
         /// <param name="cantidadCompetidores">Cantidad de competidores en la competencia.</param>
-        public Competencia(short cantidadVueltas, short cantidadCompetidores) : this()
+        /// <param name="tipo">Tipo de competencia (calificación, carrera, etc.).</param>
+        public Competencia(short cantidadVueltas, short cantidadCompetidores, TipoCompetencia tipo) : this()
         {
             this.cantidadVueltas = cantidadVueltas;
             this.cantidadCompetidores = cantidadCompetidores;
+            this.tipoCompetencia = tipo;
         }
 
-        // Getters 
+        // Indexador
+
+        public VehiculoDeCarrera this[int indice]
+        {
+            get { return this.Competidores[indice]; }
+        }
+
+        // Getters y Setters 
 
         /// <summary>
-        /// Obtiene la cantidad de competidores en la competencia.
+        /// Obtiene y establece la cantidad de competidores en la competencia.
         /// </summary>
-        public short CantidadCompetidores { get; }
+        public short CantidadCompetidores
+        {
+            get { return cantidadCompetidores; }
+            set { this.cantidadCompetidores = (short)((value > 0) ? value : 0); }
+        }
 
         /// <summary>
-        /// Obtiene la cantidad de vueltas en la competencia.
+        /// Obtiene y establece la cantidad de vueltas en la competencia.
         /// </summary>
-        public short CantidadVueltas { get; }
+        public short CantidadVueltas
+        {
+            get { return cantidadVueltas; }
+            set { this.cantidadVueltas = (short)((value > 0) ? value : 0); }
+        }
 
         /// <summary>
         /// Obtiene la lista de competidores en la competencia.
         /// </summary>
-        public List<AutoF1> Competidores { get { return competidores; } }
+        public List<VehiculoDeCarrera> Competidores { get { return competidores; } }
+
+        /// <summary>
+        /// Obtiene o establece el tipo de competencia (F1 o Motocross).
+        /// </summary>
+        public TipoCompetencia Tipo
+        {
+            get { return tipoCompetencia; }
+            set { tipoCompetencia = value; }
+        }
 
         // Métodos de instancia 
 
@@ -77,8 +109,9 @@ namespace Ejercicio_C02
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(" *** Datos Competencia ***");
             sb.AppendLine($"Cantidad de competidores: {CantidadCompetidores}");
+            sb.AppendLine($"Tipo de competencia: {Tipo}");
             sb.AppendLine($"Cantidad de vueltas: {CantidadVueltas}");
-            foreach (AutoF1 auto in Competidores)
+            foreach (VehiculoDeCarrera auto in Competidores)
             {
                 sb.AppendLine(auto.ToString());
             }
@@ -88,47 +121,66 @@ namespace Ejercicio_C02
         // Sobrecarga de operadores 
 
         /// <summary>
-        /// Sobrecarga del operador de igualdad (==) para comparar una competencia con un auto de Fórmula 1 y determinar si el auto está en la competencia.
+        /// Sobrecarga del operador de igualdad (==) para comparar una competencia con 
+        /// un vehículoy determinar si el auto está en la competencia.
         /// </summary>
         /// <param name="competencia">Competencia en la que se busca el auto.</param>
-        /// <param name="autoBuscado">Auto de Fórmula 1 que se busca.</param>
-        /// <returns>True si el auto está en la competencia, false en caso contrario.</returns>
-        public static bool operator ==(Competencia competencia, AutoF1 autoBuscado)
+        /// <param name="vehiculoBuscado">Vehículo que se busca.</param>
+        /// <returns>True si el vehículo está en la competencia, false en caso contrario.</returns>
+        public static bool operator ==(Competencia competencia, VehiculoDeCarrera vehiculoBuscado)
         {
             if (competencia is null) return false;
-            foreach (AutoF1 auto in competencia.Competidores)
+            foreach (VehiculoDeCarrera vehiculo in competencia.Competidores)
             {
-                if (autoBuscado == auto) return true;
+                if (vehiculoBuscado == vehiculo) return true;
             }
             return false;
         }
 
         /// <summary>
-        /// Sobrecarga del operador de desigualdad (!=) para comparar una competencia con un auto de Fórmula 1 y determinar si el auto no está en la competencia.
+        /// Sobrecarga del operador de desigualdad (!=) para comparar una competencia con un 
+        /// vehículo y determinar si no está en la competencia.
         /// </summary>
         /// <param name="competencia">Competencia en la que se busca el auto.</param>
-        /// <param name="auto">Auto de Fórmula 1 que se busca.</param>
+        /// <param name="vehiculo">Auto de Fórmula 1 que se busca.</param>
         /// <returns>True si el auto no está en la competencia, false en caso contrario.</returns>
-        public static bool operator !=(Competencia competencia, AutoF1 auto)
+        public static bool operator !=(Competencia competencia, VehiculoDeCarrera vehiculo)
         {
-            return !(competencia == auto);
+            return !(competencia == vehiculo);
         }
 
         /// <summary>
-        /// Sobrecarga del operador de adición (+) para agregar un auto de Fórmula 1 a la competencia si hay espacio disponible.
+        /// Sobrecarga del operador de adición (+) para agregar un vehículo a la competencia
+        /// si hay espacio disponible.
         /// </summary>
         /// <param name="competencia">Competencia a la que se agrega el auto.</param>
-        /// <param name="auto">Auto de Fórmula 1 que se agrega a la competencia.</param>
+        /// <param name="vehiculo">Vehículo que se agrega a la competencia.</param>
         /// <returns>True si el auto se agrega con éxito, false en caso contrario.</returns>
-        public static bool operator +(Competencia competencia, AutoF1 auto)
+        public static bool operator +(Competencia competencia, VehiculoDeCarrera vehiculo)
         {
             if (competencia.Competidores.Count < competencia.cantidadCompetidores)
             {
-                if (competencia == auto) return false;
-                auto.EnCompetencia = true;
-                auto.VueltasRestantes = competencia.CantidadVueltas;
-                auto.CantidadCombustible = (short)new Random().Next(15, 101);
-                competencia.Competidores.Add(auto);
+                if (competencia == vehiculo) return false;
+                vehiculo.EnCompetencia = true;
+                vehiculo.VueltasRestantes = competencia.CantidadVueltas;
+                vehiculo.CantidadCombustible = (short)new Random().Next(15, 101);
+                competencia.Competidores.Add(vehiculo);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Sobrecarga del operador de sustracción (-) para eliminar un vehículo de la
+        /// competencia.
+        /// </summary>
+        /// <param name="competencia">Competencia de la que se elimina el auto.</param>
+        /// <param name="vehiculoBuscado">Vehículo que se elimina de la competencia.</param>
+        public static bool operator -(Competencia competencia, VehiculoDeCarrera vehiculoBuscado)
+        {
+            if (competencia == vehiculoBuscado)
+            {
+                competencia.Competidores.Remove(vehiculoBuscado);
                 return true;
             }
             return false;
