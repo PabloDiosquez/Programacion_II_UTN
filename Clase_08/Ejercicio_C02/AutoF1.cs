@@ -50,6 +50,8 @@ namespace Ejercicio_C02
             set { this.caballosDeFuerza = (short)((value > 0) ? value : 0); }
         }
 
+        public 
+
         // Métodos de instancia 
 
         /// <summary>
