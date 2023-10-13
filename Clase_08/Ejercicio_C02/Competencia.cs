@@ -59,6 +59,11 @@ namespace Ejercicio_C02
 
         // Indexador
 
+        /// <summary>
+        /// Permite acceder a un competidor en la competencia por su índice.
+        /// </summary>
+        /// <param name="indice">El índice del competidor.</param>
+        /// <returns>El competidor correspondiente al índice.</returns>
         public VehiculoDeCarrera this[int indice]
         {
             get { return this.Competidores[indice]; }
@@ -150,22 +155,37 @@ namespace Ejercicio_C02
         }
 
         /// <summary>
-        /// Sobrecarga del operador de adición (+) para agregar un vehículo a la competencia
-        /// si hay espacio disponible.
+        /// Sobrecarga del operador de adición (+) para agregar un auto de Fórmula 1
+        /// o Motocross a la competencia si hay espacio disponible y cumple con las 
+        /// reglas de la competencia.
         /// </summary>
         /// <param name="competencia">Competencia a la que se agrega el auto.</param>
-        /// <param name="vehiculo">Vehículo que se agrega a la competencia.</param>
-        /// <returns>True si el auto se agrega con éxito, false en caso contrario.</returns>
+        /// <param name="vehiculo">Auto de Fórmula 1 o Motocross que se agrega a la competencia.</param>
         public static bool operator +(Competencia competencia, VehiculoDeCarrera vehiculo)
         {
             if (competencia.Competidores.Count < competencia.cantidadCompetidores)
             {
-                if (competencia == vehiculo) return false;
-                vehiculo.EnCompetencia = true;
-                vehiculo.VueltasRestantes = competencia.CantidadVueltas;
-                vehiculo.CantidadCombustible = (short)new Random().Next(15, 101);
-                competencia.Competidores.Add(vehiculo);
-                return true;
+                if (competencia == vehiculo) return false; // El vehículo ya está en la competencia.
+
+                switch (competencia.Tipo)
+                {
+                    case TipoCompetencia.F1:
+                        if (vehiculo is Motocross) return false;
+                        break;
+                    case TipoCompetencia.Motocross:
+                        if (vehiculo is AutoF1) return false;
+                        break;
+                    default:
+                        vehiculo.EnCompetencia = true;
+
+                        vehiculo.VueltasRestantes = competencia.CantidadVueltas;
+
+                        vehiculo.CantidadCombustible = (short)new Random().Next(15, 101);
+
+                        competencia.Competidores.Add(vehiculo);
+
+                        return true;
+                }
             }
             return false;
         }
