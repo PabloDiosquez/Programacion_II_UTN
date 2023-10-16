@@ -143,5 +143,10 @@ namespace Ejercicio_C03_Biblioteca
         {
             return objeto is Provincial;
         }
+
+        public static explicit operator Provincial(bool v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

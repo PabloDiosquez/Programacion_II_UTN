@@ -131,6 +131,11 @@ namespace Ejercicio_C03_Biblioteca
         /// <returns>Una cadena que contiene los datos de la centralita y sus llamadas.</returns>
         public override string ToString()
         {
+            return Mostrar();
+        }
+
+        private string Mostrar()
+        {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(" *** Datos de la Centralita *** ");
             sb.AppendLine($"Razón Social: {razonSocial}");
@@ -145,6 +150,7 @@ namespace Ejercicio_C03_Biblioteca
 
             return sb.ToString();
         }
+
 
         #endregion
     }

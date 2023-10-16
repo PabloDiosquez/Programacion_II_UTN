@@ -133,7 +133,7 @@ namespace Ejercicio_C03_Biblioteca
         /// <returns>Una cadena que representa los detalles de la llamada.</returns>
         protected virtual string Mostrar()
         {
-            return $"Llamada[Duración: {Duracion}, Origen: {NroOrigen}, Destino: {NroDestino}]";
+            return $"Llamada[Duración: {Duracion}', Origen: {NroOrigen}, Destino: {NroDestino}]";
         }
 
         #endregion
@@ -150,7 +150,22 @@ namespace Ejercicio_C03_Biblioteca
         {
             if (llamada1 is not null && llamada2 is not null)
             {
-                return llamada1.NroDestino == llamada2.NroDestino && llamada1.NroOrigen == llamada2.NroOrigen;
+                bool comparacionBase = true;
+
+                if (llamada1 is Local)
+                {
+                    // Compara llamadas locales utilizando el método Equals de la clase Local.
+                    comparacionBase = ((Local)llamada1).Equals(llamada2);
+                }
+
+                if (llamada1 is Provincial)
+                {
+                    // Compara llamadas provinciales utilizando el método Equals de la clase Provincial.
+                    comparacionBase = ((Provincial)llamada1).Equals(llamada2);
+                }
+
+                // Compara los números de origen y destino además de la comparación específica de cada clase.
+                return comparacionBase && llamada1.NroDestino == llamada2.NroDestino && llamada1.NroOrigen == llamada2.NroOrigen;
             }
             return false;
         }
