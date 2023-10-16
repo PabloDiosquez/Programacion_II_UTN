@@ -75,7 +75,7 @@ namespace Ejercicio_C03_Biblioteca
         /// <summary>
         /// Obtiene el costo total de la llamada provincial.
         /// </summary>
-        public float CostoLlamada { get { return CalcularCosto(); } }
+        public override float CostoLlamada => CalcularCosto();
 
         #endregion
 
@@ -87,12 +87,7 @@ namespace Ejercicio_C03_Biblioteca
         /// <returns>Una cadena que contiene los datos de la llamada provincial y su costo.</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(base.ToString());
-            sb.AppendLine($"Franja horaria: {FranjaHoraria}");
-            sb.AppendLine($"Costo de la llamada: {CostoLlamada}");
-
-            return sb.ToString();
+            return Mostrar();
         }
 
         #endregion
@@ -125,6 +120,28 @@ namespace Ejercicio_C03_Biblioteca
             }
         }
 
-        #endregion
+        /// <summary>
+        /// Devuelve una representación detallada de la llamada provincial, incluyendo la franja horaria y el costo.
+        /// </summary>
+        /// <returns>Una cadena que representa los detalles de la llamada provincial.</returns>
+        protected override string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(base.Mostrar());
+            sb.AppendLine($"Franja horaria: {FranjaHoraria}");
+            sb.AppendLine($"Costo de la llamada: {CostoLlamada}");
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Determina si el objeto especificado es igual a esta instancia de llamada provincial.
+        /// </summary>
+        /// <param name="objeto">El objeto a comparar con esta instancia.</param>
+        /// <returns>True si el objeto es una instancia de llamada provincial, de lo contrario, False.</returns>
+        public override bool Equals(object objeto)
+        {
+            return objeto is Provincial;
+        }
     }
 }

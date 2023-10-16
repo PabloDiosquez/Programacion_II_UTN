@@ -49,26 +49,19 @@ namespace Ejercicio_C03_Biblioteca
         /// <summary>
         /// Obtiene el costo total de la llamada local.
         /// </summary>
-        public float CostoLlamada
-        {
-            get { return CalcularCosto(); }
-        }
+        public override float CostoLlamada => CalcularCosto();
 
         #endregion
 
         #region Sobrescritura del método ToString()
 
         /// <summary>
-        /// Devuelve una representación en forma de cadena de la llamada local.
+        /// Devuelve una representación en forma de cadena de la llamada local usando el método Mostrar().
         /// </summary>
         /// <returns>Una cadena que contiene los datos de la llamada local y su costo.</returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(base.ToString());
-            sb.AppendLine($"Costo de la llamada: {CostoLlamada}");
-
-            return sb.ToString();
+            return Mostrar();
         }
 
         #endregion
@@ -84,6 +77,28 @@ namespace Ejercicio_C03_Biblioteca
             return this.costo * this.Duracion;
         }
 
+        /// <summary>
+        /// Devuelve una representación detallada de la llamada local, incluyendo el costo.
+        /// </summary>
+        /// <returns>Una cadena que representa los detalles de la llamada local.</returns>
+        protected override string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(base.Mostrar());
+            sb.AppendLine($"Costo de la llamada: {CostoLlamada}");
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Determina si el objeto especificado es igual a esta instancia de llamada local.
+        /// </summary>
+        /// <param name="objeto">El objeto a comparar con esta instancia.</param>
+        /// <returns>True si el objeto es una instancia de llamada local, de lo contrario, False.</returns>
+        public override bool Equals(Object objeto)
+        {
+            return objeto is Local;
+        }
         #endregion
     }
 }
