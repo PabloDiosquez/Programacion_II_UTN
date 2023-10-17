@@ -121,6 +121,15 @@ namespace Ejercicio_C03_Biblioteca
             this.llamadas.Sort(Llamada.OrdenarPorDuracion);
         }
 
+        private bool AgregarLlamada(Llamada llamada)
+        {
+            if (this == llamada) return false;
+
+            this.Llamadas.Add(llamada); 
+
+            return true;
+        }
+
         #endregion
 
         #region Sobrescritura del método ToString()
@@ -151,7 +160,28 @@ namespace Ejercicio_C03_Biblioteca
             return sb.ToString();
         }
 
+        #endregion
 
+        #region Sobrecarga de operadores 
+
+        public static bool operator ==(Centralita central, Llamada llamadaBuscada) 
+        {
+            foreach (Llamada llamada in central.Llamadas)
+            {
+                if (llamadaBuscada == llamada) return true;
+            }
+            return false;   
+        }
+
+        public static bool operator !=(Centralita central, Llamada llamada) 
+        {
+            return !(central == llamada);
+        }
+
+        public static bool operator +(Centralita central, Llamada llamada) 
+        {
+            return central.AgregarLlamada(llamada);
+        }
         #endregion
     }
 }

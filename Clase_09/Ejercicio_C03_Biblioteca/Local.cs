@@ -99,6 +99,11 @@ namespace Ejercicio_C03_Biblioteca
         {
             return objeto is Local;
         }
+
+        public static explicit operator Local(bool v)
+        {
+            return null;
+        }
         #endregion
     }
 }
