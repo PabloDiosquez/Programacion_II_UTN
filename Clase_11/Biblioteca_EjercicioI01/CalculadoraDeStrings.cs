@@ -15,20 +15,19 @@ namespace Biblioteca_EjercicioI01
         /// <exception cref="Exception">Se lanza si se encuentra un valor no válido o no entero en la cadena.</exception>
         public static int Add(this string numeros)
         {
-            if (numeros.Length <= 1) return 0;
-
             char[] separadores = new char[] { ',', '\n' };
 
             string[] numerosEnLista = numeros.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
+
+            if (numerosEnLista.Length <= 1) return 0;
 
             int sumaAlMomento = 0;
 
             foreach (string numero in numerosEnLista)
             {
-                if (!int.TryParse(numero, out int numeroSumado))
-                {
-                    throw new Exception("Asegúrese de ingresar números enteros.");
-                }
+                if (!int.TryParse(numero, out int numeroSumado)) throw new InvalidCastException("Asegúrese de ingresar números enteros.");
+
+                if (numeroSumado < 0) throw new NegativoNoPermitidoException("No se permiten números negativos 🥴");
 
                 sumaAlMomento += numeroSumado;
             }

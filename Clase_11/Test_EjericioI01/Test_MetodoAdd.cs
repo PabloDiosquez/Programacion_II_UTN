@@ -23,7 +23,7 @@ namespace Test_EjericioI01
 
             // Act 
 
-            int resultado = CalculadoraDeStrings.Add(str);    
+            int resultado = CalculadoraDeStrings.Add(str);
 
             // Assert 
 
@@ -36,7 +36,7 @@ namespace Test_EjericioI01
         {
             // Arrange
 
-            string str = "1";
+            string str = "1,";
 
             int resultadoEsperado = 0;
 
@@ -79,10 +79,56 @@ namespace Test_EjericioI01
             // Act 
 
             int resultado = str.Add();
-            
+
             // Assert 
 
             Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        public void Add_CuandoRecibeTresNumerosSeparadosPorUnSaltoDeLinea_DeberiaRetornarSuSumaNumerica()
+        {
+            // Arrange 
+
+            string str = "1\n2,3";
+
+            int resultadoEsperado = 6;
+
+            // Act
+
+            int resultado = str.Add();
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidCastException))]
+
+        public void Add_CuandoNoPuedeCastearAEntero_DeberiaLanzarInvalidCastException()
+        {
+            // Arrange
+
+            string str = "Hola, soy una cadena sin números";
+
+            // Act
+
+            int resultado = str.Add();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(NegativoNoPermitidoException))]
+
+        public void Add_CuandoRecibeUnNumeroNegativo_DeberíaLanzarNegativoNoPermitidoException()
+        {
+            // Arrange
+
+            string str = "1, -2";
+
+            // Act
+
+            int resultado = str.Add();
         }
     }
 }
