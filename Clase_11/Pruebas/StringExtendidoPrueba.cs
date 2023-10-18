@@ -36,7 +36,6 @@ namespace Pruebas
             string texto = string.Empty;
 
             // Act
-
             texto.ContarPalabras();
 
         }
