@@ -104,6 +104,25 @@ namespace Test_EjericioI01
         }
 
         [TestMethod]
+        public void Add_CuandoRecibeUnStringConUnNuevoSeparadorYDosNumerosSeparadosPorElNuevoSeparador_DeberiaRetornarSuSuma()
+        {
+            // Arrange
+
+            string str = "//;1; 2";
+
+            int resultadoEsperado = 3;
+
+            // Act
+
+            int resultado = str.Add();
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
+        }
+
+
+        [TestMethod]
         [ExpectedException(typeof(InvalidCastException))]
 
         public void Add_CuandoNoPuedeCastearAEntero_DeberiaLanzarInvalidCastException()

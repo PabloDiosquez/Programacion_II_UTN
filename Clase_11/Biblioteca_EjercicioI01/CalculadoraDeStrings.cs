@@ -15,11 +15,13 @@ namespace Biblioteca_EjercicioI01
         /// <exception cref="Exception">Se lanza si se encuentra un valor no válido o no entero en la cadena.</exception>
         public static int Add(this string numeros)
         {
-            char[] separadores = new char[] { ',', '\n' };
+            char[] separadores = AgregarSeparador(numeros);
 
             string[] numerosEnLista = numeros.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
 
             if (numerosEnLista.Length <= 1) return 0;
+
+            if (numerosEnLista[0] == "//") numerosEnLista[0] = "0";
 
             int sumaAlMomento = 0;
 
@@ -32,6 +34,24 @@ namespace Biblioteca_EjercicioI01
                 sumaAlMomento += numeroSumado;
             }
             return sumaAlMomento;
+        }
+
+        private static char[] AgregarSeparador(string numeros)
+        {
+            char[] separadores  = new char[] { ',', '\n'};
+
+            if (numeros.Length >= 3)
+            {
+                char primerCaracter = numeros[0];
+
+                char segundoCaracter = numeros[1];
+
+                if (primerCaracter == '/' && segundoCaracter == '/')
+                {
+                    separadores = new char[] { ',', '\n', numeros[2]};
+                }
+            }
+            return separadores;
         }
     }
     
