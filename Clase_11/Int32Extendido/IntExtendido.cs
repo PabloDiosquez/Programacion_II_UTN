@@ -19,18 +19,12 @@ namespace Int32Extendido
         {
             string resultado = numero.ToString();
 
-            if (numero.EsDivisiblePor(3) && numero.EsDivisiblePor(5))
-            {
-                resultado = "FizzBuzz";
-            }
-            else if (numero.EsDivisiblePor(3))
-            {
-                resultado = "Fizz";
-            }
-            else if (numero.EsDivisiblePor(5))
-            {
-                resultado = "Buzz";
-            }
+            if (numero.EsDivisiblePor(3) && numero.EsDivisiblePor(5)) resultado = "FizzBuzz";
+            
+            else if (numero.EsDivisiblePor(3)) resultado = "Fizz";
+            
+            else if (numero.EsDivisiblePor(5)) resultado = "Buzz";
+            
             return resultado;
         }
 
@@ -47,10 +41,8 @@ namespace Int32Extendido
         /// </exception>
         private static bool EsDivisiblePor(this Int32 numero, int divisor)
         {
-            if (divisor == 0)
-            {
-                throw new DivideByZeroException("¡No se puede dividir por 0! 🤬");
-            }
+            if (divisor == 0) throw new DivideByZeroException("¡No se puede dividir por 0! 🤬");
+            
             return numero % divisor == 0;
         }
     }
