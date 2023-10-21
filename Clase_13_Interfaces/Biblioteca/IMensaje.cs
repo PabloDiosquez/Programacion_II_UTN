@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
+    /// <summary>
+    /// Interfaz para enviar mensajes.
+    /// </summary>
     public interface IMensaje
     {
-        public string EnviarMensaje();
+        /// <summary>
+        /// Método que permite enviar un mensaje.
+        /// </summary>
+        /// <returns>El mensaje enviado como una cadena de caracteres.</returns>
+        string EnviarMensaje();
     }
 }
