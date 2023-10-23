@@ -14,7 +14,6 @@ namespace EjercicioI01_Consola
 
             EscrituraWrapper eLapiz = miLapiz.Escribir("Hola");
             Console.ForegroundColor = eLapiz.Color;
-            Console.WriteLine("Hola");
             Console.ForegroundColor = colorOriginal;
             Console.WriteLine(eLapiz.Texto);
             Console.WriteLine(miLapiz);
