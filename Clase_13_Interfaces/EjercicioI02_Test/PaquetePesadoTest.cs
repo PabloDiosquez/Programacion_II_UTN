@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EjercicioI02_Biblioteca;
 
 namespace EjercicioI02_Test
 {
@@ -31,7 +32,17 @@ namespace EjercicioI02_Test
         [TestMethod]
         public void TienePrioridad_DeberiaRetornarFalse() 
         {
+            // Arrange 
 
+            PaquetePesado paquetePesado = new PaquetePesado(string.Empty, 0, string.Empty, string.Empty, 0);
+
+            // Act 
+
+            bool restultado = paquetePesado.TienePrioridad;
+
+            // Assert 
+
+            Assert.IsFalse(restultado);
         }
     }
 }
