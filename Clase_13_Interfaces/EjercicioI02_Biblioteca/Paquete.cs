@@ -64,7 +64,7 @@ namespace EjercicioI02_Biblioteca
         /// Obtiene información detallada del paquete.
         /// </summary>
         /// <returns>Información del paquete en formato de cadena.</returns>
-        public string ObtenerInformacionDePaquete()
+        protected string ObtenerInformacionDePaquete()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Información del paquete:");

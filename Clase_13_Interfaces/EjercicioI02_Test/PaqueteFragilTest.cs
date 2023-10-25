@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using EjercicioI02_Biblioteca;
 
 namespace EjercicioI02_Test
 {
@@ -19,7 +20,17 @@ namespace EjercicioI02_Test
         [TestMethod]
         public void TienePrioridad_DeberiaRetornarTrue() 
         {
+            // Arrange
 
+            PaqueteFragil paqueteFragil = new PaqueteFragil(string.Empty, 0, string.Empty, string.Empty, 0);
+
+            // Act 
+
+            bool resultado = paqueteFragil.TienePrioridad;
+
+            // Assert 
+
+            Assert.IsTrue(resultado);
         }
     }
 }
