@@ -8,9 +8,9 @@ namespace EjercicioI03_Biblioteca
 {
     public class Foto : Imprimible
     {
-        public void Imprimir() 
+        public string Imprimir() 
         {
-
+            return "Soy una foto";
         }
     }
 }

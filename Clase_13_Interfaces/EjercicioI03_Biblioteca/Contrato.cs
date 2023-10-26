@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace EjercicioI03_Biblioteca
 {
-    internal class Contrato
+    public class Contrato : Imprimible
     {
+        public string Imprimir()
+        {
+            return "Soy un contrato";
+        }
     }
 }

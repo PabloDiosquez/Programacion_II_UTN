@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impresora multifunción", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioI03_Biblioteca", "EjercicioI03_Biblioteca\EjercicioI03_Biblioteca.csproj", "{CE83E2FC-E68C-4EA1-B4F4-B2CB2293C265}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPrincipal", "FormPrincipal\FormPrincipal.csproj", "{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{CE83E2FC-E68C-4EA1-B4F4-B2CB2293C265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE83E2FC-E68C-4EA1-B4F4-B2CB2293C265}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE83E2FC-E68C-4EA1-B4F4-B2CB2293C265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
