@@ -6,7 +6,7 @@ namespace EjercicioI02_Biblioteca
     /// <summary>
     /// Clase abstracta que representa un paquete de envío.
     /// </summary>
-    public abstract class Paquete
+    public abstract class Paquete : IAduana
     {
         // Atributos 
 
@@ -64,7 +64,7 @@ namespace EjercicioI02_Biblioteca
         /// Obtiene información detallada del paquete.
         /// </summary>
         /// <returns>Información del paquete en formato de cadena.</returns>
-        protected string ObtenerInformacionDePaquete()
+        public string ObtenerInformacionDePaquete()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Información del paquete:");
@@ -75,6 +75,23 @@ namespace EjercicioI02_Biblioteca
             sb.AppendLine($"Peso (en kilogramos): {this.pesoKg}");
 
             return sb.ToString();
+        }
+
+        // Propiedades y métodos de la interfaz
+
+        /// <summary>
+        /// Obtiene el monto de impuestos aplicado a un elemento.
+        /// Calculado como el 35% del costo de envío.
+        /// </summary>
+        public decimal Impuestos => (decimal)0.35 * this.costoEnvio;
+
+        /// <summary>
+        /// Calcula y devuelve el costo total incluyendo impuestos.
+        /// </summary>
+        /// <returns>El costo total con impuestos.</returns>
+        public virtual decimal AplicarImpuestos()
+        {
+            return this.costoEnvio + this.Impuestos;    
         }
     }
 }

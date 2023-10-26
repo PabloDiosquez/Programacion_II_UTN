@@ -9,7 +9,7 @@ namespace EjercicioI02_Biblioteca
     /// <summary>
     /// Clase que representa un paquete pesado que hereda de la clase base Paquete.
     /// </summary>
-    public class PaquetePesado : Paquete
+    public class PaquetePesado : Paquete, IAduana, IAfip
     {
         /// <summary>
         /// Obtiene un valor que indica si el paquete pesado tiene prioridad.
@@ -28,5 +28,29 @@ namespace EjercicioI02_Biblioteca
         public PaquetePesado(string codigoSeguimiento, decimal costoEnvio, string destino, string origen, double pesoKg)
             : base(codigoSeguimiento, costoEnvio, destino, origen, pesoKg)
         { }
+
+        // Propiedades y Métodos de interfaces 
+
+        // <summary>
+        /// Obtiene el monto de impuestos según la interfaz IAduana.
+        /// Calculado como el 25% del costo de envío.
+        /// </summary>
+        decimal IAduana.Impuestos => (decimal)0.35 * this.costoEnvio;
+
+        /// <summary>
+        /// Obtiene el monto de impuestos según la interfaz IAfip.
+        /// Calculado como el 25% del costo de envío.
+        /// </summary>
+        decimal IAfip.Impuestos => (decimal)0.25 * this.costoEnvio;
+
+        /// <summary>
+        /// Calcula y devuelve el costo total incluyendo impuestos de ambas interfaces.
+        /// </summary>
+        /// <returns>El costo total con impuestos.</returns>
+        public override decimal AplicarImpuestos()
+        {
+            // Se realiza una conversión explícita a IAfip para acceder a Impuestos de IAfip.
+            return this.costoEnvio + ((IAfip)this).Impuestos + ((IAduana)this).Impuestos;
+        }
     }
 }

@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjercicioI01_Consola", "Eje
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cartuchera", "Cartuchera", "{5751E07B-6679-46E2-B608-E399662FA761}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioI02_Test", "EjercicioI02_Test\EjercicioI02_Test.csproj", "{B733687D-97B8-49B1-B96D-F4DCC1B179F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjercicioI02_Test", "EjercicioI02_Test\EjercicioI02_Test.csproj", "{B733687D-97B8-49B1-B96D-F4DCC1B179F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioI02_Biblioteca", "EjercicioI02_Biblioteca\EjercicioI02_Biblioteca.csproj", "{E90E7F96-1764-4FE6-85B6-0A07416700A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjercicioI02_Biblioteca", "EjercicioI02_Biblioteca\EjercicioI02_Biblioteca.csproj", "{E90E7F96-1764-4FE6-85B6-0A07416700A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioI02_Consola", "EjercicioI02_Consola\EjercicioI02_Consola.csproj", "{CEDCF443-A9EF-4C75-A354-BEC1E28CD2BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{E90E7F96-1764-4FE6-85B6-0A07416700A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E90E7F96-1764-4FE6-85B6-0A07416700A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E90E7F96-1764-4FE6-85B6-0A07416700A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEDCF443-A9EF-4C75-A354-BEC1E28CD2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEDCF443-A9EF-4C75-A354-BEC1E28CD2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEDCF443-A9EF-4C75-A354-BEC1E28CD2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEDCF443-A9EF-4C75-A354-BEC1E28CD2BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

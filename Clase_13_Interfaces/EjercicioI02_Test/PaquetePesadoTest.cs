@@ -14,19 +14,61 @@ namespace EjercicioI02_Test
         [TestMethod]
         public void AplicarImpuestos_DeberiaRetornarCostoDeEnvioMasImpuestoAfipYAduana()
         {
+            // Arrange
 
+            const decimal costoEnvio = 100;
+
+            const decimal resultadoEsperado = 160;
+
+            PaquetePesado paquetePesado = new PaquetePesado(string.Empty, costoEnvio, string.Empty, string.Empty, 0);
+
+            // Act 
+
+            decimal resultado = paquetePesado.AplicarImpuestos();
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
         }
 
         [TestMethod]
         public void Impuestos_DeberiaRetornarValorImpuestoDel25PorcientoSobreCostoEnvio_CuandoEsImplementacionExplicitaAfip()
         {
+            // Arrange
 
+            const decimal costoEnvio = 100;
+
+            const decimal resultadoEsperado = 25;
+
+            PaquetePesado paquetePesado = new PaquetePesado(string.Empty, costoEnvio, string.Empty, string.Empty, 0);
+
+            // Act 
+
+            decimal resultado = ((IAfip)paquetePesado).Impuestos;
+
+            // Assert 
+
+            Assert.AreEqual(resultadoEsperado, resultado);
         }
 
         [TestMethod]
         public void Impuestos_DeberiaRetornarValorImpuestoDel35PorcientoSobreCostoEnvio_CuandoEsImplementacionImplicita()
         {
+            // Arrange
 
+            const decimal costoEnvio = 100;
+
+            const decimal resultadoEsperado = 35;
+
+            PaquetePesado paquetePesado = new PaquetePesado(string.Empty, costoEnvio, string.Empty, string.Empty, 0);
+
+            // Act 
+
+            decimal resultado = paquetePesado.Impuestos;
+
+            // Assert
+
+            Assert.AreEqual(resultadoEsperado, resultado);
         }
 
         [TestMethod]
