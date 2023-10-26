@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EjercicioI02_Biblioteca;
 
 namespace EjercicioI02_Test
 {
@@ -13,7 +14,11 @@ namespace EjercicioI02_Test
         [TestMethod]
         public void CalcularTotalImpuestosAduana_DeberiaRetornarLaSumaDeLosImpuestosDeAduana() 
         {
+            // Arrange 
 
+            // Act 
+
+            // Assert
         }
 
         public void CalcularTotalImpuestosAfip_DeberiaRetornarLaSumaDeLosImpuestosDeAfip()
