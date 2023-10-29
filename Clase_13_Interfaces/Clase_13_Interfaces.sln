@@ -23,9 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Control Aduana", "Control A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impresora multifunción", "Impresora multifunción", "{7B9F660E-6510-45FE-A951-AEE4F4166E8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioI03_Biblioteca", "EjercicioI03_Biblioteca\EjercicioI03_Biblioteca.csproj", "{CE83E2FC-E68C-4EA1-B4F4-B2CB2293C265}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjercicioI03_Biblioteca", "EjercicioI03_Biblioteca\EjercicioI03_Biblioteca.csproj", "{CE83E2FC-E68C-4EA1-B4F4-B2CB2293C265}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPrincipal", "FormPrincipal\FormPrincipal.csproj", "{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormPrincipal", "FormPrincipal\FormPrincipal.csproj", "{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioI04_Biblioteca", "EjercicioI04_Biblioteca\EjercicioI04_Biblioteca.csproj", "{B94A3A49-8DA6-4FBB-AE2D-8A0B0AFCDAFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94A3A49-8DA6-4FBB-AE2D-8A0B0AFCDAFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94A3A49-8DA6-4FBB-AE2D-8A0B0AFCDAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94A3A49-8DA6-4FBB-AE2D-8A0B0AFCDAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94A3A49-8DA6-4FBB-AE2D-8A0B0AFCDAFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,8 @@ Global
 		{CEDCF443-A9EF-4C75-A354-BEC1E28CD2BC} = {600F632D-B537-4C91-85FF-2C3350FC4383}
 		{600F632D-B537-4C91-85FF-2C3350FC4383} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
 		{7B9F660E-6510-45FE-A951-AEE4F4166E8F} = {3D04228F-79BA-4025-9845-3C1EBE43DA5D}
+		{CE83E2FC-E68C-4EA1-B4F4-B2CB2293C265} = {7B9F660E-6510-45FE-A951-AEE4F4166E8F}
+		{0C94DC18-51D5-41EB-A6A7-0C2B31E658BC} = {7B9F660E-6510-45FE-A951-AEE4F4166E8F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BB31256-A705-4C8B-A191-4EE00E92A749}
