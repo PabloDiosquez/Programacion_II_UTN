@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace EjercicioC01_Biblioteca
 {
     /// <summary>
-    /// Clase que representa una competencia de autos de Fórmula 1.
+    /// Clase que representa una competencia de autos de Fórmula 1 o MotoCross.
     /// </summary>
     public class Competencia
     {
@@ -26,7 +26,12 @@ namespace EjercicioC01_Biblioteca
         /// <summary>
         /// Lista de competidores en la competencia.
         /// </summary>
-        private List<AutoF1> competidores;
+        private List<VehiculoDeCarrera> competidores;
+
+        /// <summary>
+        /// Tipo de la competencia (F1 o MotoCross).
+        /// </summary>
+        private TipoCompetencia tipoCompetencia;
 
         /// <summary>
         /// Obtiene la cantidad de competidores en la competencia.
@@ -41,7 +46,34 @@ namespace EjercicioC01_Biblioteca
         /// <summary>
         /// Obtiene la lista de competidores en la competencia.
         /// </summary>
-        public List<AutoF1> Competidores { get => competidores; }
+        public List<VehiculoDeCarrera> Competidores { get => competidores; }
+
+        /// <summary>
+        /// Obtiene o establece el tipo de la competencia.
+        /// </summary>
+        public TipoCompetencia TipoCompetencia { get => tipoCompetencia; set => tipoCompetencia = value; }
+
+        // Indexador 
+
+        /// <summary>
+        /// Acceso a un competidor en la competencia mediante un índice.
+        /// </summary>
+        /// <param name="indice">Índice del competidor.</param>
+        /// <returns>El competidor en la posición indicada.</returns>
+        public VehiculoDeCarrera this[int indice]
+        {
+            get
+            {
+                if (indice >= 0 && indice < this.competidores.Count)
+                {
+                    return this.competidores[indice];
+                }
+                else
+                {
+                    throw new IndexOutOfRangeException("Índice fuera de rango.");
+                }
+            }
+        }
 
         // Constructor 
 
@@ -50,18 +82,20 @@ namespace EjercicioC01_Biblioteca
         /// </summary>
         private Competencia()
         {
-            competidores = new List<AutoF1>();
+            competidores = new List<VehiculoDeCarrera>();
         }
 
         /// <summary>
-        /// Constructor de la clase Competencia que establece la cantidad de vueltas y competidores y llama al constructor privado.
+        /// Constructor de la clase Competencia que establece la cantidad de vueltas, competidores y tipo, y llama al constructor privado.
         /// </summary>
         /// <param name="cantidadVueltas">Cantidad de vueltas en la competencia.</param>
         /// <param name="cantidadCompetidores">Cantidad de competidores en la competencia.</param>
-        public Competencia(short cantidadVueltas, short cantidadCompetidores) : this()
+        /// <param name="tipo">Tipo de competencia (F1 o MotoCross).</param>
+        public Competencia(short cantidadVueltas, short cantidadCompetidores, TipoCompetencia tipo) : this()
         {
             this.cantidadVueltas = cantidadVueltas;
             this.cantidadCompetidores = cantidadCompetidores;
+            this.tipoCompetencia = tipo;
         }
 
         // Métodos de instancia 
@@ -76,7 +110,8 @@ namespace EjercicioC01_Biblioteca
             sb.AppendLine("*** Datos de la Competencia ***");
             sb.AppendLine($"Cantidad de vueltas: {this.CantidadVueltas}");
             sb.AppendLine($"Cantidad de competidores: {this.CantidadCompetidores}");
-            foreach (AutoF1 auto in this.Competidores) auto.MostrarDatos();
+            sb.AppendLine($"Tipo Competencia: {this.TipoCompetencia}");
+            foreach (VehiculoDeCarrera vehiculo in this.Competidores) vehiculo.MostrarDatos();
 
             return sb.ToString();
         }
@@ -98,7 +133,7 @@ namespace EjercicioC01_Biblioteca
 
             auto.EnCompetencia = true;
 
-            auto.VueltasRestantes = competencia.cantidadVueltas;
+            auto.VueltasRestantes = competencia.CantidadVueltas;
 
             auto.CantidadCombustible = (short)new Random().Next(15, 101);
 
@@ -127,31 +162,49 @@ namespace EjercicioC01_Biblioteca
         }
 
         /// <summary>
-        /// Compara si un auto está en la competencia.
+        /// Compara si un vehículo de carrera está en la competencia.
         /// </summary>
-        /// <param name="competencia">Competencia en la que se busca el auto.</param>
-        /// <param name="autoBuscado">Auto que se busca en la competencia.</param>
-        /// <returns>Verdadero si el auto se encuentra en la competencia, falso en caso contrario.</returns>
-        public static bool operator ==(Competencia competencia, AutoF1 autoBuscado)
+        /// <param name="competencia">Competencia en la que se busca el vehículo de carrera.</param>
+        /// <param name="vehiculoBuscado">Vehículo de carrera que se busca en la competencia.</param>
+        /// <returns>Verdadero si el vehículo de carrera se encuentra en la competencia, falso en caso contrario.</returns>
+        public static bool operator ==(Competencia competencia, VehiculoDeCarrera vehiculoBuscado)
         {
-            if (competencia is null || autoBuscado is null) return false;
+            if (competencia is null || vehiculoBuscado is null) return false;
 
-            foreach (AutoF1 auto in competencia.Competidores)
+            if (!VehiculoDeTipoCorrectoParaLaCompetencia(competencia, vehiculoBuscado))
+                return false;
+
+            foreach (VehiculoDeCarrera vehiculo in competencia.Competidores)
             {
-                if (auto == autoBuscado) return true;
+                if (vehiculo == vehiculoBuscado) return true;
             }
             return false;
         }
 
         /// <summary>
-        /// Compara si un auto no está en la competencia.
+        /// Compara si un vehículo de carrera no está en la competencia.
         /// </summary>
-        /// <param name="competencia">Competencia en la que se busca el auto.</param>
-        /// <param name="auto">Auto que se busca en la competencia.</param>
-        /// <returns>Verdadero si el auto no se encuentra en la competencia, falso en caso contrario.</returns>
-        public static bool operator !=(Competencia competencia, AutoF1 auto)
+        /// <param name="competencia">Competencia en la que se busca el vehículo de carrera.</param>
+        /// <param name="vehiculo">Vehículo de carrera que se busca en la competencia.</param>
+        /// <returns>Verdadero si el vehículo de carrera no se encuentra en la competencia, falso en caso contrario.</returns>
+        public static bool operator !=(Competencia competencia, VehiculoDeCarrera vehiculo)
         {
-            return !(competencia == auto);
+            return !(competencia == vehiculo);
+        }
+
+        /// <summary>
+        /// Verifica si el tipo del vehículo es adecuado para la competencia.
+        /// </summary>
+        /// <param name="competencia">Competencia en la que se evalúa el tipo de vehículo.</param>
+        /// <param name="vehiculo">Vehículo de carrera que se evalúa.</param>
+        /// <returns>Verdadero si el tipo del vehículo es adecuado para la competencia, falso en caso contrario.</returns>
+        private static bool VehiculoDeTipoCorrectoParaLaCompetencia(Competencia competencia, VehiculoDeCarrera vehiculo)
+        {
+            if (competencia.TipoCompetencia == TipoCompetencia.F1 && vehiculo is AutoF1) return true;
+
+            if (competencia.TipoCompetencia == TipoCompetencia.MotoCross && vehiculo is MotoCross) return true;
+
+            return false;
         }
     }
 }
