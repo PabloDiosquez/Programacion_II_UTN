@@ -6,7 +6,7 @@ namespace Consola
     /// <summary>
     /// Clase principal del programa.
     /// </summary>
-    internal class Program
+    public class Program
     {
         /// <summary>
         /// Punto de entrada del programa.
@@ -14,15 +14,18 @@ namespace Consola
         /// <param name="args">Argumentos de línea de comandos.</param>
         static void Main(string[] args)
         {
-            verificarSistemaOperativo();
+            //verificarSistemaOperativo();
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            ObtenerInformacionOS();
+            //ObtenerInformacionOS();
 
-            ObtenerInformacionAlmacenamiento();
+            //ObtenerInformacionAlmacenamiento();
 
-            CrearDirectorio();
+            //CrearDirectorio();
+
+            Archivo.Escribir();
+
         }
 
         /// <summary>
