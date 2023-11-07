@@ -24,9 +24,9 @@ namespace Consola
 
             //CrearDirectorio();
 
-            //Archivo.Escribir();
+            Archivo.Escribir();
 
-            Console.WriteLine(Archivo.Leer("Archivos/prueba.txt"));
+            //Console.WriteLine(Archivo.Leer("Archivos/prueba.txt"));
 
         }
 
