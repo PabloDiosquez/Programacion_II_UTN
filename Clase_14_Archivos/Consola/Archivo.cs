@@ -33,8 +33,15 @@ namespace Consola
             // Define el nombre del archivo a crear.
             string nombreArchivo = "prueba.txt";
 
+            string rutaCarpeta = $"{ruta}/Archivos";
+
             // Crea la ruta completa del archivo utilizando la ruta del escritorio y el nombre del archivo.
-            string rutaCompleta = $"{ruta}/{nombreArchivo}";
+            string rutaCompleta = $"{ruta}/Archivos/{nombreArchivo}";
+
+            if (!Directory.Exists(rutaCarpeta))
+            {
+                Directory.CreateDirectory(rutaCarpeta);
+            }
 
             try
             {
@@ -45,16 +52,42 @@ namespace Consola
                     sw.WriteLine("Línea de prueba 1");
                     sw.WriteLine("Línea de prueba 2");
                     sw.WriteLine("Línea de prueba 3");
+                    sw.WriteLine("Línea de prueba 4");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // Captura cualquier excepción y lanza una excepción personalizada.
-                throw new Exception($"Error en el archivo {ruta}/{nombreArchivo}");
+                throw new Exception($"Error en el archivo {ruta}/{nombreArchivo}: {ex.Message}");
             }
 
             // Muestra un mensaje de éxito en la consola.
             Console.WriteLine("Archivo creado con éxito.");
+        }
+
+        public static string Leer(string rutaArchivo)
+        {
+            string rutaCompleta = $"{ruta}/{rutaArchivo}";
+
+            try
+            {
+                string texto = string.Empty;
+
+                StreamReader sr = new StreamReader(rutaCompleta);
+
+                string linea;
+
+                while ((linea = sr.ReadLine()) is not null)
+                {
+                    texto += $"{linea}\n";
+                }
+
+                return texto;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error en el archivo {rutaCompleta}: {ex.Message}");
+            }
         }
     }
 }
