@@ -101,5 +101,39 @@ namespace SerializacionXML
                 throw new Exception($"Ocurrió un error: {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Lee un objeto Personaje desde un archivo XML y lo devuelve.
+        /// </summary>
+        /// <returns>El objeto Personaje leído desde el archivo XML.</returns>
+        public static Personaje Leer()
+        {
+            // Construye la ruta completa del archivo XML donde se leerá el Personaje.
+            string rutaArchivo = $"{rutaDir}/personajesSerializados.xml";
+
+            // Inicializa la variable del objeto Personaje como nulo.
+            Personaje personaje = null;
+
+            try
+            {
+                // Abre un StreamReader para leer el archivo XML.
+                using (StreamReader sr = new StreamReader(rutaArchivo))
+                {
+                    // Crea un XmlSerializer para deserializar objetos Personaje.
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(Personaje));
+
+                    // Deserializa el archivo y lo convierte en un objeto Personaje.
+                    personaje = (Personaje)xmlSerializer.Deserialize(sr);
+                }
+
+                // Devuelve el objeto Personaje leído desde el archivo XML.
+                return personaje;
+            }
+            catch (Exception ex)
+            {
+                // Captura excepciones y las relanza con un mensaje personalizado.
+                throw new Exception($"Ocurrió un error: {ex.Message}");
+            }
+        }
     }
 }

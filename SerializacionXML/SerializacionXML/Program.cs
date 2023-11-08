@@ -15,7 +15,9 @@ namespace SerializacionXML
 
             List<Personaje> personajes = new List<Personaje>() { personaje1, personaje2, personaje3};
 
-            ClaseSerializadora.Escribir(personajes);
+            //ClaseSerializadora.Escribir(personajes);
+
+            Console.WriteLine(ClaseSerializadora.Leer());
         }
     }
 }
