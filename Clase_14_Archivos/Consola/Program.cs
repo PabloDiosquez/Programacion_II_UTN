@@ -24,9 +24,11 @@ namespace Consola
 
             //CrearDirectorio();
 
-            Archivo.Escribir();
+            Archivo.Escribir("Archivos/prueba.txt", "Línea appendeada por el método Escribir() sobrecargado ⚡", false);
 
-            //Console.WriteLine(Archivo.Leer("Archivos/prueba.txt"));
+            Console.ReadKey();
+
+            Console.WriteLine(Archivo.Leer("Archivos/prueba.txt"));
 
             //ManejadorArchivosTexto.Escribir($"Prueba de escritura en el archivo\n'segundaPrueba.txt' -- {DateTime.Now.ToString()}");
 
