@@ -10,7 +10,7 @@ namespace Consola
     /// <summary>
     /// Clase para gestionar operaciones de lectura y escritura de archivos en una carpeta específica en el escritorio.
     /// </summary>
-    public static class ArchivoBis
+    public static class ManejadorArchivosTexto
     {
         static string ruta;         // Ruta base del escritorio
         static string rutaCarpeta;  // Ruta completa de la carpeta de archivos
@@ -18,7 +18,7 @@ namespace Consola
         /// <summary>
         /// Constructor estático de la clase ArchivoBis que inicializa las rutas.
         /// </summary>
-        static ArchivoBis()
+        static ManejadorArchivosTexto()
         {
             ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             rutaCarpeta = $"{ruta}/Archivos";

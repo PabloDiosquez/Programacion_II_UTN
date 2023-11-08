@@ -24,15 +24,15 @@ namespace Consola
 
             //CrearDirectorio();
 
-            //Archivo.Escribir();
+            Archivo.Escribir();
 
             //Console.WriteLine(Archivo.Leer("Archivos/prueba.txt"));
 
-            //ArchivoBis.Escribir($"Prueba de escritura en el archivo\n'segundaPrueba.txt' -- {DateTime.Now.ToString()}");
+            //ManejadorArchivosTexto.Escribir($"Prueba de escritura en el archivo\n'segundaPrueba.txt' -- {DateTime.Now.ToString()}");
 
-            string texto = ArchivoBis.Leer("Archivos/segundaPrueba.txt");
+            //string texto = ManejadorArchivosTexto.Leer("Archivos/segundaPrueba.txt");
 
-            Console.WriteLine(texto);
+            //Console.WriteLine(texto);
 
         }
 

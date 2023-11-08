@@ -28,6 +28,14 @@ namespace Consola
             rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
         }
 
+        public static void EscribirUnaLinea(string path, string texto) 
+        {
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine(texto);
+            }
+        }
+
         /// <summary>
         /// Esta función crea un archivo de texto en el escritorio del usuario y escribe la fecha y hora actual en él.
         /// </summary>
@@ -50,11 +58,13 @@ namespace Consola
 
             try
             {
-                // Abre un StreamWriter y escribe la fecha y hora actual en el archivo.
+                //Abre un StreamWriter y escribe la fecha y hora actual en el archivo.
                 using (StreamWriter sw = new StreamWriter(rutaCompleta, true))
                 {
                     sw.WriteLine(DateTime.Now.ToString());
                 }
+
+                //EscribirUnaLinea(rutaCompleta, DateTime.Now.ToString());
             }
             catch (Exception ex)
             {
@@ -64,6 +74,39 @@ namespace Consola
 
             // Muestra un mensaje de éxito en la consola.
             Console.WriteLine("Archivo creado con éxito.");
+        }
+
+        /// <summary>
+        /// Escribe el texto en un archivo en la ruta especificada, permitiendo la opción de agregar al archivo existente o reemplazarlo.
+        /// </summary>
+        /// <param name="pathArchivo">El nombre o ruta relativa del archivo donde se escribirá el texto.</param>
+        /// <param name="texto">El texto que se va a escribir en el archivo.</param>
+        /// <param name="appendear">Indica si se debe agregar el texto al final del archivo existente (true) o reemplazar el contenido del archivo (false).</param>
+        public static void Escribir(string pathArchivo, string texto, bool appendear)
+        {
+            // Construye la ruta completa del archivo.
+            string rutaCompleta = $"{ruta}/{pathArchivo}";
+
+            StreamWriter sw = null;
+
+            try
+            {
+                // Inicializa un StreamWriter para escribir en el archivo.
+                sw = new StreamWriter(rutaCompleta, appendear);
+
+                // Escribe el texto en el archivo
+                sw.WriteLine(texto);
+            }
+            catch (Exception ex)
+            {
+                // Captura cualquier excepción y la lanza nuevamente.
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                // Asegura que se cierre el StreamWriter, si está abierto.
+                if (sw is not null) sw.Close();
+            }
         }
 
         /// <summary>
@@ -78,7 +121,7 @@ namespace Consola
 
             try
             {
-                string texto = string.Empty;
+                string texto;
 
                 // Abre un StreamReader para leer el archivo.
                 using (StreamReader sr = new StreamReader(rutaCompleta))
