@@ -29,17 +29,18 @@ namespace SerializacionXML_Herencia
             ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             // Establece la ruta completa del directorio de serialización
-            rutaDir = $"{ruta}/SerializaciónHerencia";
+            rutaDir = @$"{ruta}\SerializacionHerencia";
         }
 
         /// <summary>
         /// Método estático para escribir datos serializados en un archivo XML.
         /// </summary>
         /// <param name="datos">Datos a ser serializados.</param>
+        /// <param name="path">Ruta del archivo en la que se escribirán los datos serializados.</param>
         public static void Escribir(T datos, string path)
         {
             // Ruta completa del archivo a escribir
-            string rutaArchivo = $"{rutaDir}/{path}";
+            string rutaArchivo = @$"{rutaDir}\{path}";
 
             try
             {
@@ -70,6 +71,20 @@ namespace SerializacionXML_Herencia
         /// <returns>Los datos deserializados.</returns>
         public static T Leer(string path)
         {
+            if (Directory.Exists(rutaDir))
+            {
+                string[] archivosEnRuta = Directory.GetFiles(rutaDir);
+
+                foreach (string archivo in archivosEnRuta)
+                {
+                    if (archivo.Contains(path))
+                    {
+                        path = archivo; // Actualiza la ruta para coincidir con el archivo encontrado
+                        break;
+                    }
+                }
+            }
+
             // Verifica si la ruta es nula o vacía y lanza una excepción si es así
             if (string.IsNullOrEmpty(path)) throw new ArgumentNullException("path");
 
@@ -86,6 +101,8 @@ namespace SerializacionXML_Herencia
 
                     // Deserializa los datos del archivo y los asigna a la variable
                     datos = (T)xmlSerializer.Deserialize(sr);
+
+                    return datos; // Devuelve los datos deserializados
                 }
             }
             catch (Exception ex)
@@ -93,7 +110,6 @@ namespace SerializacionXML_Herencia
                 // Captura cualquier excepción y la lanza como una nueva excepción con un mensaje personalizado
                 throw new Exception($"Ocurrió algo inesperado: {ex.Message}");
             }
-            return datos; // Devuelve los datos deserializados
         }
     }
 }

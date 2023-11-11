@@ -13,7 +13,14 @@ namespace SerializacionXML_Herencia
             personajes.Add(new Arquero("Legolas", 123, true));
             personajes.Add(new Mago("Gandalf", 542, false));
 
-            ClaseSerializadora<List<Personaje>>.Escribir(personajes, "personajes.xml");
+            //ClaseSerializadora<List<Personaje>>.Escribir(personajes, "personajes.xml");
+
+            List<Personaje> personajesDeserializados = ClaseSerializadora<List<Personaje>>.Leer("personajes.xml");
+
+            foreach (Personaje personaje in personajesDeserializados)
+            {
+                Console.WriteLine(personaje);
+            }
         }
     }
 }
