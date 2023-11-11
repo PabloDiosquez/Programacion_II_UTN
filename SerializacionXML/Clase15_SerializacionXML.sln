@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializacionXML", "SerializacionXML\SerializacionXML.csproj", "{9CF582FA-AB2C-4528-9A89-DC0482A2DE22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializacionXML_Herencia", "SerializacionXML_Herencia\SerializacionXML_Herencia.csproj", "{905F395E-A8C5-46D6-971A-5B6B91AFC40C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializacionXML_Herencia", "SerializacionXML_Herencia\SerializacionXML_Herencia.csproj", "{AF2B92F5-1882-435C-B5AF-0051BA30F7C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{9CF582FA-AB2C-4528-9A89-DC0482A2DE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CF582FA-AB2C-4528-9A89-DC0482A2DE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CF582FA-AB2C-4528-9A89-DC0482A2DE22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{905F395E-A8C5-46D6-971A-5B6B91AFC40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{905F395E-A8C5-46D6-971A-5B6B91AFC40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{905F395E-A8C5-46D6-971A-5B6B91AFC40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{905F395E-A8C5-46D6-971A-5B6B91AFC40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2B92F5-1882-435C-B5AF-0051BA30F7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2B92F5-1882-435C-B5AF-0051BA30F7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2B92F5-1882-435C-B5AF-0051BA30F7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2B92F5-1882-435C-B5AF-0051BA30F7C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
