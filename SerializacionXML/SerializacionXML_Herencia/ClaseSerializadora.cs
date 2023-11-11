@@ -36,18 +36,18 @@ namespace SerializacionXML_Herencia
         /// Método estático para escribir datos serializados en un archivo XML.
         /// </summary>
         /// <param name="datos">Datos a ser serializados.</param>
-        public static void Escribir(T datos)
+        public static void Escribir(T datos, string path)
         {
             // Ruta completa del archivo a escribir
-            string rutaArchivo = $"{rutaDir}/personaje.xml";
+            string rutaArchivo = $"{rutaDir}/{path}";
 
             try
             {
                 // Verifica si el directorio existe, de lo contrario lo crea
-                if (Directory.Exists(rutaDir)) Directory.CreateDirectory(rutaDir);
+                if (!Directory.Exists(rutaDir)) Directory.CreateDirectory(rutaDir);
 
                 // Escribe los datos serializados en un archivo XML
-                using (StreamWriter sw = new StreamWriter(rutaArchivo))
+                using (StreamWriter sw = new StreamWriter(rutaArchivo, true))
                 {
                     // Inicializa un XmlSerializer para el tipo T
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));

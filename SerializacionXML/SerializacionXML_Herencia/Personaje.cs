@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace SerializacionXML_Herencia
 {
+    [XmlInclude(typeof(Arquero))]
+    [XmlInclude(typeof(Mago))]
+
     /// <summary>
     /// Clase que representa a un personaje con nombre y nivel.
     /// </summary>

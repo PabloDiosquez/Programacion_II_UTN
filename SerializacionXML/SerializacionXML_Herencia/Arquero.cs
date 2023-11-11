@@ -16,7 +16,11 @@ namespace SerializacionXML_Herencia
         // Indica si el arquero tiene armadura
         private bool tieneArmadura;
 
-        // Constructor
+        // Constructores
+        public Arquero()
+        {
+                
+        }
 
         /// <summary>
         /// Constructor que inicializa un Arquero con nombre, nivel y si tiene o no armadura.

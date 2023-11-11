@@ -16,7 +16,11 @@ namespace SerializacionXML_Herencia
         // Indica si el Mago tiene armadura
         private bool tieneArmadura;
 
-        // Constructor
+        // Constructores
+        public Mago()
+        {
+
+        }
 
         /// <summary>
         /// Constructor que inicializa un Mago con nombre, nivel y si tiene o no armadura.
