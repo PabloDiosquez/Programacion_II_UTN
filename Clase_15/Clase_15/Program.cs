@@ -26,9 +26,9 @@ namespace Clase_15
                     Edad = 36
                 };
 
-                Serializadora.GuardarXml(alumno, @$"{pathDirectorio}\alumno.xml");
+                Serializadora<Alumno>.GuardarXml(alumno, @$"{pathDirectorio}\alumno.xml");
 
-                Alumno alumnoDeserializado = Serializadora.LeerXml(@$"{pathDirectorio}\alumno.xml");
+                Alumno alumnoDeserializado = Serializadora<Alumno>.LeerXml(@$"{pathDirectorio}\alumno.xml");
 
                 Console.WriteLine(alumnoDeserializado);
 

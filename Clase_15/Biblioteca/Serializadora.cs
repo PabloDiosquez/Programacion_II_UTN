@@ -8,17 +8,17 @@ using System.Xml.Serialization;
 
 namespace Biblioteca
 {
-    public static class Serializadora
+    public static class Serializadora<T>
     {
-        public static void GuardarXml(Alumno alumno, string path)
+        public static void GuardarXml(T objeto, string path)
         {
             try
             {
                 using (StreamWriter sw = new StreamWriter(path))
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(Alumno));
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
 
-                    xmlSerializer.Serialize(sw, alumno);
+                    xmlSerializer.Serialize(sw, objeto);
                 }
             }
             catch (Exception ex)
@@ -27,21 +27,21 @@ namespace Biblioteca
             }
         }
 
-        public static Alumno LeerXml(string path)
+        public static T LeerXml(string path)
         {
             if(path is null) throw new ArgumentNullException("path");
 
-            Alumno alumno = default;
+            T objeto = default(T);
 
             try
             {
                 using (StreamReader sw = new StreamReader(path))
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(Alumno));
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
 
-                    alumno = (Alumno)xmlSerializer.Deserialize(sw);
+                    objeto = (T)xmlSerializer.Deserialize(sw);
                 }
-                return alumno;
+                return objeto;
             }
             catch (Exception ex)
             {
