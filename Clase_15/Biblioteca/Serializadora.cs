@@ -14,7 +14,7 @@ namespace Biblioteca
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(path))
+                using (StreamWriter sw = new StreamWriter(path, true))
                 {
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
 
@@ -31,17 +31,14 @@ namespace Biblioteca
         {
             if(path is null) throw new ArgumentNullException("path");
 
-            T objeto = default(T);
-
             try
             {
                 using (StreamReader sw = new StreamReader(path))
                 {
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
 
-                    objeto = (T)xmlSerializer.Deserialize(sw);
+                    return (T)xmlSerializer.Deserialize(sw);  
                 }
-                return objeto;
             }
             catch (Exception ex)
             {
