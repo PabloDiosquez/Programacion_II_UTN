@@ -74,6 +74,7 @@
             this.mstrip_guardar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.mstrip_guardar.Size = new System.Drawing.Size(269, 22);
             this.mstrip_guardar.Text = "Guardar";
+            this.mstrip_guardar.Click += new System.EventHandler(this.mstrip_guardar_Click);
             // 
             // mstrip_guardar_como
             // 
@@ -82,6 +83,7 @@
             | System.Windows.Forms.Keys.S)));
             this.mstrip_guardar_como.Size = new System.Drawing.Size(269, 22);
             this.mstrip_guardar_como.Text = "Guardar como...";
+            this.mstrip_guardar_como.Click += new System.EventHandler(this.mstrip_guardar_como_Click);
             // 
             // sStrip
             // 
