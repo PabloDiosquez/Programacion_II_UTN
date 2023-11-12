@@ -52,15 +52,24 @@ namespace Clase_15
 
                 List<Alumno> alumnos = new List<Alumno>() { alumno1, alumno3, alumno4 };
 
-                Serializadora<List<Alumno>>.GuardarXml(alumnos, @$"{pathDirectorio}\alumnos.xml");
+                //Serializadora<List<Alumno>>.GuardarXml(alumnos, @$"{pathDirectorio}\alumnos.xml");
 
-                List<Alumno> alumnosDeserializados = Serializadora<List<Alumno>>.LeerXml(@$"{pathDirectorio}\alumnos.xml");
+                //List<Alumno> alumnosDeserializados = Serializadora<List<Alumno>>.LeerXml(@$"{pathDirectorio}\alumnos.xml");
 
-                Console.WriteLine(alumnoDeserializado);
+                //foreach (Alumno alumnoDeserializado in alumnosDeserializados)
+                //{
+                //    Console.WriteLine(alumnoDeserializado);
+                //}
 
-                foreach (Alumno alumnoDeserializado in alumnosDeserializados)
+                //Serializadora<Alumno>.GuardarJSON(alumno, @$"{pathDirectorio}\alumno.json");
+
+                Serializadora<List<Alumno>>.GuardarJSON(alumnos, @$"{pathDirectorio}\alumnos.json");
+
+                List<Alumno> alumnosRecuperados = Serializadora<List<Alumno>>.LeerJSON(@$"{pathDirectorio}\alumnos.json");
+
+                foreach (Alumno alumnoRecuperado in alumnosRecuperados)
                 {
-                    Console.WriteLine(alumnoDeserializado);
+                    Console.WriteLine(alumnoRecuperado);
                 }
 
             }
