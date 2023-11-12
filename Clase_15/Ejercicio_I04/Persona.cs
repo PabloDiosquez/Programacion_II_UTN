@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -70,6 +71,44 @@ namespace Ejercicio_I04
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(Persona));
 
                     return xmlSerializer.Deserialize(sr) as Persona;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static void GuardarJSON(Persona persona)
+        {
+            string path = string.Empty;
+
+            JsonSerializerOptions options = new JsonSerializerOptions();
+
+            options.WriteIndented = true;   
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.Write(JsonSerializer.Serialize(persona, typeof(Persona), options));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static Persona LeerJSON() 
+        {
+            string path = string.Empty;
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    return JsonSerializer.Deserialize<Persona>(sr.ReadToEnd()) as Persona;
                 }
             }
             catch (Exception ex)
