@@ -28,5 +28,10 @@ namespace Biblioteca
         public string NombreCompleto { get => nombreCompleto; set => nombreCompleto = value; }
         public int Legajo { get => legajo; set => legajo = value; }
         public short Edad { get => edad; set => edad = value; }
+
+        public override string ToString()
+        {
+            return $"Nombre completo: {nombreCompleto} -- Legajo: {Legajo}";
+        }
     }
 }

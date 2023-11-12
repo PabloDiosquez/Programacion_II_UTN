@@ -26,5 +26,27 @@ namespace Biblioteca
                 throw new Exception($"Algo salió mal 🥴: {ex.Message}");
             }
         }
+
+        public static Alumno LeerXml(string path)
+        {
+            if(path is null) throw new ArgumentNullException("path");
+
+            Alumno alumno = default;
+
+            try
+            {
+                using (StreamReader sw = new StreamReader(path))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(Alumno));
+
+                    alumno = (Alumno)xmlSerializer.Deserialize(sw);
+                }
+                return alumno;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Algo salió mal 🥴: {ex.Message}");
+            }
+        }
     }
 }
