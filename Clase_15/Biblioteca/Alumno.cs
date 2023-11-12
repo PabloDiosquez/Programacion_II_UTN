@@ -9,7 +9,7 @@ namespace Biblioteca
     /// <summary>
     /// Clase que representa a un alumno.
     /// </summary>
-    public class Alumno
+    public class Alumno : Persona
     {
         private string nombreCompleto; // Nombre completo del alumno.
         private int legajo; // Número de legajo del alumno.
