@@ -58,6 +58,7 @@
             this.btn_Eliminar.Text = "-";
             this.toolTip.SetToolTip(this.btn_Eliminar, "Eliminar objeto");
             this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Modificar
             // 
@@ -94,6 +95,7 @@
             this.Name = "FrmListaSuper";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista del supermercado";
+            this.Load += new System.EventHandler(this.FrmListaSuper_Load);
             this.ResumeLayout(false);
 
         }

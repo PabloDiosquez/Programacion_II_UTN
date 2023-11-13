@@ -12,54 +12,59 @@ namespace Ejercicio_I01
 {
     public partial class FrmAltaModificacion : Form
     {
-        public string Objeto { get { return this.textObjeto.Text; } }
-
-        public FrmAltaModificacion()
+        public FrmAltaModificacion(string titulo, string contenidoTextBox, string btnConfirmarTexto)
         {
+            this.Text = titulo;   
+
+            this.textObjeto.Text = contenidoTextBox;
+
+            this.btnConfirmar.Text = btnConfirmarTexto;
+
             InitializeComponent();
         }
+        public string Objeto { get { return this.textObjeto.Text; } }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.textObjeto.Text)) 
-            {
-                MessageBox.Show("La caja de texto no puede quedar vacía 🥴");
-            }
-            else 
-            {
-                DialogResult = DialogResult.OK;
-
-                this.Close();
-            }
+            Validar_Y_Confirmar();
         }
-
         private void textObjeto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13) // 13 es el código ASCII que representa a ENTER.
             {
-                if (string.IsNullOrEmpty(this.textObjeto.Text))
-                {
-                    MessageBox.Show("La caja de texto no puede quedar vacía 🤔");
-                }
-                else
-                {
-                    DialogResult = DialogResult.OK;
-
-                    this.Close();
-                }
+                Validar_Y_Confirmar();
             }
 
-            if (e.KeyChar == (char)27) 
+            else if (e.KeyChar == (char)27) // 27 es el código ASCII que representa a ESC.
             {
-                DialogResult=DialogResult.Cancel;
-
-                this.Close();
+                Cancelar();
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult result = DialogResult.Cancel;
+            Cancelar();
+        }
+
+        // Métodos auxiliares 
+
+        private void Validar_Y_Confirmar()
+        {
+            if (!string.IsNullOrEmpty(this.textObjeto.Text))
+            {
+                DialogResult = DialogResult.OK;
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("La caja de texto no puede quedar vacía 🥴");
+            }
+        }
+
+        private void Cancelar()
+        {
+            DialogResult= DialogResult.Cancel;
 
             this.Close();
         }
