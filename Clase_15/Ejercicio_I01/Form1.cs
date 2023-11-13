@@ -14,13 +14,13 @@ namespace Ejercicio_I01
     {
         public FrmAltaModificacion(string titulo, string contenidoTextBox, string btnConfirmarTexto)
         {
-            this.Text = titulo;   
+            InitializeComponent();
+
+            this.Text = titulo;
 
             this.textObjeto.Text = contenidoTextBox;
 
             this.btnConfirmar.Text = btnConfirmarTexto;
-
-            InitializeComponent();
         }
         public string Objeto { get { return this.textObjeto.Text; } }
 
@@ -58,7 +58,7 @@ namespace Ejercicio_I01
             }
             else
             {
-                MessageBox.Show("La caja de texto no puede quedar vacía 🥴");
+                MessageBox.Show("La caja de texto no puede quedar vacía 🥴", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

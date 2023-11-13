@@ -44,7 +44,6 @@
             this.btn_Agregar.Size = new System.Drawing.Size(54, 37);
             this.btn_Agregar.TabIndex = 0;
             this.btn_Agregar.Text = "+";
-            this.toolTip.SetToolTip(this.btn_Agregar, "Agregar objeto");
             this.btn_Agregar.UseVisualStyleBackColor = true;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
@@ -56,7 +55,6 @@
             this.btn_Eliminar.Size = new System.Drawing.Size(54, 37);
             this.btn_Eliminar.TabIndex = 1;
             this.btn_Eliminar.Text = "-";
-            this.toolTip.SetToolTip(this.btn_Eliminar, "Eliminar objeto");
             this.btn_Eliminar.UseVisualStyleBackColor = true;
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
@@ -68,7 +66,6 @@
             this.btn_Modificar.Size = new System.Drawing.Size(54, 37);
             this.btn_Modificar.TabIndex = 2;
             this.btn_Modificar.Text = "M";
-            this.toolTip.SetToolTip(this.btn_Modificar, "Modificar objeto");
             this.btn_Modificar.UseVisualStyleBackColor = true;
             // 
             // lbx_ListaSuper

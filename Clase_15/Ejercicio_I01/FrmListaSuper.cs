@@ -15,14 +15,21 @@ namespace Ejercicio_I01
         List<string> listaSuper;
         public FrmListaSuper()
         {
-            listaSuper = new List<string>();
-
             InitializeComponent();
+
+            listaSuper = new List<string>();
+        }
+
+        private void FrmListaSuper_Load(object sender, EventArgs e)
+        {
+            SetToolTip();
+            //CargarListaAlmacenada();
+            //RefrescarLista();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            FrmAltaModificacion frmAlta = new FrmAltaModificacion("Agregar objeto", "Agregar");
+            FrmAltaModificacion frmAlta = new FrmAltaModificacion("Agregar objeto", string.Empty, "Agregar");
 
             frmAlta.ShowDialog();
 
@@ -30,27 +37,47 @@ namespace Ejercicio_I01
             {
                 this.listaSuper.Add(frmAlta.Objeto);
 
-                this.lbx_ListaSuper.Items.Add(frmAlta.Objeto);
-            }
-
-            this.lbx_ListaSuper.DataSource = listaSuper;    
+                RefrescarLista();
+            }   
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            if (this.lbx_ListaSuper.SelectedValue is not null)
+            string? objetoSeleccionado = this.lbx_ListaSuper.SelectedItem as string;
+
+            if (objetoSeleccionado is not null)
             {
-                listaSuper.Remove(this.lbx_ListaSuper.SelectedValue.ToString());
+                this.listaSuper.Remove(objetoSeleccionado);
+
+                RefrescarLista();
             }
             else
             {
-                MessageBox.Show("Debe elegir un elemento a eliminar");
+                MessageBox.Show("Debe elegir un elemento de la lista", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void FrmListaSuper_Load(object sender, EventArgs e)
+        // Métodos auxiliares 
+
+        private void SetToolTip()
         {
-            
+            this.toolTip.SetToolTip(this.btn_Agregar, "Agregar objeto");
+
+            this.toolTip.SetToolTip(this.btn_Eliminar, "Eliminar objeto");
+
+            this.toolTip.SetToolTip(this.btn_Modificar, "Modificar objeto");
+        }
+
+        private void CargarListaAlmacenada()
+        {
+             
+        }
+
+        private void RefrescarLista()
+        {
+            this.lbx_ListaSuper.DataSource = null;
+
+            this.lbx_ListaSuper.DataSource = listaSuper;
         }
     }
 }
