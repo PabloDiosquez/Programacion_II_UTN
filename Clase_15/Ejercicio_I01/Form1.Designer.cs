@@ -40,6 +40,7 @@
             this.textObjeto.Name = "textObjeto";
             this.textObjeto.Size = new System.Drawing.Size(460, 23);
             this.textObjeto.TabIndex = 0;
+            this.textObjeto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textObjeto_KeyPress);
             // 
             // btnConfirmar
             // 
@@ -59,12 +60,13 @@
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmAltaModificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 93);
+            this.ClientSize = new System.Drawing.Size(485, 96);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);

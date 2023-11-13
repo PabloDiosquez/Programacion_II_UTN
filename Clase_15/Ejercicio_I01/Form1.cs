@@ -32,5 +32,36 @@ namespace Ejercicio_I01
                 this.Close();
             }
         }
+
+        private void textObjeto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) // 13 es el código ASCII que representa a ENTER.
+            {
+                if (string.IsNullOrEmpty(this.textObjeto.Text))
+                {
+                    MessageBox.Show("La caja de texto no puede quedar vacía 🤔");
+                }
+                else
+                {
+                    DialogResult = DialogResult.OK;
+
+                    this.Close();
+                }
+            }
+
+            if (e.KeyChar == (char)27) 
+            {
+                DialogResult=DialogResult.Cancel;
+
+                this.Close();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = DialogResult.Cancel;
+
+            this.Close();
+        }
     }
 }
