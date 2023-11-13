@@ -57,6 +57,31 @@ namespace Ejercicio_I01
             }
         }
 
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            string? objetoSeleccionado = this.lbx_ListaSuper.SelectedItem as string;
+
+            if (objetoSeleccionado is not null)
+            {
+                int indice = listaSuper.IndexOf(objetoSeleccionado);
+
+                FrmAltaModificacion frmAlta = new FrmAltaModificacion("Modificar objeto", string.Empty, "Modicar");
+
+                frmAlta.ShowDialog();
+
+                if (frmAlta.DialogResult == DialogResult.OK)
+                {
+                    this.listaSuper[indice] = frmAlta.Objeto;
+
+                    RefrescarLista();
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Debe elegir un elemento de la lista para modificarlo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         // Métodos auxiliares 
 
         private void SetToolTip()
@@ -78,6 +103,18 @@ namespace Ejercicio_I01
             this.lbx_ListaSuper.DataSource = null;
 
             this.lbx_ListaSuper.DataSource = listaSuper;
+        }
+
+        // TODO 1
+        private void AgregarObjeto()
+        {
+
+        }
+
+        // TODO 2
+        private void ModificarObjeto() 
+        {
+
         }
     }
 }

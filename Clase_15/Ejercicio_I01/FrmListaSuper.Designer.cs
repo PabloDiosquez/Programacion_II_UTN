@@ -67,6 +67,7 @@
             this.btn_Modificar.TabIndex = 2;
             this.btn_Modificar.Text = "M";
             this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // lbx_ListaSuper
             // 
