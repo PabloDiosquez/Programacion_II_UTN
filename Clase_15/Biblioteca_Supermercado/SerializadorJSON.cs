@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Xml.Serialization;
 
 namespace Biblioteca_Supermercado
@@ -16,9 +13,7 @@ namespace Biblioteca_Supermercado
             {
                 using (StreamWriter sw = new StreamWriter(path))
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-
-                    xmlSerializer.Serialize(sw, objeto);
+                    JsonSerializer.Serialize(objeto, typeof(T));
                 }
             }
             catch (Exception ex)
@@ -27,20 +22,20 @@ namespace Biblioteca_Supermercado
             }
         }
 
-        public T Recuperar(string path) 
+        public T Recuperar(string path)
         {
             try
             {
-                using (StreamReader sr = new StreamReader(path))
+                using (StreamReader sr = new StreamReader(path)) 
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+                    string json = sr.ReadToEnd();   
 
-                    return xmlSerializer.Deserialize(sr) as T;
+                    return JsonSerializer.Deserialize(json, typeof(T)) as T;
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al recuperar el archivo: {ex.Message}"
+                throw new Exception($"Error al almacenar el archivo: {ex.Message}");
             }
         }
     }
