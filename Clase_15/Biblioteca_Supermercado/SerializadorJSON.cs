@@ -11,10 +11,16 @@ namespace Biblioteca_Supermercado
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(path))
+                using (StreamWriter sw = new StreamWriter(path, true))
                 {
-                    JsonSerializer.Serialize(objeto, typeof(T));
+                    JsonSerializerOptions options = new JsonSerializerOptions();    
+
+                    options.WriteIndented = true;   
+
+                    sw.Write(JsonSerializer.Serialize(objeto, typeof(T)), options);
                 }
+
+                Console.WriteLine("Operación de escritura exitosa.");
             }
             catch (Exception ex)
             {
@@ -36,6 +42,24 @@ namespace Biblioteca_Supermercado
             catch (Exception ex)
             {
                 throw new Exception($"Error al almacenar el archivo: {ex.Message}");
+            }
+        }
+
+        public static void VaciarJson(string path)
+        {
+            // Crear un objeto vacío o el tipo de objeto que necesites
+            T objetoVacio = null;
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path, true))
+                {
+                    JsonSerializer.Serialize(objetoVacio, typeof(T));
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }
