@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Supermercado
 {
-    public interface IPersistencia
+    public interface IPersistencia<T>
     {
-        void Almacenar(string path);
+        void Almacenar(T objeto, string path);
 
-        void Recuperar(string path);
+        T Recuperar(string path);
     }
 }
