@@ -31,55 +31,19 @@ namespace Ejercicio_I01
         {
             FrmAltaModificacion frmAlta = new FrmAltaModificacion("Agregar objeto", string.Empty, "Agregar");
 
-            frmAlta.ShowDialog();
-
-            if (frmAlta.DialogResult == DialogResult.OK) 
-            {
-                this.listaSuper.Add(frmAlta.Objeto);
-
-                RefrescarLista();
-            }   
+            AgregarObjeto(frmAlta);   
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            string? objetoSeleccionado = this.lbx_ListaSuper.SelectedItem as string;
-
-            if (objetoSeleccionado is not null)
-            {
-                this.listaSuper.Remove(objetoSeleccionado);
-
-                RefrescarLista();
-            }
-            else
-            {
-                MessageBox.Show("Debe elegir un elemento de la lista", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            EliminarObjeto();
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            string? objetoSeleccionado = this.lbx_ListaSuper.SelectedItem as string;
+            FrmAltaModificacion frmAlta = new FrmAltaModificacion("Modificar objeto", string.Empty, "Modicar");
 
-            if (objetoSeleccionado is not null)
-            {
-                int indice = listaSuper.IndexOf(objetoSeleccionado);
-
-                FrmAltaModificacion frmAlta = new FrmAltaModificacion("Modificar objeto", string.Empty, "Modicar");
-
-                frmAlta.ShowDialog();
-
-                if (frmAlta.DialogResult == DialogResult.OK)
-                {
-                    this.listaSuper[indice] = frmAlta.Objeto;
-
-                    RefrescarLista();
-                }
-            }
-            else 
-            {
-                MessageBox.Show("Debe elegir un elemento de la lista para modificarlo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            ModificarObjeto(frmAlta);
         }
 
         // Métodos auxiliares 
@@ -93,6 +57,7 @@ namespace Ejercicio_I01
             this.toolTip.SetToolTip(this.btn_Modificar, "Modificar objeto");
         }
 
+        // TODO 1: Empezar por acá... 
         private void CargarListaAlmacenada()
         {
              
@@ -105,16 +70,52 @@ namespace Ejercicio_I01
             this.lbx_ListaSuper.DataSource = listaSuper;
         }
 
-        // TODO 1
-        private void AgregarObjeto()
+        private void AgregarObjeto(FrmAltaModificacion frmAlta)
         {
+            frmAlta.ShowDialog();
 
+            if (frmAlta.DialogResult == DialogResult.OK)
+            {
+                this.listaSuper.Add(frmAlta.Objeto);
+
+                RefrescarLista();
+            }
         }
 
-        // TODO 2
-        private void ModificarObjeto() 
+        private void EliminarObjeto() 
         {
+            string? objeto = lbx_ListaSuper.SelectedItem as string;
 
+            if (!string.IsNullOrEmpty(objeto))
+            {
+                this.listaSuper.Remove(objeto);
+
+                RefrescarLista();
+            }
+            else 
+            {
+                MessageBox.Show("Asegúrese de elegir un elemento de la lista", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ModificarObjeto(FrmAltaModificacion frmAlta) 
+        {
+            frmAlta.ShowDialog();
+
+            string? objeto = lbx_ListaSuper.SelectedItem as string;
+
+            if (!string.IsNullOrEmpty(objeto))
+            {
+                int indice = listaSuper.IndexOf(objeto);    
+
+                this.listaSuper[indice] = frmAlta.Objeto;
+
+                RefrescarLista();
+            }
+            else
+            {
+                MessageBox.Show("Asegúrese de elegir un elemento de la lista 🤔", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);  ;
+            }
         }
     }
 }
