@@ -31,7 +31,48 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Obtiene una lista de personas almacenadas en la base de datos.
+        /// Lee los datos de la base de datos para una persona específica según su identificador.
+        /// </summary>
+        /// <param name="id">El identificador único de la persona.</param>
+        /// <returns>Un objeto Persona con los datos de la persona encontrada o el valor predeterminado de Persona si no se encuentra ninguna coincidencia.</returns>
+        public static Persona Leer(int id)
+        {
+            try
+            {
+                conexion.Open();
+
+                comando.CommandText = $"SELECT * FROM EMPLEADOS WHERE ID_EMPLEADO = {id};";
+
+                Persona persona = default(Persona);
+
+                using (SqlDataReader lector = comando.ExecuteReader())
+                {
+                    while (lector.Read())
+                    {
+                        if (Convert.ToInt32(lector["ID_EMPLEADO"]) == id)
+                        {
+                            // Se encontró una persona con el ID especificado, se crea un objeto Persona.
+                            persona = new Persona(lector["NOMBRE"].ToString(), lector["APELLIDO"].ToString());
+                        }
+                    }
+                }
+
+                return persona;
+            }
+            catch (Exception)
+            {
+                // Se propaga la excepción para su manejo en capas superiores.
+                throw;
+            }
+            finally
+            {
+                // Se cierra la conexión después de realizar las operaciones necesarias.
+                conexion?.Close();
+            }
+        }
+
+        /// <summary>
+        /// Obtiene una lista de empleados almacenados en la base de datos.
         /// </summary>
         /// <returns>Una lista de objetos Persona.</returns>
         public static List<Persona> Leer()

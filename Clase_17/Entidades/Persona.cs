@@ -30,8 +30,8 @@ namespace Entidades
         /// <param name="apellido">El apellido de la persona.</param>
         public Persona(string nombre, string apellido)
         {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
+            this.nombre = nombre;
+            this.apellido = apellido;
         }
 
         /// <summary>

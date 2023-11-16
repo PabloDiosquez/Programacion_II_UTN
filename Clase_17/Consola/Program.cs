@@ -8,15 +8,25 @@ namespace Consola
     {
         static void Main(string[] args)
         {
-            List<Persona> personas = PersonaAccesoDatos.Leer();
+            //List<Persona> personas = PersonaAccesoDatos.Leer();
 
-            foreach (Persona persona in personas)
+            //foreach (Persona persona in personas)
+            //{
+            //    Console.WriteLine(persona.ToString());
+            //}
+
+            //PersonaAccesoDatos.Eliminar(2);
+
+            try
             {
-                Console.WriteLine(persona.ToString());
+                Persona persona = PersonaAccesoDatos.Leer(4);
+
+                Console.WriteLine(persona);
             }
-
-            PersonaAccesoDatos.Eliminar(2);
-
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
