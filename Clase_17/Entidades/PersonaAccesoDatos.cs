@@ -7,27 +7,33 @@ using System.Data.SqlClient;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase estática que proporciona métodos para el acceso a datos de la entidad Persona en la base de datos.
+    /// </summary>
     public static class PersonaAccesoDatos
     {
         static string cadenaConexion;
-
         static SqlCommand comando;
-
         static SqlConnection conexion;
 
+        /// <summary>
+        /// Inicializa la clase <see cref="PersonaAccesoDatos"/> con la cadena de conexión predeterminada.
+        /// </summary>
         static PersonaAccesoDatos()
         {
             cadenaConexion = @"Data Source=.\SQLEXPRESS; Initial Catalog=EMPRESA_DB; Integrated Security=True";
 
             comando = new SqlCommand();
-
             conexion = new SqlConnection(cadenaConexion);
 
             comando.Connection = conexion;
-
             comando.CommandType = System.Data.CommandType.Text;
         }
 
+        /// <summary>
+        /// Obtiene una lista de personas almacenadas en la base de datos.
+        /// </summary>
+        /// <returns>Una lista de objetos Persona.</returns>
         public static List<Persona> Leer()
         {
             List<Persona> personas = new List<Persona>();
@@ -51,12 +57,16 @@ namespace Entidades
             {
                 throw;
             }
-            finally 
+            finally
             {
                 conexion.Close();
             }
         }
 
+        /// <summary>
+        /// Elimina una persona de la base de datos según su identificador.
+        /// </summary>
+        /// <param name="id">El identificador de la persona a eliminar.</param>
         public static void Eliminar(int id)
         {
             try
@@ -67,10 +77,9 @@ namespace Entidades
 
                 comando.CommandText = $"DELETE FROM EMPLEADOS WHERE ID = @id";
 
-                comando.Parameters.AddWithValue("@id",id);
+                comando.Parameters.AddWithValue("@id", id);
 
                 comando.ExecuteNonQuery();
-
             }
             catch (Exception)
             {
@@ -79,9 +88,13 @@ namespace Entidades
             finally
             {
                 conexion.Close();
-            } 
+            }
         }
 
+        /// <summary>
+        /// Guarda una nueva persona en la base de datos.
+        /// </summary>
+        /// <param name="persona">La persona a guardar.</param>
         public static void Guardar(Persona persona)
         {
             try
@@ -93,7 +106,6 @@ namespace Entidades
                 comando.CommandText = $"INSERT INTO EMPLEADOS (NOMBRE, APELLIDO) VALUES (@NOMBRE, @APELLIDO)";
 
                 comando.Parameters.AddWithValue("@NOMBRE", persona.Nombre);
-
                 comando.Parameters.AddWithValue("@APELLIDO", persona.Apellido);
 
                 comando.ExecuteNonQuery();
@@ -105,7 +117,7 @@ namespace Entidades
             finally
             {
                 conexion.Close();
-            } 
+            }
         }
     }
 }
