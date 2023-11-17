@@ -41,7 +41,8 @@ namespace Entidades
             {
                 conexion.Open();
 
-                comando.CommandText = $"SELECT * FROM EMPLEADOS WHERE ID_EMPLEADO = {id};";
+                comando.CommandText = $"SELECT * FROM EMPLEADOS WHERE ID_EMPLEADO = @ID_EMPLEADO;";
+                comando.Parameters.AddWithValue("@ID_EMPLEADO", id);
 
                 Persona persona = default(Persona);
 
@@ -116,7 +117,7 @@ namespace Entidades
 
                 conexion.Open();
 
-                comando.CommandText = $"DELETE FROM EMPLEADOS WHERE ID = @id";
+                comando.CommandText = $"DELETE FROM EMPLEADOS WHERE ID_EMPLEADO = @id";
 
                 comando.Parameters.AddWithValue("@id", id);
 
@@ -173,11 +174,13 @@ namespace Entidades
         {
             try
             {
-                if (ExisteIdALaBD(id)) 
+                if (ExisteIdEnLaBD(id)) 
                 {
                     conexion.Open();
 
                     comando.CommandText = $"UPDATE EMPLEADOS SET NOMBRE = '{nombre}' WHERE ID_EMPLEADO = {id}";
+                    comando.Parameters.AddWithValue("@NOMBRE_EMPLEADO", nombre);
+                    comando.Parameters.AddWithValue("@ID", id);
 
                     // Ejecuta la consulta de actualización en la base de datos.
                     comando.ExecuteNonQuery();
@@ -208,11 +211,13 @@ namespace Entidades
         /// <remarks>
         /// Este método comprueba si un identificador específico se encuentra en la base de datos mediante una consulta de lectura.
         /// </remarks>
-        public static bool ExisteIdALaBD(int id)
+        public static bool ExisteIdEnLaBD(int id)
         {
             try
             {
                 conexion.Open();
+
+                comando.CommandText = "SELECT ID_EMPLEADO FROM EMPLEADOS";
 
                 SqlDataReader lector = comando.ExecuteReader();
 

@@ -19,7 +19,7 @@ namespace Consola
 
             try
             {
-                PersonaAccesoDatos.ModificarNombre(4, "Lara");
+                PersonaAccesoDatos.ModificarNombre(4, "Claudio Paul");
 
                 Persona persona = PersonaAccesoDatos.Leer(4);
 
