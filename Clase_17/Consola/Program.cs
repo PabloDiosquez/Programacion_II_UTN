@@ -19,6 +19,8 @@ namespace Consola
 
             try
             {
+                PersonaAccesoDatos.ModificarNombre(4, "Lara");
+
                 Persona persona = PersonaAccesoDatos.Leer(4);
 
                 Console.WriteLine(persona);

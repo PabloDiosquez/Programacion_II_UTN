@@ -160,5 +160,84 @@ namespace Entidades
                 conexion.Close();
             }
         }
+
+        /// <summary>
+        /// Modifica el nombre de una persona en la base de datos según su identificador.
+        /// </summary>
+        /// <param name="id">El identificador único de la persona.</param>
+        /// <param name="nombre">El nuevo nombre que se asignará a la persona.</param>
+        /// <remarks>
+        /// Este método realiza una operación de actualización en la base de datos para cambiar el nombre de una persona específica.
+        /// </remarks>
+        public static bool ModificarNombre(int id, string nombre)
+        {
+            try
+            {
+                if (ExisteIdALaBD(id)) 
+                {
+                    conexion.Open();
+
+                    comando.CommandText = $"UPDATE EMPLEADOS SET NOMBRE = '{nombre}' WHERE ID_EMPLEADO = {id}";
+
+                    // Ejecuta la consulta de actualización en la base de datos.
+                    comando.ExecuteNonQuery();
+
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                // Propaga la excepción para su manejo en capas superiores.
+                throw;
+            }
+            finally
+            {
+                // Cierra la conexión después de realizar las operaciones necesarias.
+                conexion.Close();
+            }
+        }
+
+        /// <summary>
+        /// Verifica si un identificador pertenece a la base de datos.
+        /// </summary>
+        /// <param name="id">El identificador que se verificará en la base de datos.</param>
+        /// <returns>
+        ///   <c>true</c> si el identificador pertenece a la base de datos; de lo contrario, <c>false</c>.
+        /// </returns>
+        /// <remarks>
+        /// Este método comprueba si un identificador específico se encuentra en la base de datos mediante una consulta de lectura.
+        /// </remarks>
+        public static bool ExisteIdALaBD(int id)
+        {
+            try
+            {
+                conexion.Open();
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    // Compara el ID leído con el ID proporcionado y devuelve true si hay coincidencia.
+                    if (Convert.ToInt32(lector["ID_EMPLEADO"]) == id)
+                    {
+                        return true;
+                    }
+                }
+
+                // No se encontró coincidencia, devuelve false.
+                return false;
+            }
+            catch (Exception)
+            {
+                // Propaga la excepción para su manejo en capas superiores.
+                throw;
+            }
+            finally
+            {
+                // Cierra la conexión después de realizar las operaciones necesarias.
+                conexion.Close();
+            }
+        }
     }
 }
