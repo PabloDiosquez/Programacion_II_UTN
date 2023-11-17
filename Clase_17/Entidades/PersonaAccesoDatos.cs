@@ -40,7 +40,7 @@ namespace Entidades
             try
             {
                 conexion.Open();
-
+                comando.Parameters.Clear();
                 comando.CommandText = $"SELECT * FROM EMPLEADOS WHERE ID_EMPLEADO = @ID_EMPLEADO;";
                 comando.Parameters.AddWithValue("@ID_EMPLEADO", id);
 
@@ -177,7 +177,7 @@ namespace Entidades
                 if (ExisteIdEnLaBD(id)) 
                 {
                     conexion.Open();
-
+                    comando.Parameters.Clear();
                     comando.CommandText = $"UPDATE EMPLEADOS SET NOMBRE = '{nombre}' WHERE ID_EMPLEADO = {id}";
                     comando.Parameters.AddWithValue("@NOMBRE_EMPLEADO", nombre);
                     comando.Parameters.AddWithValue("@ID", id);
