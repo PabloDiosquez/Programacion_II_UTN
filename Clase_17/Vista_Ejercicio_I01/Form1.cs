@@ -18,6 +18,8 @@ namespace Vista_Ejercicio_I01
             InitializeComponent();
         }
 
+        // TODO: Agregar validaciones a los métodos y ver cómo actualizar la lista de manera automática
+
         private void Form1_Load(object sender, EventArgs e)
         {
             this.lbx_Personas.DataSource = PersonaDAO.Leer();
@@ -31,7 +33,7 @@ namespace Vista_Ejercicio_I01
 
             string apellido = tbx_Apellido.Text;
 
-            PersonaDAO.Guardar(new Persona(id, nombre, apellido);
+            PersonaDAO.Guardar(new Persona(id, nombre, apellido));
 
             MessageBox.Show("Persona agregada 💪🏼", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
