@@ -78,7 +78,58 @@ namespace Biblioteca_Ejercicio_I01
             }
         }
 
+        public static List<Persona> Leer()
+        {
+            List<Persona> personas = default(List<Persona>);    
 
+            try
+            {
+                conexion.Open();
+
+                comando.CommandText = "SELECT * FROM PERSONA;";
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    personas.Add(new Persona(Convert.ToInt32(lector["ID"]), lector["NOMBRE"].ToString(), lector["APELLIDO"].ToString()));
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally 
+            {
+                conexion.Close();
+            }
+            return personas;    
+        }
+
+        public static void Modificar(Persona personaA, Persona personaB) 
+        {
+            try
+            {
+                conexion.Open();
+                comando.Parameters.Clear();
+                comando.CommandText = "UPDATE PERSONA SET ID=@id, NOMBRE=@nombre, APELLIDO=@apellido WHERE ID=@idViejo";
+                comando.Parameters.AddWithValue("@id", personaB.Id);
+                comando.Parameters.AddWithValue("@nombre", personaB.Nombre);
+                comando.Parameters.AddWithValue("@apellido", personaB.Apellido);
+                comando.Parameters.AddWithValue("@idViejo", personaA.Id);
+
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
 
     }
