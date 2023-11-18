@@ -31,5 +31,12 @@ namespace Biblioteca_Ejercicio_I01
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
 
+        // Sobrecarga del método ToString().
+
+        public override string ToString()
+        {
+            return $"[Id: {this.Id}, Nombre: {this.Nombre}, Apellido: {this.Apellido}]";
+        }
+
     }
 }

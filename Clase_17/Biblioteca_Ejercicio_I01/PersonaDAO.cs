@@ -34,10 +34,10 @@ namespace Biblioteca_Ejercicio_I01
             {
                 conexion.Open();
                 comando.Parameters.Clear();
-                comando.CommandText = $"INSERT INTO PERSONA (ID, NOMBRE, APELLIDO) VALUES (@ID, @NOMBRE, @APELLIDO)')";
-                comando.Parameters.AddWithValue("@ID", persona.Id);
-                comando.Parameters.AddWithValue("@NOMBRE", persona.Nombre);
-                comando.Parameters.AddWithValue("@APELLIDO", persona.Apellido);
+                comando.CommandText = $"INSERT INTO PERSONA (ID, NOMBRE, APELLIDO) VALUES (@id, @nombre, @apellido)";
+                comando.Parameters.AddWithValue("@id", persona.Id);
+                comando.Parameters.AddWithValue("@nombre", persona.Nombre);
+                comando.Parameters.AddWithValue("@apellido", persona.Apellido);
 
                 comando.ExecuteNonQuery();
             }
@@ -80,7 +80,7 @@ namespace Biblioteca_Ejercicio_I01
 
         public static List<Persona> Leer()
         {
-            List<Persona> personas = default(List<Persona>);    
+            List<Persona> personas = new List<Persona>();    
 
             try
             {
@@ -132,27 +132,40 @@ namespace Biblioteca_Ejercicio_I01
             }
         }
 
+        /// <summary>
+        /// Borra un registro de la tabla PERSONA en la base de datos.
+        /// </summary>
+        /// <param name="persona">Objeto de tipo Persona que contiene la información del registro a borrar.</param>
         public static void Borrar(Persona persona)
         {
             try
             {
-                if (conexion.State == System.Data.ConnectionState.Closed) conexion.Open();
-
-                using (SqlCommand comando = new SqlCommand("DELETE FROM PERSONA WHERE ID=@id", conexion))
+                // Utilizando 'using' para garantizar la liberación de recursos
+                using (SqlConnection conexion = new SqlConnection(conexionString))
                 {
+                    // Abre la conexión
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@id", persona.Id);
 
-                    comando.ExecuteNonQuery();
+                    // Utilizando 'using' para garantizar la liberación de recursos
+                    using (SqlCommand comando = new SqlCommand("DELETE FROM PERSONA WHERE ID=@id", conexion))
+                    {
+                        // Establece el valor del parámetro
+                        comando.Parameters.AddWithValue("@id", persona.Id);
+
+                        // Ejecuta la consulta
+                        comando.ExecuteNonQuery();
+                    }
                 }
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-                throw;
+                // Manejar o registrar la excepción específica de SQL
+                Console.WriteLine("Error de SQL: " + ex.Message);
             }
-            finally 
+            catch (Exception ex)
             {
-                conexion.Close();
+                // Manejar o registrar otras excepciones
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
     }
