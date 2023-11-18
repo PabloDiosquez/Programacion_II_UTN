@@ -7,4 +7,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca_Ejercicio_I01\Biblioteca_Ejercicio_I01.csproj" />
+  </ItemGroup>
+
 </Project>

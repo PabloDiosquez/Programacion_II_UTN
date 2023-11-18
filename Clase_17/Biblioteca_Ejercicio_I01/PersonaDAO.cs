@@ -33,6 +33,7 @@ namespace Biblioteca_Ejercicio_I01
                     // Utilizando 'using' para garantizar la liberación de recursos
                     using (SqlCommand comando = new SqlCommand())
                     {
+                        comando.Connection = conexion;  
                         comando.CommandText = $"INSERT INTO PERSONA (ID, NOMBRE, APELLIDO) VALUES (@id, @nombre, @apellido)";
                         comando.Parameters.AddWithValue("@id", persona.Id);
                         comando.Parameters.AddWithValue("@nombre", persona.Nombre);
@@ -72,6 +73,7 @@ namespace Biblioteca_Ejercicio_I01
                     // Utilizando 'using' para garantizar la liberación de recursos
                     using (SqlCommand comando = new SqlCommand())
                     {
+                        comando.Connection = conexion;  
                         comando.CommandText = $"SELECT * FROM PERSONA WHERE ID = @ID_PERSONA;";
                         comando.Parameters.AddWithValue("@ID_Persona", id);
 
@@ -116,6 +118,8 @@ namespace Biblioteca_Ejercicio_I01
                     // Utilizando 'using' para garantizar la liberación de recursos
                     using (SqlCommand comando = new SqlCommand("SELECT * FROM PERSONA"))
                     {
+                        comando.Connection = conexion;  
+
                         SqlDataReader lector = comando.ExecuteReader();
 
                         while (lector.Read())
@@ -156,6 +160,7 @@ namespace Biblioteca_Ejercicio_I01
                     // Utilizando 'using' para garantizar la liberación de recursos
                     using (SqlCommand comando = new SqlCommand())
                     {
+                        comando.Connection= conexion;
                         comando.CommandText = "UPDATE PERSONA SET ID=@nuevoId, NOMBRE=@nuevoNombre, APELLIDO=@nuevoApellido WHERE ID=@idAntiguo";
                         comando.Parameters.AddWithValue("@nuevoId", personaNueva.Id);
                         comando.Parameters.AddWithValue("@nuevoNombre", personaNueva.Nombre);
@@ -195,6 +200,8 @@ namespace Biblioteca_Ejercicio_I01
                     // Utilizando 'using' para garantizar la liberación de recursos
                     using (SqlCommand comando = new SqlCommand("DELETE FROM PERSONA WHERE ID=@id", conexion))
                     {
+                        comando.Connection= conexion;   
+
                         // Establece el valor del parámetro
                         comando.Parameters.AddWithValue("@id", persona.Id);
 
