@@ -106,20 +106,21 @@ namespace Biblioteca_Ejercicio_I01
             return personas;    
         }
 
-        public static void Modificar(Persona personaA, Persona personaB) 
+        public static void Modificar(Persona personaAntigua, Persona personaNueva) 
         {
             try
             {
-                conexion.Open();
+                if (conexion.State == System.Data.ConnectionState.Closed) conexion.Open();
+
                 comando.Parameters.Clear();
-                comando.CommandText = "UPDATE PERSONA SET ID=@id, NOMBRE=@nombre, APELLIDO=@apellido WHERE ID=@idViejo";
-                comando.Parameters.AddWithValue("@id", personaB.Id);
-                comando.Parameters.AddWithValue("@nombre", personaB.Nombre);
-                comando.Parameters.AddWithValue("@apellido", personaB.Apellido);
-                comando.Parameters.AddWithValue("@idViejo", personaA.Id);
+
+                comando.CommandText = "UPDATE PERSONA SET ID=@nuevoId, NOMBRE=@nuevoNombre, APELLIDO=@nuevoApellido WHERE ID=@idAntiguo";
+                comando.Parameters.AddWithValue("@nuevoId", personaNueva.Id);
+                comando.Parameters.AddWithValue("@nuevoNombre", personaNueva.Nombre);
+                comando.Parameters.AddWithValue("@nuevoApellido", personaNueva.Apellido);
+                comando.Parameters.AddWithValue("@idAntiguo", personaAntigua.Id);
 
                 comando.ExecuteNonQuery();
-
             }
             catch (Exception)
             {
@@ -131,6 +132,28 @@ namespace Biblioteca_Ejercicio_I01
             }
         }
 
+        public static void Borrar(Persona persona)
+        {
+            try
+            {
+                if (conexion.State == System.Data.ConnectionState.Closed) conexion.Open();
 
+                using (SqlCommand comando = new SqlCommand("DELETE FROM PERSONA WHERE ID=@id", conexion))
+                {
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@id", persona.Id);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally 
+            {
+                conexion.Close();
+            }
+        }
     }
 }
