@@ -141,5 +141,33 @@ namespace Biblioteca
                 if (conexion.State == System.Data.ConnectionState.Open) conexion.Close();
             }
         }
+
+        public static List<Biblioteca> Leer()
+        {
+            List<Biblioteca> biblioteca = new List<Biblioteca>();
+
+            try
+            {
+                if (conexion.State == System.Data.ConnectionState.Closed) conexion.Open();
+
+                comando.CommandText= "SELECT J.CODIGO_JUEGO, U.USERNAME AS USUARIO, J.NOMBRE AS JUEGO, J.GENERO FROM JUEGOS J INNER JOIN USUARIOS U ON J.CODIGO_USUARIO = U.CODIGO_USUARIO;";
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    biblioteca.Add(new Biblioteca(lector["USUARIO"].ToString(), lector["GENERO"].ToString(), lector["JUEGO"].ToString(), Convert.ToInt32(lector["CODIGO_JUEGO"])));
+                }
+                return biblioteca;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if(conexion.State == System.Data.ConnectionState.Open) conexion.Close();    
+            }
+        }
     }
 }
