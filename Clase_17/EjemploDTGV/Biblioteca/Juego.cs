@@ -2,45 +2,63 @@
 
 namespace Biblioteca
 {
+    /// <summary>
+    /// Representa un juego en el sistema.
+    /// </summary>
     public class Juego
     {
-        // Atributos 
+        /// <summary>
+        /// Obtiene el código único del juego.
+        /// </summary>
+        public int CodigoJuego { get; }
 
-        private int codigoJuego;
+        /// <summary>
+        /// Obtiene el código único del usuario asociado al juego.
+        /// </summary>
+        public int CodigoUsuario { get; }
 
-        private int codigoUsuario;
+        /// <summary>
+        /// Obtiene el género del juego.
+        /// </summary>
+        public string Genero { get; }
 
-        private string genero;
+        /// <summary>
+        /// Obtiene el nombre del juego.
+        /// </summary>
+        public string Nombre { get; }
 
-        private string nombre;
+        /// <summary>
+        /// Obtiene el precio del juego.
+        /// </summary>
+        public double Precio { get; }
 
-        private double precio;
-
-        // Constructores 
-
-        public Juego(string nombre, double precio, string genero, int codigoJuego, int codigoUsuario) 
-            : this(nombre, precio, genero, codigoUsuario) 
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Juego.
+        /// </summary>
+        /// <param name="nombre">El nombre del juego.</param>
+        /// <param name="precio">El precio del juego.</param>
+        /// <param name="genero">El género del juego.</param>
+        /// <param name="codigoJuego">El código único del juego.</param>
+        /// <param name="codigoUsuario">El código único del usuario asociado al juego.</param>
+        public Juego(string nombre, double precio, string genero, int codigoJuego, int codigoUsuario)
+            : this(nombre, precio, genero, codigoUsuario)
         {
-            this.codigoJuego = codigoJuego; 
+            this.CodigoJuego = codigoJuego;
         }
 
+        /// <summary>
+        /// Inicializa una nueva instancia de la clase Juego.
+        /// </summary>
+        /// <param name="nombre">El nombre del juego.</param>
+        /// <param name="precio">El precio del juego.</param>
+        /// <param name="genero">El género del juego.</param>
+        /// <param name="codigoUsuario">El código único del usuario asociado al juego.</param>
         public Juego(string nombre, double precio, string genero, int codigoUsuario)
         {
-            this.nombre = nombre;   
-
-            this.precio = precio;   
-
-            this.genero = genero;   
-
-            this.codigoUsuario = codigoUsuario;
+            this.Nombre = nombre;
+            this.Precio = precio;
+            this.Genero = genero;
+            this.CodigoUsuario = codigoUsuario;
         }
-
-        // Propiedades 
-
-        public int CodigoJuego { get => codigoJuego; }
-        public int CodigoUsuario { get => codigoUsuario; }
-        public string Genero { get => genero; }
-        public string Nombre { get => nombre; }
-        public double Precio { get => precio; }
     }
 }

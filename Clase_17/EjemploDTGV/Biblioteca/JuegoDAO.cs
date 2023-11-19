@@ -7,18 +7,33 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
+    /// <summary>
+    /// Clase de acceso a datos para la entidad Juego.
+    /// </summary>
     public static class JuegoDAO
     {
         // Atributos 
 
-        static string cadenaConexion;
+        /// <summary>
+        /// Cadena de conexión para la base de datos.
+        /// </summary>
+        private static string cadenaConexion;
 
-        static SqlConnection conexion;
+        /// <summary>
+        /// Objeto de conexión a la base de datos.
+        /// </summary>
+        private static SqlConnection conexion;
 
-        static SqlCommand comando;
+        /// <summary>
+        /// Objeto de comando para ejecutar consultas en la base de datos.
+        /// </summary>
+        private static SqlCommand comando;
 
         // Constructor
 
+        /// <summary>
+        /// Inicializa la clase JuegoDAO.
+        /// </summary>
         static JuegoDAO()
         {
             cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=EJERCICIOS_UTN;Integrated Security=true";
@@ -31,6 +46,11 @@ namespace Biblioteca
         }
 
         // Métodos 
+
+        /// <summary>
+        /// Guarda un nuevo juego en la base de datos.
+        /// </summary>
+        /// <param name="juegoNuevo">Instancia del juego a guardar.</param>
         public static void Guardar(Juego juegoNuevo)
         {
             if (juegoNuevo is null) throw new ArgumentNullException(nameof(juegoNuevo));
@@ -39,7 +59,7 @@ namespace Biblioteca
             {
                 if (conexion.State == System.Data.ConnectionState.Closed) conexion.Open();
 
-                comando.Parameters.Clear(); 
+                comando.Parameters.Clear();
                 comando.CommandText = "INSERT INTO JUEGOS (CODIGO_USUARIO, NOMBRE, PRECIO, GENERO) VALUES (@codigoUsuario, @nombre, @precio, @genero);";
                 comando.Parameters.AddWithValue("@codigoUsuario", juegoNuevo.CodigoUsuario);
                 comando.Parameters.AddWithValue("@nombre", juegoNuevo.Nombre);
@@ -58,6 +78,11 @@ namespace Biblioteca
             }
         }
 
+        /// <summary>
+        /// Lee un juego por su código desde la base de datos.
+        /// </summary>
+        /// <param name="codigoJuego">Código único del juego a leer.</param>
+        /// <returns>Instancia del juego o null si no se encuentra.</returns>
         public static Juego LeerPorId(int codigoJuego)
         {
             try
@@ -74,10 +99,10 @@ namespace Biblioteca
                 if (lector.Read())
                 {
                     return new Juego(
-                        lector["NOMBRE"].ToString(), 
-                        Convert.ToDouble(lector["PRECIO"]), 
-                        lector["GENERO"].ToString(), 
-                        Convert.ToInt32(lector["CODIGO_JUEGO"]), 
+                        lector["NOMBRE"].ToString(),
+                        Convert.ToDouble(lector["PRECIO"]),
+                        lector["GENERO"].ToString(),
+                        Convert.ToInt32(lector["CODIGO_JUEGO"]),
                         Convert.ToInt32(lector["CODIGO_USUARIO"]));
                 }
                 return null;
@@ -86,17 +111,20 @@ namespace Biblioteca
             {
                 throw;
             }
-            finally 
+            finally
             {
                 if (conexion.State == System.Data.ConnectionState.Open) conexion.Close();
             }
         }
 
-        public static void Eliminar(int codigoJuego) 
+        /// <summary>
+        /// Elimina un juego por su código desde la base de datos.
+        /// </summary>
+        /// <param name="codigoJuego">Código único del juego a eliminar.</param>
+        public static void Eliminar(int codigoJuego)
         {
             try
             {
-
                 if (conexion.State == System.Data.ConnectionState.Closed) conexion.Open();
 
                 comando.Parameters.Clear();
@@ -115,6 +143,11 @@ namespace Biblioteca
             }
         }
 
+        /// <summary>
+        /// Modifica un juego por su código en la base de datos.
+        /// </summary>
+        /// <param name="codigoJuego">Código único del juego a modificar.</param>
+        /// <param name="juegoNuevo">Nueva instancia del juego con los cambios.</param>
         public static void Modificar(int codigoJuego, Juego juegoNuevo)
         {
             if (juegoNuevo == null) throw new ArgumentNullException(nameof(juegoNuevo));
@@ -142,6 +175,10 @@ namespace Biblioteca
             }
         }
 
+        /// <summary>
+        /// Lee la lista de juegos en la biblioteca desde la base de datos.
+        /// </summary>
+        /// <returns>Lista de objetos Biblioteca.</returns>
         public static List<Biblioteca> Leer()
         {
             List<Biblioteca> biblioteca = new List<Biblioteca>();
@@ -150,7 +187,7 @@ namespace Biblioteca
             {
                 if (conexion.State == System.Data.ConnectionState.Closed) conexion.Open();
 
-                comando.CommandText= "SELECT J.CODIGO_JUEGO, U.USERNAME AS USUARIO, J.NOMBRE AS JUEGO, J.GENERO FROM JUEGOS J INNER JOIN USUARIOS U ON J.CODIGO_USUARIO = U.CODIGO_USUARIO;";
+                comando.CommandText = "SELECT J.CODIGO_JUEGO, U.USERNAME AS USUARIO, J.NOMBRE AS JUEGO, J.GENERO FROM JUEGOS J INNER JOIN USUARIOS U ON J.CODIGO_USUARIO = U.CODIGO_USUARIO;";
 
                 SqlDataReader lector = comando.ExecuteReader();
 
@@ -166,7 +203,7 @@ namespace Biblioteca
             }
             finally
             {
-                if(conexion.State == System.Data.ConnectionState.Open) conexion.Close();    
+                if (conexion.State == System.Data.ConnectionState.Open) conexion.Close();
             }
         }
     }

@@ -7,18 +7,33 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
+    /// <summary>
+    /// Clase de acceso a datos para la entidad Usuario.
+    /// </summary>
     public static class UsuarioDAO
     {
         // Atributos 
 
-        static string cadenaConexion;
+        /// <summary>
+        /// Cadena de conexión para la base de datos.
+        /// </summary>
+        private static string cadenaConexion;
 
-        static SqlConnection conexion;
+        /// <summary>
+        /// Objeto de conexión a la base de datos.
+        /// </summary>
+        private static SqlConnection conexion;
 
-        static SqlCommand comando;
+        /// <summary>
+        /// Objeto de comando para ejecutar consultas en la base de datos.
+        /// </summary>
+        private static SqlCommand comando;
 
         // Constructor 
 
+        /// <summary>
+        /// Inicializa la clase UsuarioDAO.
+        /// </summary>
         static UsuarioDAO()
         {
             cadenaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=EJERCICIOS_UTN;Integrated Security=true";
@@ -30,7 +45,11 @@ namespace Biblioteca
             comando.Connection = conexion;
         }
 
-        public static List<Usuario> Leer() 
+        /// <summary>
+        /// Lee la lista de usuarios desde la base de datos.
+        /// </summary>
+        /// <returns>Lista de objetos Usuario.</returns>
+        public static List<Usuario> Leer()
         {
             List<Usuario> usuarios = new List<Usuario>();
 
@@ -52,7 +71,7 @@ namespace Biblioteca
             {
                 throw;
             }
-            finally 
+            finally
             {
                 if (conexion.State == System.Data.ConnectionState.Open) conexion.Close();
             }
