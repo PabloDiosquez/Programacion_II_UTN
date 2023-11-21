@@ -9,11 +9,11 @@ namespace Clase_19
     {
         static void Main(string[] args)
         {
-            Task hilo = Task.Run(EjecutarTareasSincronico);
+            Task hiloSincronico = Task.Run(EjecutarTareasSincronico);
 
-            EjecutarTareasEnParalelo();
+            Task hiloParalelo = Task.Run(EjecutarTareasEnParalelo);
 
-            hilo.Wait();
+            Task.WaitAll(hiloSincronico, hiloParalelo);
 
             Console.WriteLine("Se ejecutaron todas las tareas...");
         }
@@ -54,7 +54,7 @@ namespace Clase_19
 
             Thread.Sleep(tiempoEjecucion);
 
-            Console.WriteLine($"{DateTime.Now:T} - 'Tarea {codigo}' completada en {tiempoEjecucion}ms");
+            Console.WriteLine($"{DateTime.Now:T} - 'Tarea {codigo}' completada en {tiempoEjecucion}ms -- Hilo: {Task.CurrentId}");
         }
     }
 }
