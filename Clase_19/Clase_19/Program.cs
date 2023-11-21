@@ -9,24 +9,28 @@ namespace Clase_19
     {
         static void Main(string[] args)
         {
-            Task hilo = new Task(() => EjecutarTareasSincronico());
+            Task hilo = Task.Run(EjecutarTareasSincronico);
 
-            hilo.Start();
-
-            EjecutarEnParalelo();
+            EjecutarTareasEnParalelo();
 
             hilo.Wait();
 
             Console.WriteLine("Se ejecutaron todas las tareas...");
         }
 
-        public static void EjecutarEnParalelo()
+        public static void EjecutarTareasEnParalelo()
         {
-            Task hilo1 = new Task(() => EjecutarTarea("A en paralelo"));
-            hilo1.Start();
+            Queue<Action> tareas = new Queue<Action>();
 
-            Task hilo2 = new Task(() => EjecutarTarea("B en paralelo"));
-            hilo2.Start();
+            tareas.Enqueue(() => EjecutarTarea("Tarea A en paralelo"));
+            tareas.Enqueue(() => EjecutarTarea("Tarea B en paralelo"));
+            tareas.Enqueue(() => EjecutarTarea("Tarea C en paralelo"));
+            tareas.Enqueue(() => EjecutarTarea("Tarea D en paralelo"));
+
+            foreach (Action tarea in tareas)
+            {
+                Task.Run(tarea);
+            }
         }
 
         public static void EjecutarTareasSincronico()
@@ -37,10 +41,6 @@ namespace Clase_19
             tareas.Enqueue(() => EjecutarTarea("B"));
             tareas.Enqueue(() => EjecutarTarea("C"));
             tareas.Enqueue(() => EjecutarTarea("D"));
-            tareas.Enqueue(() => EjecutarTarea("E"));
-            tareas.Enqueue(() => EjecutarTarea("F"));
-            tareas.Enqueue(() => EjecutarTarea("G"));
-            tareas.Enqueue(() => EjecutarTarea("H"));
 
             foreach (Action tarea in tareas)
             {
@@ -54,7 +54,7 @@ namespace Clase_19
 
             Thread.Sleep(tiempoEjecucion);
 
-            Console.WriteLine($"'Tarea {codigo}' ejecutada en {tiempoEjecucion}ms");
+            Console.WriteLine($"{DateTime.Now:T} - 'Tarea {codigo}' completada en {tiempoEjecucion}ms");
         }
     }
 }
