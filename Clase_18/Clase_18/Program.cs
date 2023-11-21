@@ -9,7 +9,7 @@ namespace Clase_18
     public class Program
     {
         // Definición del objeto delegado
-        delegate void ObjetoDelegado(string mensaje);
+        public delegate void ObjetoDelegado(string mensaje);
 
         /// <summary>
         /// Método principal de la aplicación.
@@ -24,16 +24,18 @@ namespace Clase_18
             // ObjetoDelegado despedida = new ObjetoDelegado(MensajeDespedida.Saludar);
 
             // Llamada al método asociado al objeto delegado (MensajeBienvenida.Saludar)
-            saludo("Bienvenido...");
+            //saludo("Bienvenido...");
 
             // Asignación del método MensajeDespedida.Saludar al objeto delegado
-            saludo = MensajeDespedida.Saludar;
+            //saludo = MensajeDespedida.Saludar;
 
             // Pausa la ejecución durante 3 segundos (3000 milisegundos)
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
 
             // Llamada al método asociado al objeto delegado (MensajeDespedida.Saludar)
-            saludo("Hasta luego...");
+            //saludo("Hasta luego...");
+
+            Temporizador.EsperarYDisparar(5000, saludo);
         }
     }
 
