@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Clase_19
 {
@@ -8,9 +9,24 @@ namespace Clase_19
     {
         static void Main(string[] args)
         {
-            EjecutarTareasSincronico();
+            Task hilo = new Task(() => EjecutarTareasSincronico());
+
+            hilo.Start();
+
+            EjecutarEnParalelo();
+
+            hilo.Wait();
 
             Console.WriteLine("Se ejecutaron todas las tareas...");
+        }
+
+        public static void EjecutarEnParalelo()
+        {
+            Task hilo1 = new Task(() => EjecutarTarea("A en paralelo"));
+            hilo1.Start();
+
+            Task hilo2 = new Task(() => EjecutarTarea("B en paralelo"));
+            hilo2.Start();
         }
 
         public static void EjecutarTareasSincronico()
