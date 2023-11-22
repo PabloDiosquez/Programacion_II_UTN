@@ -18,7 +18,7 @@ namespace Clase_18
         static void Main(string[] args)
         {
             // Creación de una instancia del objeto delegado y asignación del método MensajeBienvenida.Saludar
-            ObjetoDelegado saludo = new ObjetoDelegado(MensajeBienvenida.Saludar);
+            // ObjetoDelegado saludo = new ObjetoDelegado(MensajeBienvenida.Saludar);
 
             // Puedes asignar otro método al objeto delegado en cualquier momento
             // ObjetoDelegado despedida = new ObjetoDelegado(MensajeDespedida.Saludar);
@@ -35,7 +35,22 @@ namespace Clase_18
             // Llamada al método asociado al objeto delegado (MensajeDespedida.Saludar)
             //saludo("Hasta luego...");
 
-            Temporizador.EsperarYDisparar(5000, saludo);
+            //Temporizador.EsperarYDisparar(5000, s => Console.WriteLine(s));
+
+            // ####################################  🎀  #################################### //
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 
