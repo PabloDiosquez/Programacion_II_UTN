@@ -1,46 +1,34 @@
 ﻿using System;
+using System.Threading;
 
 namespace Consola
 {
-    public class Program
+    public static class Program
     {
-        static void Main(string[] args)
-        {
+        public static void Main() {}
 
-            
-
-            
-            
-
-
-
-
-
-
-
-
-        }
-
-        // Ejercicio 1.
-        //Escriba un programa de aplicación que solicite al usuario ingresar su nombre y apellido,
-        //e imprima en la consola un saludo personalizado utilizando ese nombre e informe entre()
-        //la cantidad de letras que conforman la oración
-        //impresa.
-        //Ejemplo: Hola Juan Perez, bienvenido a la materia (34)
-
-        public static Action<string> saludar = nombreCompleto => 
+        /// <summary>
+        /// Ejercicio 1:
+        /// Escriba un programa que solicite al usuario ingresar su nombre y apellido,
+        /// e imprima en la consola un saludo personalizado y la cantidad de letras de la oración.
+        /// </summary>
+        public static Action<string> saludar = nombreCompleto =>
         {
             string mensaje = $"Hola {nombreCompleto}, bienvenido a la materia";
 
             Console.WriteLine($"{mensaje} ({Helpers.ContarLetras(mensaje)})");
         };
 
-        // Ejercicio 2.
-        //Escriba un programa de aplicación que calcule la suma de dos números reales introducidos por
-        //teclado y muestre el resultado en la consola.
-
+        /// <summary>
+        /// Ejercicio 2:
+        /// Calcula la suma de dos números reales introducidos por teclado y muestra el resultado en la consola.
+        /// </summary>
         public static Func<double, double, double> suma = ((x, y) => x + y);
 
+        /// <summary>
+        /// Ejercicio 2:
+        /// Pide dos números al usuario y muestra su suma en la consola.
+        /// </summary>
         public static void PedirDosNumerosYMostrarSuSuma()
         {
             double primerNumero = Helpers.ValidarNumero();
@@ -50,19 +38,13 @@ namespace Consola
             Console.WriteLine($"Suma: {suma(primerNumero, segundoNumero)}");
         }
 
-        // Ejercicio 3.
-        //Escriba un programa de aplicación que lea por teclado una secuencia de números y que imprima
-        //el valor máximo, el valor mínimo de dicho conjunto y el valor promedio.
-
-        public static Func<int[], int> minimo = numeros => Helpers.Minimo(numeros);
-
-        public static Func<int[], int> maximo = numeros => Helpers.Maximo(numeros);
-
-        public static Func<int[], double> promedio = numeros => Helpers.CalcularPromedio(numeros);
-
+        /// <summary>
+        /// Ejercicio 3:
+        /// Lee por teclado una secuencia de números, muestra el valor máximo, mínimo y el promedio de la secuencia.
+        /// </summary>
         public static Action<int> leerYMostrar = cantidad => MostrarDatosEnArray(LeerPorTeclado(cantidad));
 
-        public static int[] LeerPorTeclado(int cantidad)
+        private static int[] LeerPorTeclado(int cantidad)
         {
             int[] numeros = new int[cantidad];
 
@@ -73,14 +55,58 @@ namespace Consola
             return numeros;
         }
 
-        public static void MostrarDatosEnArray(int[] numeros)
+        private static void MostrarDatosEnArray(int[] numeros)
         {
-            Console.WriteLine($"Mínimo: {minimo(numeros)}");
+            Console.WriteLine($"Mínimo: {Helpers.Minimo(numeros)}");
 
-            Console.WriteLine($"Máximo: {maximo(numeros)}");
+            Console.WriteLine($"Máximo: {Helpers.Maximo(numeros)}");
 
-            Console.WriteLine($"Promedio: {promedio(numeros)}");
+            Console.WriteLine($"Promedio: {Helpers.CalcularPromedio(numeros)}");
         }
 
+        /// <summary>
+        /// Ejercicio 4:
+        /// Imprime en la consola todos los números pares, múltiplos de 5 y comprendidos entre 250 y 900.
+        /// </summary>
+        public static Action imprimirNumerosParesYMultiplosDe5 = () => ImprimirNumerosParesYMultiplosDe5(250, 900);
+        private static void ImprimirNumerosParesYMultiplosDe5(int desde, int hasta)
+        {
+            for (int numero = desde; numero <= hasta; numero++)
+            {
+                Thread.Sleep(10);
+                if (Helpers.esPar(numero) && Helpers.esMultiploDe(numero, 5))
+                    Console.WriteLine(numero);
+            }
+        }
+
+        /// <summary>
+        /// Ejercicio 5:
+        /// Permite al usuario ingresar números por la consola y muestra la suma acumulada.
+        /// Informa la cantidad total de números ingresados y sumados cuando se ingresa un 0.
+        /// </summary>
+        public static Action leerEImprimirNumerosHastaIngresarCero = () => LeerEImprimirNumeros();
+        private static void LeerEImprimirNumeros()
+        {
+            int sumaAcumuladaAlMomento = 0;
+
+            int totalNumerosAlMomento = 0;
+
+            while (true)
+            {
+                int numero = Helpers.ValidarNumeroEntero();
+
+                if (numero == 0) break;
+
+                totalNumerosAlMomento++;
+
+                Console.WriteLine($"Número: {numero}");
+
+                Console.WriteLine($"Suma acumulada al momento: {sumaAcumuladaAlMomento += numero}");
+            }
+
+            Console.WriteLine($"Números ingresados en total: {totalNumerosAlMomento}");
+
+            Console.WriteLine($"Suma total: {sumaAcumuladaAlMomento}");
+        }
     }
 }
