@@ -39,6 +39,27 @@ namespace Clase_18
 
             // ####################################  🎀  #################################### //
 
+            // Instancio dos receptores...
+
+            Receptor receptorA = new Receptor("Receptor A");
+
+            Receptor receptorB = new Receptor("Receptor B");
+
+            // Instancio una emisor...
+
+            Emisor emisor = new Emisor();
+
+            // Agrego los receptores a la lista del emisor...
+
+            emisor.AgregarDestinatario(receptorA.RecibirNotificacion);
+
+            emisor.AgregarDestinatario(receptorB.RecibirNotificacion);
+
+            emisor.AgregarDestinatario(Notificar);
+
+            // Invoco al método EmitirNotificacion() del emisor...
+
+            emisor.EmitirNotificacion();
 
 
 
@@ -46,11 +67,11 @@ namespace Clase_18
 
 
 
+        }
 
-
-
-
-
+        public static void Notificar()
+        {
+            Console.WriteLine("Enviado notificación a Lio Messi...");
         }
     }
 

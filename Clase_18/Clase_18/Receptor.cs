@@ -15,9 +15,11 @@ namespace Clase_18
             this.nombre = nombre;
         }
 
+        public string Nombre { get { return nombre; } }
+
         public void RecibirNotificacion()
         {
-            Console.WriteLine($"Recibí una notificación: {DateTime.Now:T}");
+            Console.WriteLine($"{this.Nombre} - Recibí una notificación: {DateTime.Now:T}");
         }
     }
 }

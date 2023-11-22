@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Clase_18
@@ -19,6 +20,10 @@ namespace Clase_18
         {
             foreach (Action delegadoDestinatario in destinatarios)
             {
+                Console.WriteLine("Notificación emitida!");
+
+                Thread.Sleep(new Random().Next(1000, 3000));
+
                 //delegadoDestinatario.Invoke();
 
                 delegadoDestinatario();
