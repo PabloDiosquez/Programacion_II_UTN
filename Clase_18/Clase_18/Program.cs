@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Clase_18
@@ -8,7 +9,9 @@ namespace Clase_18
     /// </summary>
     public class Program
     {
-        // Definición del objeto delegado
+        /// <summary>
+        /// Definición del objeto delegado.
+        /// </summary>
         public delegate void ObjetoDelegado(string mensaje);
 
         /// <summary>
@@ -17,61 +20,73 @@ namespace Clase_18
         /// <param name="args">Argumentos de la línea de comandos.</param>
         static void Main(string[] args)
         {
-            // Creación de una instancia del objeto delegado y asignación del método MensajeBienvenida.Saludar
-            // ObjetoDelegado saludo = new ObjetoDelegado(MensajeBienvenida.Saludar);
-
-            // Puedes asignar otro método al objeto delegado en cualquier momento
-            // ObjetoDelegado despedida = new ObjetoDelegado(MensajeDespedida.Saludar);
-
-            // Llamada al método asociado al objeto delegado (MensajeBienvenida.Saludar)
-            //saludo("Bienvenido...");
-
-            // Asignación del método MensajeDespedida.Saludar al objeto delegado
-            //saludo = MensajeDespedida.Saludar;
-
-            // Pausa la ejecución durante 3 segundos (3000 milisegundos)
-            //Thread.Sleep(3000);
-
-            // Llamada al método asociado al objeto delegado (MensajeDespedida.Saludar)
-            //saludo("Hasta luego...");
-
-            //Temporizador.EsperarYDisparar(5000, s => Console.WriteLine(s));
+            // ... (comentarios para el código restante)
 
             // ####################################  🎀  #################################### //
 
             // Instancio dos receptores...
 
-            Receptor receptorA = new Receptor("Receptor A");
+            //Receptor receptorA = new Receptor("Receptor A");
 
-            Receptor receptorB = new Receptor("Receptor B");
+            //Receptor receptorB = new Receptor("Receptor B");
 
-            // Instancio una emisor...
+            //// Instancio una emisor...
 
-            Emisor emisor = new Emisor();
+            //Emisor emisor = new Emisor();
 
-            // Agrego los receptores a la lista del emisor...
+            //// Agrego los receptores a la lista del emisor...
 
-            emisor.AgregarDestinatario(receptorA.RecibirNotificacion);
+            //emisor.AgregarDestinatario(receptorA.RecibirNotificacion);
 
-            emisor.AgregarDestinatario(receptorB.RecibirNotificacion);
+            //emisor.AgregarDestinatario(receptorB.RecibirNotificacion);
 
-            emisor.AgregarDestinatario(Notificar);
+            //emisor.AgregarDestinatario(CambiarColorConsola);
 
-            // Invoco al método EmitirNotificacion() del emisor...
+            //emisor.AgregarDestinatario(Notificar);
 
-            emisor.EmitirNotificacion();
+            //// Invoco al método EmitirNotificacion() del emisor...
 
+            //emisor.EmitirNotificacion();
 
+            // ####################################  🎀  #################################### //
 
+            List<int> numeros = new List<int>() { 1, 43, -12, 6, -87, 101 };
 
+            ImprimirLista<int>(numeros.Filtar<int>(numero => numero % 2 == 0));
 
+            Console.WriteLine();
 
+            ImprimirLista<int>(numeros.Filtar<int>(numero => numero >= 0));
 
         }
 
+        /// <summary>
+        /// Imprime los elementos de una lista.
+        /// </summary>
+        /// <typeparam name="T">Tipo de elementos en la lista.</typeparam>
+        /// <param name="lista">Lista a imprimir.</param>
+        public static void ImprimirLista<T>(List<T> lista)
+        {
+            foreach (T elemento in lista)
+            {
+                Console.WriteLine(elemento.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Envia una notificación.
+        /// </summary>
         public static void Notificar()
         {
             Console.WriteLine("Enviado notificación a Lio Messi...");
+        }
+
+        /// <summary>
+        /// Cambia el color de la consola a rojo.
+        /// </summary>
+        public static void CambiarColorConsola()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
         }
     }
 
