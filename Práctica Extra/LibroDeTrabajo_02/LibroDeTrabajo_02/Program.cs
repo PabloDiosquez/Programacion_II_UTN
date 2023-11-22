@@ -6,7 +6,12 @@ namespace LibroDeTrabajo_02
     {
         static void Main(string[] args)
         {
-            LeerPalabrasYDeterminarPorcentaje();
+            string palabra = "eeeiiioouuffaa";
+
+            foreach (string par in cantidadVocales(palabra))
+            {
+                Console.WriteLine(par);
+            }
         }
 
         // Ejercicio 1.
@@ -56,5 +61,11 @@ namespace LibroDeTrabajo_02
             }
 
         }
+
+        // Ejercicio 3.
+        //Defina una función que reciba una palabra y retorne en un vector la cantidad de cada una de las vocales que
+        //contiene.
+
+        static Func<string, string[]> cantidadVocales = (str) => str.ContadorDeVocales();  
     }
 }
