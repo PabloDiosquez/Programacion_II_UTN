@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace LibroDeTrabajo_02
 {
@@ -6,12 +8,14 @@ namespace LibroDeTrabajo_02
     {
         static void Main(string[] args)
         {
-            string palabra = "eeeiiioouuffaa";
+            //string palabra = "eeeiiioouuffaa";
 
-            foreach (string par in cantidadVocales(palabra))
-            {
-                Console.WriteLine(par);
-            }
+            //foreach (string par in cantidadVocales(palabra))
+            //{
+            //    Console.WriteLine(par);
+            //}
+
+            usarCalculadora();
         }
 
         // Ejercicio 1.
@@ -66,6 +70,62 @@ namespace LibroDeTrabajo_02
         //Defina una función que reciba una palabra y retorne en un vector la cantidad de cada una de las vocales que
         //contiene.
 
-        static Func<string, string[]> cantidadVocales = (str) => str.ContadorDeVocales();  
+        static Func<string, string[]> cantidadVocales = (str) => str.ContadorDeVocales();
+
+        // Ejercicio 4.
+        //Implemente un programa de aplicación que simule el funcionamiento de una calculadora que permita al usuario
+        //realizar las cuatro operaciones elementales e imprimir el resultado de la operación.Para ello el programa debe
+        //mostrar un menú de opciones con cada una de las operaciones, luego de seleccionar la operación el programa
+        //pide ingresar dos números, realiza la operación solicitada e imprime el resultado
+
+        public static Action usarCalculadora = UsarCalculadora;
+
+        private static void UsarCalculadora()
+        {
+            while (true)
+            {
+                Console.WriteLine(" **** App Calculadora **** ");
+                double primerNumero = Helpers.ValidarNumero();
+                double segundoNumero = Helpers.ValidarNumero();
+                MostrarMenuCalculadora();
+                string operador = ValidarOperador();
+                if (operador.ToUpper() == "ESC") break;
+                Console.WriteLine($"Resultado: {Calculadora.Calcular(primerNumero, segundoNumero, operador)}");
+            }
+            Console.WriteLine("Gracias por usar la App!");
+            
+        }
+        private static void MostrarMenuCalculadora()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("*** Menú Calculadora ***");
+            sb.AppendLine("Ingresa la operación que desea realizar:");
+            sb.AppendLine("Suma ➡ +");
+            sb.AppendLine("Resta ➡ -");
+            sb.AppendLine("Multiplicación ➡ *");
+            sb.AppendLine("División ➡ /");
+            sb.AppendLine("Salir ➡ ESC");
+
+            Console.WriteLine(sb.ToString());
+        }
+
+        private static string ValidarOperador()
+        {
+            List<string> operadoresValidos = new List<string>() {"+", "-", "*", "/", "ESC", "esc" };
+
+            string operador = Console.ReadLine().Trim();    
+
+            while (true)
+            {
+                if (operadoresValidos.Contains(operador)) break;
+                else 
+                {
+                    Console.WriteLine("Operación NO válida. Intente de nuevo.");
+
+                    operador = Console.ReadLine();  
+                }
+            }
+            return operador;
+        }
     }
 }

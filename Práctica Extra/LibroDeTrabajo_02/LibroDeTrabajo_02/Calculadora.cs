@@ -8,7 +8,26 @@ namespace LibroDeTrabajo_02
 {
     // Ejercicio 4.
     
-    public class Calculadora
+    public static class Calculadora
     {
+        public static double Calcular(double primerNumero, double segundoNumero, string operador) 
+        {
+            switch (operador)
+            {
+                case "+":
+                    return primerNumero + segundoNumero;
+                case "-":
+                    return primerNumero - segundoNumero;
+                case "*":
+                    return primerNumero * segundoNumero;
+                case "/":
+                    if (segundoNumero != 0) return primerNumero / segundoNumero;
+                    else return double.MaxValue;
+                default:
+                    Console.WriteLine($"{operador} NO es una operador válido...");
+                    return double.NaN;  
+            }
+        }
+
     }
 }

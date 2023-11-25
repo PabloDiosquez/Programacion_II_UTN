@@ -104,5 +104,18 @@ namespace LibroDeTrabajo_02
         {
             return condicion ? 1 : 0;
         }
+
+        public static double ValidarNumero() 
+        {
+            double numero;
+
+            Console.WriteLine("Ingrese un número:");
+
+            while (!double.TryParse(Console.ReadLine(), out numero))
+            {
+                Console.WriteLine("Asegúrese de ingresar un número...");
+            }
+            return numero;  
+        }
     }
 }
