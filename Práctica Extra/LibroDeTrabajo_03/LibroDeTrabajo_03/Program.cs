@@ -7,7 +7,7 @@ namespace LibroDeTrabajo_03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Helpers.EsPalindromo("anita lava la tina"));
+            
         }
 
         // Ejercicio 1.
@@ -34,7 +34,6 @@ namespace LibroDeTrabajo_03
         //c.Indicar total de alumnos inscriptos
         //d.Indicar total de escuelas que al menos tienen un alumno inscripto (armar una lista de escuelas)
         //e.Imprimir el listado de las escuelas, ordenado alfabéticamente, sin repeticiones.
-
 
     }
 }
