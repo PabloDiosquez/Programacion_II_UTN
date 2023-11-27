@@ -7,7 +7,47 @@ namespace LibroDeTrabajo_03
     {
         static void Main(string[] args)
         {
-            
+            Competencia olimpiada = new Competencia();
+
+            while (true)
+            {
+                Vista.MostrarMenu();
+
+                string opcion = Console.ReadLine();
+
+                switch (opcion)
+                {
+                    case "a":
+                        Console.WriteLine("DNI:");
+                        int dni = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Nombre escuela:");
+                        string nombreEscuela = Console.ReadLine();
+                        olimpiada.InscribirAlumno(new Alumno(dni, nombreEscuela));
+                        break;
+                    case "b":
+                        Console.WriteLine("DNI:");
+                        int dniDrop = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Nombre escuela:");
+                        string nombreEscuelaDrop = Console.ReadLine();
+                        olimpiada.BorrarAlumno(new Alumno(dniDrop, nombreEscuelaDrop));
+                        break;
+                    case "c":
+                        olimpiada.ObtenerTotalAlumnosInscriptos();
+                        break;
+                    case "d":
+                        olimpiada.ObtenerTotalEscuelas();
+                        break;
+                    case "e":
+                        olimpiada.ImprimirEscuelas();
+                        break;
+                    case "ESC":
+                        Console.WriteLine("Gracias por usar la App!");
+                        return;
+                    default:
+                        Console.WriteLine("Opción inválida. Intente de nuevo.");
+                        break;
+                }
+            }
         }
 
         // Ejercicio 1.
