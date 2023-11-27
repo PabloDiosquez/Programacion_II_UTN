@@ -39,6 +39,10 @@ namespace LibroDeTrabajo_03
             this.totalInscritos = 0;
         }
 
+        // Propiedades 
+
+        public List<string> Escuelas {get {return this.ObtenerEscuelas();} }
+
         // Métodos de instancia 
 
         /// <summary>

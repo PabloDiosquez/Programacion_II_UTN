@@ -13,38 +13,30 @@ namespace LibroDeTrabajo_03
             {
                 Vista.MostrarMenu();
 
-                string opcion = Console.ReadLine();
+                char opcion = Vista.ObtenerOpcionMenu();
 
                 switch (opcion)
                 {
-                    case "a":
-                        Console.WriteLine("DNI:");
-                        int dni = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Nombre escuela:");
-                        string nombreEscuela = Console.ReadLine();
-                        olimpiada.InscribirAlumno(new Alumno(dni, nombreEscuela));
+                    case 'a':
+                        olimpiada.InscribirAlumno(Vista.ObtenerAlumno());
                         break;
-                    case "b":
-                        Console.WriteLine("DNI:");
-                        int dniDrop = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Nombre escuela:");
-                        string nombreEscuelaDrop = Console.ReadLine();
-                        olimpiada.BorrarAlumno(new Alumno(dniDrop, nombreEscuelaDrop));
+                    case 'b':
+                        olimpiada.BorrarAlumno(Vista.ObtenerAlumno());
                         break;
-                    case "c":
-                        olimpiada.ObtenerTotalAlumnosInscriptos();
+                    case 'c':
+                        Console.WriteLine($"\nTotal inscriptos: {olimpiada.ObtenerTotalAlumnosInscriptos()}\n");
                         break;
-                    case "d":
-                        olimpiada.ObtenerTotalEscuelas();
+                    case 'd':
+                        Console.WriteLine($"\nTotal escuelas: {olimpiada.ObtenerTotalEscuelas()}\n"); ;
                         break;
-                    case "e":
-                        olimpiada.ImprimirEscuelas();
+                    case 'e':
+                        Vista.ImprimirEscuelas(olimpiada);
                         break;
-                    case "ESC":
-                        Console.WriteLine("Gracias por usar la App!");
+                    case 'X':
+                        Console.WriteLine("\nGracias por usar la App!");
                         return;
                     default:
-                        Console.WriteLine("Opción inválida. Intente de nuevo.");
+                        Console.WriteLine("\nOpción inválida. Intente de nuevo.");
                         break;
                 }
             }
