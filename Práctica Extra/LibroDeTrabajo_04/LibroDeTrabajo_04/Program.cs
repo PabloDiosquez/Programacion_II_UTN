@@ -17,15 +17,21 @@ namespace LibroDeTrabajo_04
 
             // Ejercicio 2
 
-            Persona rapero1 = new Persona("Tupac Shakur", 25, 98765432);
-            Persona rapero2 = new Persona("The Notorious B.I.G.", 24, 87654321);
-            Persona rapero3 = new Persona("Queen Latifah", 30, 76543210);
+            //Persona rapero1 = new Persona("Tupac Shakur", 25, 98765432);
+            //Persona rapero2 = new Persona("The Notorious B.I.G.", 24, 87654321);
+            //Persona rapero3 = new Persona("Queen Latifah", 30, 76543210);
 
-            List<Persona> raperos = new List<Persona>() { rapero1, rapero2, rapero3};
+            //List<Persona> raperos = new List<Persona>() { rapero1, rapero2, rapero3};
 
-            // Ordenar y recorrer la lista de raperos 
+            //// Ordenar y recorrer la lista de raperos 
 
-            Console.WriteLine($"Rapero de mayor edad: {PersonaMayor(raperos)}");
+            //Console.WriteLine($"Rapero de mayor edad: {PersonaMayor(raperos)}");
+
+            // Ejercicio 3
+
+            Operacion op = new Operacion(5, 4,'p');
+            int res = op.Evaluar();
+            Console.WriteLine(res);
 
         }
 
