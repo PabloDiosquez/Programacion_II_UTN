@@ -10,12 +10,6 @@ namespace Biblioteca
 
         private int legajo;
 
-        private int dni;
-
-        private string nombre;
-
-        private string apellido;
-
         private DateTime fechaNacimiento;
 
         private List<string> materias;
@@ -37,27 +31,23 @@ namespace Biblioteca
 
         // Propiedades 
         public int Legajo { get => legajo; set => legajo = value; }
-        public int Dni { get => dni; set => dni = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public List<string> Materias { get => materias; set => materias = value; }
 
         // Métodos de instancia 
 
-        public void InscribirseAMateria(string materia)
+        public void InscribirseAMateria(string materia, string diaHora)
         {
             if(string.IsNullOrEmpty(materia)) throw new ArgumentNullException(nameof(materia));
 
-            this.materias.Add(materia);
+            this.materias.Add($"[{materia}, {diaHora}]");
         }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Datos del alumno: Legajo {this.Legajo}");
-            sb.AppendLine($"DNI: {this.Dni}");
-            sb.AppendLine($"Nombre completo: {this.Apellido}, {this.Nombre}");
+            sb.AppendLine(base.ToString());
             sb.AppendLine($"Fecha de nacimiento: {this.FechaNacimiento.ToString("dd/mm/yyyy")}");
             sb.AppendLine($"Materias: {this.VerMaterias()}");
 

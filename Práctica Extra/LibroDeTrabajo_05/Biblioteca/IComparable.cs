@@ -9,7 +9,5 @@ namespace Biblioteca
     public interface IComparable
     {
         public bool EsIgualA(Persona persona);
-        public bool EsMayorQue(Persona persona);
-        public bool EsMenorQue(Persona persona);
     }
 }

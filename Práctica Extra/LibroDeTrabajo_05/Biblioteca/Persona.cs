@@ -25,19 +25,23 @@ namespace Biblioteca
             this.apellido = apellido;
         }
 
+        // Propiedades
+        public int Dni { get => dni; set => dni = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+
         public bool EsIgualA(Persona persona)
         {
             return this.dni == persona.dni;
         }
 
-        public bool EsMayorQue(Persona persona)
+        public override string ToString()
         {
-            return this.dni < persona.dni;
-        }
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"DNI: {this.Dni}");
+            sb.AppendLine($"Nombre completo: {this.Apellido}, {this.Nombre}");
 
-        public bool EsMenorQue(Persona persona)
-        {
-            return this.dni > persona.dni;
+            return sb.ToString();
         }
     }
 }
