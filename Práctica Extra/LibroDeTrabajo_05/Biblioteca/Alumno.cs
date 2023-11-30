@@ -22,17 +22,11 @@ namespace Biblioteca
 
         // Constructores
 
-        public Alumno()
-        {
-            this.materias = new List<string>();
-        }
-
-        public Alumno(int legajo, int dni, string nombre, string apellido) : this()
+        public Alumno(int legajo, int dni, string nombre, string apellido) : 
+            base(dni, nombre, apellido)
         {
             this.legajo = legajo;
-            this.dni = dni;
-            this.nombre = nombre;
-            this.apellido = apellido;
+            this.materias = new List<string>();
         }
 
         public Alumno(int legajo, int dni, string nombre, string apellido, DateTime fechaNacimiento)
@@ -65,7 +59,7 @@ namespace Biblioteca
             sb.AppendLine($"DNI: {this.Dni}");
             sb.AppendLine($"Nombre completo: {this.Apellido}, {this.Nombre}");
             sb.AppendLine($"Fecha de nacimiento: {this.FechaNacimiento.ToString("dd/mm/yyyy")}");
-            sb.AppendLine($"{this.VerMaterias()}");
+            sb.AppendLine($"Materias: {this.VerMaterias()}");
 
             return sb.ToString();
         }
