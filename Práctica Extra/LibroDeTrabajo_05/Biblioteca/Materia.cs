@@ -62,7 +62,7 @@ namespace Biblioteca
         /// <returns>Cadena que representa los datos de la materia.</returns>
         public override string ToString()
         {
-            string profesorNombre = (this.Profesor != null) ? this.Profesor.Apellido : "N/A";
+            string profesorNombre = (this.Profesor is not null) ? this.Profesor.Apellido : "N/A";
             return $"[Materia: {this.Nombre}, Día y hora: {this.DiaYHora}, Profesor a cargo: {profesorNombre}]";
         }
     }

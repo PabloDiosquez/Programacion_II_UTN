@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibroDeTrabajo_05
+namespace Biblioteca_Colecciones
 {
     /// <summary>
     /// Representa una cola genérica (FIFO - First In, First Out).

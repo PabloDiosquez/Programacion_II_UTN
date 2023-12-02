@@ -1,4 +1,7 @@
 ﻿using System;
+using Biblioteca_Expedientes;
+using Biblioteca_Colecciones;
+
 
 namespace LibroDeTrabajo_05
 {
@@ -6,7 +9,7 @@ namespace LibroDeTrabajo_05
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Cola<Expediente> expedientes = new Cola<Expediente>();
         }
     }
 }
