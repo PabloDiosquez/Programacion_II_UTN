@@ -12,7 +12,7 @@ namespace Biblioteca
 
         private int legajo;
 
-        private List<string> materiasQueDicta;
+        private List<Materia> materiasQueDicta;
 
         // Constructor 
 
@@ -21,20 +21,22 @@ namespace Biblioteca
         {
             this.legajo = legajo;
 
-            materiasQueDicta = new List<string>();
+            materiasQueDicta = new List<Materia>();
         }
 
         // Propiedades 
         public int Legajo { get => legajo; set => legajo = value; }
-        public List<string> MateriasQueDicta { get => materiasQueDicta; set => materiasQueDicta = value; }
+        public List<Materia> MateriasQueDicta { get => materiasQueDicta; set => materiasQueDicta = value; }
 
         // Métodos de instancia 
 
-        public void AgregarDictadoMateria(string materia, string diaHora) 
+        public void AgregarDictadoMateria(Materia materia) 
         {
-            if(string.IsNullOrEmpty(materia)) throw new ArgumentNullException(nameof(materia));
+            if(materia is null) throw new ArgumentNullException(nameof(materia));
 
-            this.materiasQueDicta.Add($"[{materia}, {diaHora}]");
+            this.materiasQueDicta.Add(materia);
+
+            materia.Profesor = this;    
         }
 
         public override string ToString()
@@ -49,7 +51,14 @@ namespace Biblioteca
 
         private string VerMaterias() 
         {
-            return string.Join(", ", materiasQueDicta);
+            List<string> materias = new List<string>();
+
+            foreach (Materia materia in this.materiasQueDicta)
+            {
+                materias.Add(materia.ToString());
+            }
+
+            return string.Join(", ", this.materiasQueDicta);
         }
     }
 }
