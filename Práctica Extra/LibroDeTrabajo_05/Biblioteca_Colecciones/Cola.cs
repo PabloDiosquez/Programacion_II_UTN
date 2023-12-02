@@ -19,6 +19,8 @@ namespace Biblioteca_Colecciones
         /// </summary>
         private List<T> encolados;
 
+        public List<T> Encolados { get; }
+
         // Constructor
 
         /// <summary>

@@ -5,4 +5,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca_Colecciones\Biblioteca_Colecciones.csproj" />
+    <ProjectReference Include="..\Biblioteca_Expedientes\Biblioteca_Expedientes.csproj" />
+  </ItemGroup>
+
 </Project>
