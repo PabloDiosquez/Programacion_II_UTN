@@ -19,7 +19,7 @@ namespace Biblioteca_Colecciones
         /// </summary>
         private List<T> encolados;
 
-        public List<T> Encolados { get; }
+        public List<T> Encolados { get { return this.encolados; } }
 
         // Constructor
 
