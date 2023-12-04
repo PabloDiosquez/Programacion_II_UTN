@@ -10,9 +10,9 @@ namespace Espectaculo
 
         // Constructor 
 
-        public Espectaculo() 
+        public Espectaculo(int cantidadButacas) 
         {
-            this.cantidadButacas = 10;
+            this.cantidadButacas = cantidadButacas;
         }
 
         // Propiedad de lectura
