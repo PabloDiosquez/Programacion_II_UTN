@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibroDeTrabajo_06
 {
-    abstract class Persona
+    public abstract class Persona
     {
         // Atributos 
 
@@ -64,8 +64,12 @@ namespace LibroDeTrabajo_06
             return $"{this.Nombre} {this.Apellido} ({this.Edad}) {this.Dni}";
         }
 
-        private int CalcularEdad() 
+        private int CalcularEdad()
         {
+            if (fechaNacimiento == DateTime.MinValue)
+            {
+                throw new Exception("Fecha de nacimiento sin actualizar.");
+            }
             return DateTime.Now.Year - this.fechaNacimiento.Year;
         }
     }
