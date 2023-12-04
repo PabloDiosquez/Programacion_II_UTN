@@ -7,13 +7,23 @@ namespace LibroDeTrabajo_06
     {
         static void Main(string[] args)
         {
-            //1) ALUMNO: Juan Perez(26) 2998745 7.8
-
             Alumno alumno = new Alumno(2998745, "Juan", "Perez", new DateTime(1997, 12, 3), 7.8);
 
             Console.WriteLine(alumno);
 
+            Alumno alumno1 = IngresarAlumno();
 
+            Console.WriteLine(alumno1);
+        }
+
+        public static Alumno IngresarAlumno() 
+        {
+            Console.WriteLine("Ingresar datos alumno: [DNI<TAB>Nombre<TAB>Apellido<TAB><ENTER>]");
+            string datosRaw = Console.ReadLine();
+
+            string[] datos = datosRaw.Split('\t');
+
+            return new Alumno(Convert.ToInt32(datos[0]), datos[1], datos[2]);
         }
     }
 }

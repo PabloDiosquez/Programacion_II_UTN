@@ -70,6 +70,7 @@ namespace LibroDeTrabajo_06
             {
                 throw new Exception("Fecha de nacimiento sin actualizar.");
             }
+
             return DateTime.Now.Year - this.fechaNacimiento.Year;
         }
     }
