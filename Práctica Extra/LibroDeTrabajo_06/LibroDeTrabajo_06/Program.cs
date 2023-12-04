@@ -19,9 +19,8 @@ namespace LibroDeTrabajo_06
         public static Alumno IngresarAlumno() 
         {
             Console.WriteLine("Ingresar datos alumno: [DNI<TAB>Nombre<TAB>Apellido<TAB><ENTER>]");
-            string datosRaw = Console.ReadLine();
 
-            string[] datos = datosRaw.Split('\t');
+            string[] datos = Console.ReadLine().Split('\t');
 
             return new Alumno(Convert.ToInt32(datos[0]), datos[1], datos[2]);
         }
