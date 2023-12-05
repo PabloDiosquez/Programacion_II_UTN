@@ -1,5 +1,6 @@
 ﻿using System;
 using Espectaculo;
+using Biblioteca_Cine;
 
 namespace LibroDeTrabajo_06
 {
@@ -52,6 +53,7 @@ namespace LibroDeTrabajo_06
             Console.WriteLine($"Recaudación final: {elFantasmaDeLaOpera.totalRecaudado()}");
 
             Console.ReadLine(); // Para que la consola no se cierre inmediatamente
+
         }
     
 
