@@ -10,7 +10,7 @@ namespace Espectaculo
     {
         // Atributos 
 
-        private int nroButaca;
+        private int? nroButaca;
 
         private string nombre;
 
@@ -27,7 +27,7 @@ namespace Espectaculo
 
             this.apellido = apellido;
 
-            this.nroButaca = -1;
+            this.nroButaca = null;
         }
 
         public Espectador(Espectador espectador)
@@ -36,7 +36,7 @@ namespace Espectaculo
 
         // Propiedades 
 
-        public int NroButaca { get => nroButaca; set => nroButaca = value; }
+        public int NroButaca { get => (int)nroButaca; set => nroButaca = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public int Dni { get => dni; set => dni = value; }

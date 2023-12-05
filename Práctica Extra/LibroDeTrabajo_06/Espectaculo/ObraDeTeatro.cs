@@ -12,32 +12,69 @@ namespace Espectaculo
 
         private string nombre;
 
-        private double precio;
+        Butaca[] butacas;
 
         // Constructores
 
-        public ObraDeTeatro() { }
-
-        public ObraDeTeatro(string nombre)
+        public ObraDeTeatro(string nombre, int cantidadButacas) 
+            : base(cantidadButacas)
         {
             this.nombre = nombre;
-        }
 
-        public ObraDeTeatro(string nombre, double precio)
-            : this(nombre)
-        {
-            this.precio = (precio > 0) ? precio : 0;
+            this.butacas = new Butaca[this.CantidadButacas];
         }
 
         public ObraDeTeatro(ObraDeTeatro obra)
-            : this(obra.nombre, obra.precio)
+            : this(obra.nombre, obra.CantidadButacas)
         {
-
         }
 
         // Propiedades 
         public string Nombre { get => nombre; set => nombre = value; }
-        public double Precio { get => precio; set { precio = (value > 0) ? value : 0; } } 
+
+        // Métodos de instancia
+
+        public bool VenderEntrada(Espectador espectador, double precio) 
+        {
+            
+            if (espectador == null) throw new ArgumentNullException(nameof(espectador));
+
+            int nroButacaLibre = Array.FindIndex(this.butacas, butaca => butaca is null);
+
+            if (nroButacaLibre == -1)
+            {
+                Console.WriteLine("Todas las butacas están ocupadas.");
+
+                return false;
+            }
+
+            this.butacas[nroButacaLibre] = new Butaca(nroButacaLibre, precio);
+
+            espectador.NroButaca = nroButacaLibre;
+
+            return true;
+        }
+
+        public int cantidadDeEspectadores()
+        {
+            return this.butacas.Length - this.butacas.Count(butaca => butaca is null);
+        }
+
+        public double totalRecaudado()
+        {
+            if (this.butacas.Length == 0) return 0;
+
+            double totalRecaudado = 0;
+
+            foreach (Butaca butaca in this.butacas)
+            {
+                if (butaca is not null)
+                {
+                    totalRecaudado += butaca.Precio;
+                }
+            }
+            return totalRecaudado;
+        }
 
     }
 }

@@ -9,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicio 2", "Ejercicio 2"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clases", "Clases\Clases.csproj", "{E57984D1-EC78-4A0C-B125-D46745FEDBFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Espectaculo", "Espectaculo\Espectaculo.csproj", "{D7058ABB-E005-47B0-982F-91E87B9F9A9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Espectaculo", "Espectaculo\Espectaculo.csproj", "{D7058ABB-E005-47B0-982F-91E87B9F9A9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ejercicio 4", "Ejercicio 4", "{952CCD7D-0660-47E4-8979-2366830FBF86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca_Cine", "Biblioteca_Cine\Biblioteca_Cine.csproj", "{EB7EA161-FE46-4AF7-A5C8-6743F3A619C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +33,17 @@ Global
 		{D7058ABB-E005-47B0-982F-91E87B9F9A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7058ABB-E005-47B0-982F-91E87B9F9A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7058ABB-E005-47B0-982F-91E87B9F9A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB7EA161-FE46-4AF7-A5C8-6743F3A619C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7EA161-FE46-4AF7-A5C8-6743F3A619C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7EA161-FE46-4AF7-A5C8-6743F3A619C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7EA161-FE46-4AF7-A5C8-6743F3A619C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E57984D1-EC78-4A0C-B125-D46745FEDBFA} = {679AFFE3-6C42-42B5-9B75-7F11B7D398C2}
+		{D7058ABB-E005-47B0-982F-91E87B9F9A9A} = {952CCD7D-0660-47E4-8979-2366830FBF86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F864992-C723-41BB-BDCD-CE765F922D9B}
