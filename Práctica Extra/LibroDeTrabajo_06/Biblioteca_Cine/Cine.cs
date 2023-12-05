@@ -8,24 +8,40 @@ namespace Biblioteca_Cine
 {
     public class Cine
     {
+        private int cantidadSalas;
+
         private string nombre;
 
-        List<Sala> salas;
+        Sala[] salas;
 
-        public Cine(string nombre) 
+        public Cine(string nombre, int cantidadSalas) 
         {
             this.nombre = nombre;
 
-            salas = new List<Sala>();
+            this.cantidadSalas = (cantidadSalas > 0) ? cantidadSalas : 0;
+
+            salas = new Sala[this.cantidadSalas];
         }
 
         public string Nombre { get => this.nombre; set => this.nombre = value; }
 
-        public List<Sala> Salas { get => this.salas; }
+        public Sala[] Salas { get => this.salas; }
+        public int CantidadSalas { get => cantidadSalas; set => cantidadSalas = value; }
+
+        public int cantidadDeEspectadoresTotales()
+        {
+            int totalEspectadores = 0;
+
+            foreach (Sala sala in this.Salas) 
+            {
+                totalEspectadores += sala.CantidadEspectadores;
+            }
+            return totalEspectadores;
+        }
 
         public override string ToString()
         {
-            return $"[Nombre: {this.Nombre}, Nro de salas: {this.Salas.Count}]";
+            return $"[Nombre: {this.Nombre}, Nro de salas: {this.CantidadSalas}]";
         }
     }
 }
