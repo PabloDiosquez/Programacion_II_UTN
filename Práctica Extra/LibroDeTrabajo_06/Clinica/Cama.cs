@@ -12,13 +12,7 @@ namespace Clinica
 
         private int nroCama;
 
-        private string nombrePaciente;
-
-        private string diagnostico;
-
-        private ObraSocial obraSocial;
-
-        private DateTime fechaIngreso;
+        Paciente paciente;
 
         public Cama(int nroCama)
         {
@@ -27,16 +21,32 @@ namespace Clinica
 
         // Propiedades 
         public int NroCama { get => nroCama; set => nroCama = value; }
-        public string NombrePaciente { get => nombrePaciente; set => nombrePaciente = value; }
-        public string Diagnostico { get => diagnostico; set => diagnostico = value; }
-        public ObraSocial ObraSocial { get => obraSocial; set => obraSocial = value; }
-        public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
+
 
         // Métodos 
 
+        public void AsignarPaciente(Paciente paciente)
+        {
+            if (paciente is null) throw new ArgumentNullException(nameof(paciente));
+
+            this.paciente = paciente;
+        }
+
+        public void RemoverPaciente()
+        {
+            this.paciente = null;
+        }
+
         public override string ToString()
         {
-            return $"[Nro de cama: {this.NroCama}]";
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"[Nro cama: {this.NroCama}]");
+            if (this.paciente is not null)
+            {
+               sb.AppendLine("Datos paciente");
+               sb.AppendLine(this.paciente.ToString());
+            }
+            return sb.ToString();
         }
     }
 }
