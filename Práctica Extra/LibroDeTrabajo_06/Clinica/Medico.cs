@@ -21,6 +21,9 @@ namespace Clinica
         public Medico(Medico medico) : this(medico.Legajo, medico.Nombre)
         { }
 
+        public Medico(Persona persona) : base(persona)
+        { }
+
         public Medico(int legajo, string nombre, string especialidad) : this(legajo, nombre)
         {
             this.especialidad = especialidad;
