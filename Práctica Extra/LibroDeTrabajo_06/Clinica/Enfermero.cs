@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Clinica
 {
-    public class Enfermero
+    public class Enfermero : Persona
     {
+        public Enfermero(int legajo, string nombre) : base(legajo, nombre) 
+        {
+        }
+
+        public Enfermero(Persona persona) : base(persona)
+        { }
     }
 }
