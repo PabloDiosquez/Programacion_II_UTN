@@ -5,6 +5,10 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibroDeTrabajo_07", "LibroDeTrabajo_07\LibroDeTrabajo_07.csproj", "{F428FB05-57DF-486B-AD46-DB938071A913}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{922D2676-3663-450C-92B8-60AD67F9E6EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cine", "Cine", "{E555B058-E6F5-4BB4-A25A-68E1594E372E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{F428FB05-57DF-486B-AD46-DB938071A913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F428FB05-57DF-486B-AD46-DB938071A913}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F428FB05-57DF-486B-AD46-DB938071A913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922D2676-3663-450C-92B8-60AD67F9E6EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922D2676-3663-450C-92B8-60AD67F9E6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922D2676-3663-450C-92B8-60AD67F9E6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922D2676-3663-450C-92B8-60AD67F9E6EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{922D2676-3663-450C-92B8-60AD67F9E6EC} = {E555B058-E6F5-4BB4-A25A-68E1594E372E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABC478BD-AE59-4BCB-9506-F22243D919D1}

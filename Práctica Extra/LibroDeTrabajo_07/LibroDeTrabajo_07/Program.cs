@@ -129,7 +129,6 @@ namespace LibroDeTrabajo_07
                 Console.WriteLine(ex.Message);
             }
 
-
         }
         static void metodo1()
         {
