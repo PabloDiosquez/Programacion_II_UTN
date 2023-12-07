@@ -45,6 +45,9 @@ namespace LibroDeTrabajo_07
             // manejará la excepción DivideByZeroException y imprimirá "No puede dividir por cero un numero entero" en
             // la consola.
 
+
+            //Ejercicio 2.
+
             //Suponiendo que está definida la clase NoEsElJefeException ¿Por qué no es atrapada la
             //excepción en el siguiente código?
 
@@ -77,15 +80,70 @@ namespace LibroDeTrabajo_07
             // {
             //     Console.WriteLine("No está autorizado");
             // }
-            
+
             //En este ejemplo, si `jefe` es `false`, se lanzará la excepción `NoEsElJefeException`
             //con la palabra clave `throw`. Luego, la excepción será atrapada por el bloque `catch` y
             //se imprimirá "No está autorizado" en la consola.Si `jefe` es `true`, se imprimirá
             //"Bienvenido jefe" en la consola sin lanzar ni atrapar ninguna excepción.
 
+            // Ejercicio 3.
 
+            try
+            {
+                metodo1();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"método 1 propagó una excepción");
+            }
+            
+            //¿Qué imprime? ¿Por qué?
+
+            //La variable b es de tipo byte, que es un tipo de dato sin signo y tiene un rango
+            //de 0 a 255.Al intentar incrementar el valor de b más allá de 255, ocurre un
+            //desbordamiento.
+
+            //Debido al desbordamiento, se produce una excepción de tipo System.OverflowException.
+            //Sin embargo, el bloque catch en el método Main solo atrapa excepciones de tipo
+            //Exception.
+
+            //Aunque la excepción generada es de un tipo más específico(OverflowException), la
+            //excepción no se maneja en el método Main porque el bloque catch solo está buscando
+            //excepciones de tipo Exception.
+
+            //El bloque finally dentro del método metodo1 siempre se ejecuta, independientemente
+            //de si se produce una excepción o no.En este caso, se imprimirá "bloque finally".
+
+            // Ejercicio 5.
+
+            int[] arreglo = { 1, 2, 3, 4, 5 };
+            int valorBuscado = 10;
+
+            try
+            {
+                int posicion = Helper.index(arreglo, valorBuscado);
+                Console.WriteLine($"El valor {valorBuscado} se encuentra en la posición {posicion}");
+            }
+            catch (ValorNoEncontradoException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
         }
+        static void metodo1()
+        {
+            byte b = 255;
+            try
+            {
+                b++;
+            }
+            finally
+            {
+                Console.WriteLine("bloque finally");
+            }
+
+        }
+
     }
 }
