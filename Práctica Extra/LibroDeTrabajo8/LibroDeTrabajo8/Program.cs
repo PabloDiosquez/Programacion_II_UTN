@@ -2,16 +2,13 @@
 using System.Collections;
 using System.Text;
 
-namespace LibroDeTrabajo8
+namespace LibroDeTrabajo_08
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            foreach (int numero in arrayFibonacci(8))
-            {
-                Console.WriteLine(numero);
-            }
+            Console.WriteLine();
         }
 
         // Ejercicio 1.
@@ -79,18 +76,31 @@ namespace LibroDeTrabajo8
         //Escriba una función recursiva que reciba un string y retorne la cantidad de vocales que
         //contiene.
 
+        public static int cuentaVocales(string str)
+        {
+            return _cuentaVocales(str, 0, str.Length);
+        }
 
+        private static int _cuentaVocales(string str, int desde, int hasta)
+        {
+            if (desde >= hasta) return 0;
 
+            return unoSiCeroSino(esVocal(str[desde])) + _cuentaVocales(str, desde + 1, hasta);
+        }
 
         private static bool esVocal(char caracter)
         {
-            char[] vocales = new char[] { 'a', 'e', 'i', 'o', 'u'};
+            char[] vocales = new char[] { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U',
+           'á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú',};
 
-            return true;
+            return Array.IndexOf(vocales, caracter) >= 0;
         }
 
-
-
+        private static int unoSiCeroSino(bool condicion)
+        {
+            if (condicion) return 1;
+            return 0;
+        }
 
     } 
 }
