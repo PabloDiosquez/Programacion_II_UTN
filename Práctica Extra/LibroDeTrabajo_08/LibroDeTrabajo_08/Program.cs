@@ -8,7 +8,7 @@ namespace LibroDeTrabajo_08
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
+            Console.WriteLine(esPalindromo("PEFEPA"));
         }
 
         // Ejercicio 1.
@@ -100,6 +100,22 @@ namespace LibroDeTrabajo_08
         {
             if (condicion) return 1;
             return 0;
+        }
+
+        // Ejercicio 7.
+        //Escriba una función recursiva que reciba un string como parámetro y devuelva si es o
+        //no palíndromo.
+
+        public static bool esPalindromo(string str)
+        {
+            return _esPalindromo(str, 0, str.Length - 1);
+        }
+
+        private static bool _esPalindromo(string str, int desde, int hasta)
+        {
+            if(desde >= hasta) return true;
+
+            return str[desde] == str[hasta] && _esPalindromo(str, desde + 1, hasta - 1);
         }
 
     } 
