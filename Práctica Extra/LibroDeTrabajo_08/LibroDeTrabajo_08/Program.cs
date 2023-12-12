@@ -8,7 +8,9 @@ namespace LibroDeTrabajo_08
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(esPalindromo("PEFEPA"));
+            int[] array = new int[] { 2, 4, 12, 6, 23, 1, 0 };
+
+            Console.WriteLine(maximo(array));
         }
 
         // Ejercicio 1.
@@ -101,6 +103,30 @@ namespace LibroDeTrabajo_08
             if (condicion) return 1;
             return 0;
         }
+
+        // Ejercicio 6 
+        //Escriba una función recursiva que calcule el máximo de un arreglo de enteros.
+
+        public static int maximo(int[] array)
+        {
+            return _maximo(array, array.Length);
+        }
+
+        private static int _maximo(int[] array, int longitud)
+        {
+            if(longitud == 1) return array[0];
+
+            return maximoEntre(_maximo(array, longitud - 1), array[longitud - 1]);
+        }
+
+        private static int maximoEntre(int primerNumero, int segundoNumero) 
+        {
+            if(primerNumero >= segundoNumero) return primerNumero;
+
+            return segundoNumero;
+        }
+
+
 
         // Ejercicio 7.
         //Escriba una función recursiva que reciba un string como parámetro y devuelva si es o
